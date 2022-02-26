@@ -25,18 +25,23 @@ namespace TheBitCave.MultiplayerRoguelite
 
         private void Awake()
         {
-            _inputActions = new InputActions();
             _characterController = GetComponent<CharacterController>();
             _animator = GetComponentInChildren<Animator>();
             var networkAnimator = GetComponent<NetworkAnimator>();
             if (networkAnimator != null) networkAnimator.animator = _animator;
         }
 
+        public override void OnStartLocalPlayer()
+        {
+            base.OnStartLocalPlayer();
+            _inputActions = new InputActions();
+            _inputActions.Player.Enable();
+        }
+        
         private void FixedUpdate()
         {
             // Player Input
             if (!isLocalPlayer) return;
-            
             var input = _inputActions.Player.Move.ReadValue<Vector2>();
             var isRunning = _inputActions.Player.Run.inProgress;
             var speed = isRunning ? runSpeed : walkSpeed;
@@ -53,15 +58,19 @@ namespace TheBitCave.MultiplayerRoguelite
             _animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, _characterController.velocity.magnitude);
         }
 
+        /*
         private void OnEnable()
         {
-            _inputActions.Player.Enable();
+            if (!isLocalPlayer) return;
+//            _inputActions.Player.Enable();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
+            if (!isLocalPlayer) return;
             _inputActions.Player.Disable();
         }
+        */
     }
     
 }
