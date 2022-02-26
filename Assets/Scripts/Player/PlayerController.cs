@@ -11,6 +11,7 @@ namespace TheBitCave.MultiplayerRoguelite
     public class PlayerController : NetworkBehaviour
     {
         private CharacterController _characterController;
+        private Animator _animator;
         private InputActions _inputActions;
 
         [SerializeField]
@@ -26,21 +27,30 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             _inputActions = new InputActions();
             _characterController = GetComponent<CharacterController>();
+            _animator = GetComponentInChildren<Animator>();
+            var networkAnimator = GetComponent<NetworkAnimator>();
+            if (networkAnimator != null) networkAnimator.animator = _animator;
         }
 
         private void FixedUpdate()
         {
+            // Player Input
             if (!isLocalPlayer) return;
             
-            var isRunning = _inputActions.Player.Run.ReadValue<bool>();
+            var input = _inputActions.Player.Move.ReadValue<Vector2>();
+            var isRunning = _inputActions.Player.Run.inProgress;
             var speed = isRunning ? runSpeed : walkSpeed;
             
-            var input = _inputActions.Player.Move.ReadValue<Vector2>();
+            // Character Movement
             var move = input.y * speed * transform.forward;
             _characterController.Move(move);
 
             var rotation = input.x * rotationSpeed * transform.up;
             transform.Rotate(rotation);
+            
+            // Animator update
+            if (_animator == null) return;
+            _animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, _characterController.velocity.magnitude);
         }
 
         private void OnEnable()
