@@ -69,7 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  playerSpeed: 0.2
+  walkSpeed: 0.15
+  runSpeed: 0.3
   rotationSpeed: 2
 --- !u!114 &3564142846316209451
 MonoBehaviour:

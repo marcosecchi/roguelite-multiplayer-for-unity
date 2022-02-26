@@ -14,8 +14,11 @@ namespace TheBitCave.MultiplayerRoguelite
         private InputActions _inputActions;
 
         [SerializeField]
-        private float playerSpeed = 3;
- 
+        private float walkSpeed = 3;
+
+        [SerializeField]
+        private float runSpeed = 3;
+
         [SerializeField]
         private float rotationSpeed = 3;
 
@@ -29,8 +32,11 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             if (!isLocalPlayer) return;
             
+            var isRunning = _inputActions.Player.Run.ReadValue<bool>();
+            var speed = isRunning ? runSpeed : walkSpeed;
+            
             var input = _inputActions.Player.Move.ReadValue<Vector2>();
-            var move = input.y * playerSpeed * transform.forward;
+            var move = input.y * speed * transform.forward;
             _characterController.Move(move);
 
             var rotation = input.x * rotationSpeed * transform.up;
