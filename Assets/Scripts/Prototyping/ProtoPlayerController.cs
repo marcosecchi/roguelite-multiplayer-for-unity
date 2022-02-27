@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -22,6 +21,9 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField]
         private float rotationSpeed = 3;
 
+        [SyncVar(hook = nameof(OnSkinColorChange))]
+        private Color _skinColor;
+        
         private void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -36,7 +38,19 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
             _inputActions = new InputActions();
             _inputActions.Player.Enable();
         }
-        
+
+        public override void OnStartServer()
+        {
+            _skinColor = Random.ColorHSV();
+        }
+
+        private void OnSkinColorChange(Color _, Color newColor)
+        {
+            var smr = GetComponentInChildren<SkinnedMeshRenderer>();
+            if (smr == null) return;
+            smr.material.color = newColor;
+        }
+
         private void FixedUpdate()
         {
             // Player Input
