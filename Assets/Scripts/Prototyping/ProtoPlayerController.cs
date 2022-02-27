@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
     [RequireComponent(typeof(CharacterController))]
-    public class PlayerController : NetworkBehaviour
+    public class ProtoPlayerController : AbstractPlayerController
     {
         private CharacterController _characterController;
         private Animator _animator;

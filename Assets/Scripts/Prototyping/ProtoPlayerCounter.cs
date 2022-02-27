@@ -5,7 +5,7 @@ using TheBitCave.MultiplayerRoguelite.Data;
 namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
     [AddComponentMenu("")]
-    public class PlayerCounterNetworkTransformChild : NetworkTransformChild
+    public class ProtoPlayerCounter : NetworkTransformChild
     {
         [SerializeField] private CurveScriptableObject animationCurve;
 
