@@ -14,7 +14,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
 
         [SyncVar(hook = nameof(OnSkinColorChange))]
         private Color _skinColor;
-
+        
         [SyncVar(hook = nameof(OnPointsChange))]
         private int _points = -1;
         

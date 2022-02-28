@@ -51,7 +51,7 @@ namespace TheBitCave.MultiplayerRoguelite
             
             // Character Movement
             var move = input.y * speed * transform.forward;
-            _characterController.Move(move);
+            _characterController.SimpleMove(move);
 
             var rotation = input.x * rotationSpeed * transform.up;
             transform.Rotate(rotation);
