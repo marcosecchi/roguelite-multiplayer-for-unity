@@ -17,43 +17,40 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField] private float maxSpawnTime = 2f;
 
         private Bounds _bounds;
+
+        private bool _isSpawning;
         
         private void Awake()
         {
             _bounds = spawnArea.bounds;
-            spawnArea.enabled = true;
+            spawnArea.enabled = false;
         }
 
         public override void OnStartServer()
         {
             base.OnStartServer();
+            _isSpawning = true;
             StartCoroutine(nameof(SpawnSequence));
         }
 
         public override void OnStopServer()
         {
             base.OnStopServer();
-            StopCoroutine(nameof(SpawnSequence));
+            _isSpawning = false;
         }
 
         private IEnumerator SpawnSequence()
         {
-            while (true)
+            while (_isSpawning)
             {
-                yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
-
                 var posX = Random.Range(_bounds.min.x, _bounds.max.x);
                 var posZ = Random.Range(_bounds.min.z, _bounds.max.z);
                 var pos = new Vector3(posX, transform.position.y, posZ);
                 var go = Instantiate(objectPrefab, pos, Quaternion.identity);
-               NetworkServer.Spawn(go);
+                NetworkServer.Spawn(go);
+
+                yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
             }
-        }
-        
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = new Color(1, 1, 0, .5f);
-            Gizmos.DrawCube(spawnArea.center, spawnArea.size);
         }
     }
 }

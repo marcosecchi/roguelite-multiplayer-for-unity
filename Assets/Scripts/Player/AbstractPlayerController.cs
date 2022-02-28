@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -50,10 +51,11 @@ namespace TheBitCave.MultiplayerRoguelite
             var speed = isRunning ? runSpeed : walkSpeed;
             
             // Character Movement
-            var move = input.y * speed * transform.forward;
+            var t = transform;
+            var move = Math.Clamp(input.y, 0, 1) * speed * t.forward;
             _characterController.SimpleMove(move);
 
-            var rotation = input.x * rotationSpeed * transform.up;
+            var rotation = input.x * rotationSpeed * t.up;
             transform.Rotate(rotation);
             
             // Animator update
