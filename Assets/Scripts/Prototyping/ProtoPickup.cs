@@ -11,6 +11,8 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
     {
         private Collider _collider;
 
+        public int points = 1;
+
         private void Awake()
         {
             _collider = GetComponent<Collider>();
@@ -22,9 +24,9 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
-            var nb = other.GetComponent<AbstractPlayerController>();
-            if (nb == null) return;
-            
+            var controller = other.GetComponent<ProtoPlayerController>();
+            if (controller == null) return;
+            controller.AddPoints(points);
             NetworkServer.Destroy(gameObject);            
         }
     }

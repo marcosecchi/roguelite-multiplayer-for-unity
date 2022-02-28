@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using TMPro;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Prototype
@@ -21,9 +22,15 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField]
         private float rotationSpeed = 3;
 
+        [SerializeField]
+        private TextMeshProUGUI pointsLabel;
+
         [SyncVar(hook = nameof(OnSkinColorChange))]
         private Color _skinColor;
-        
+
+        [SyncVar(hook = nameof(OnPointsChange))]
+        private int _points = -1;
+
         private void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -42,15 +49,27 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         public override void OnStartServer()
         {
             _skinColor = Random.ColorHSV();
+            _points = 0;
         }
 
-        private void OnSkinColorChange(Color _, Color newColor)
+        public void AddPoints(int value)
+        {
+            if (!isServer) return;
+            _points += value;
+        }
+        
+        private void OnSkinColorChange(Color _, Color newValue)
         {
             var smr = GetComponentInChildren<SkinnedMeshRenderer>();
             if (smr == null) return;
-            smr.material.color = newColor;
+            smr.material.color = newValue;
         }
 
+        private void OnPointsChange(int _, int newValue)
+        {
+            pointsLabel.text = newValue.ToString();
+        }
+        
         private void FixedUpdate()
         {
             // Player Input

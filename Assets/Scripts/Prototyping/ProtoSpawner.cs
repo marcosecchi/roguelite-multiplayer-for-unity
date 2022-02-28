@@ -46,7 +46,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
                 var posZ = Random.Range(_bounds.min.z, _bounds.max.z);
                 var pos = new Vector3(posX, transform.position.y, posZ);
                 var go = Instantiate(objectPrefab, pos, Quaternion.identity);
-     //          NetworkServer.Spawn(go);
+               NetworkServer.Spawn(go);
             }
         }
         
