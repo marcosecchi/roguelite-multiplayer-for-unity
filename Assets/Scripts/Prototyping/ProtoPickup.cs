@@ -7,6 +7,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
     [RequireComponent(typeof(Collider))]
+    [AddComponentMenu("")]
     public class ProtoPickup : NetworkBehaviour
     {
         private Collider _collider;
@@ -24,7 +25,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
-            var controller = other.GetComponent<ProtoPlayerController>();
+            var controller = other.GetComponent<ProtoCharacter>();
             if (controller == null) return;
             controller.AddPoints(points);
             NetworkServer.Destroy(gameObject);            

@@ -1,12 +1,15 @@
 using System.Collections;
-using Mirror;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    /// <summary>
+    /// Behaviour utility used by Cinemachine to lock on the target local player
+    /// </summary>
     public class FollowPlayer : MonoBehaviour
     {
         private Transform _target;
+        
         private void Update()
         {
             if (_target != null)
@@ -19,12 +22,16 @@ namespace TheBitCave.MultiplayerRoguelite
             }
         }
 
+        /// <summary>
+        /// Keep on looking for the local player if it is null (i.e.: not yet spawned)
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator FindTarget()
         {
             while (_target == null)
             {
                 yield return new WaitForSeconds(.5f);
-                var t = FindObjectOfType<AbstractPlayerController>();
+                var t = FindObjectOfType<AbstractCharacter>();
                 if(t != null && t.isLocalPlayer) _target = t.transform;
             }
         }

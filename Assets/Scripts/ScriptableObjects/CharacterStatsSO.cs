@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace  TheBitCave.MultiplayerRoguelite.Prototype
 {
-    [CreateAssetMenu(fileName = "PlayerStats", menuName = "Roguelite/Data/Player Stats")]
-    public class PlayerStatsSO : ScriptableObject
+    [CreateAssetMenu(fileName = "CharacterStats", menuName = "Roguelite/Data/Character Stats")]
+    public class CharacterStatsSO : ScriptableObject
     {
         [SerializeField]
         private float walkSpeed = 3;

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite
 {
     [RequireComponent(typeof(CharacterController))]
-    public abstract class AbstractPlayerController : NetworkBehaviour
+    public abstract class AbstractCharacter : NetworkBehaviour
     {
         private CharacterController _characterController;
         private Animator _animator;
@@ -16,7 +16,7 @@ namespace TheBitCave.MultiplayerRoguelite
 
         [Header("Stats")]
         [SerializeField]
-        private PlayerStatsSO stats;
+        private CharacterStatsSO stats;
         
         protected virtual void Awake()
         {

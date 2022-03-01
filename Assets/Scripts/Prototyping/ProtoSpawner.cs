@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
+    [AddComponentMenu("")]
     public class ProtoSpawner : NetworkBehaviour
     {
         [SerializeField] private BoxCollider spawnArea;
