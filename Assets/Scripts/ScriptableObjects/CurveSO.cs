@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 namespace TheBitCave.MultiplayerRoguelite.Data
 {
     [CreateAssetMenu(fileName = "CurveData", menuName = "Roguelite/Data/Curve")]
-    public class CurveScriptableObject : ScriptableObject
+    public class CurveSO : ScriptableObject
     {
         [FormerlySerializedAs("Curve")] [SerializeField]
         private AnimationCurve curve;

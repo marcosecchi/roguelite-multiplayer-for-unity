@@ -9,6 +9,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
     public class ProtoPlayerController : AbstractPlayerController
     {
 
+        [Header("HUD")]
         [SerializeField]
         private TextMeshProUGUI pointsLabel;
 

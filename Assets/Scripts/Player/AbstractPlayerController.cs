@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Prototype;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite
@@ -13,15 +14,10 @@ namespace TheBitCave.MultiplayerRoguelite
         private Animator _animator;
         private InputActions _inputActions;
 
+        [Header("Stats")]
         [SerializeField]
-        private float walkSpeed = 3;
-
-        [SerializeField]
-        private float runSpeed = 3;
-
-        [SerializeField]
-        private float rotationSpeed = 3;
-
+        private PlayerStatsSO stats;
+        
         protected virtual void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -48,14 +44,14 @@ namespace TheBitCave.MultiplayerRoguelite
             if (!isLocalPlayer) return;
             var input = _inputActions.Player.Move.ReadValue<Vector2>();
             var isRunning = _inputActions.Player.Run.inProgress;
-            var speed = isRunning ? runSpeed : walkSpeed;
+            var speed = isRunning ? stats.RunSpeed : stats.WalkSpeed;
             
             // Character Movement
             var t = transform;
             var move = Math.Clamp(input.y, 0, 1) * speed * t.forward;
             _characterController.SimpleMove(move);
 
-            var rotation = input.x * rotationSpeed * t.up;
+            var rotation = input.x * stats.RotationSpeed * t.up;
             transform.Rotate(rotation);
             
             // Animator update
@@ -63,11 +59,11 @@ namespace TheBitCave.MultiplayerRoguelite
             _animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, _characterController.velocity.magnitude);
         }
 
-        /*
+        
         private void OnEnable()
         {
             if (!isLocalPlayer) return;
-//            _inputActions.Player.Enable();
+            _inputActions.Player.Enable();
         }
 
         private void OnDisable()
@@ -75,7 +71,5 @@ namespace TheBitCave.MultiplayerRoguelite
             if (!isLocalPlayer) return;
             _inputActions.Player.Disable();
         }
-        */
-
     }
 }

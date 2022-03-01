@@ -7,7 +7,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
     [AddComponentMenu("")]
     public class ProtoFloater : MonoBehaviour
     {
-        [SerializeField] private CurveScriptableObject animationCurve;
+        [SerializeField] private CurveSO animationCurve;
 
         private float _startY;
         

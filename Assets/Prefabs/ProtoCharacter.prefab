@@ -171,9 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  walkSpeed: 8
-  runSpeed: 0.3
-  rotationSpeed: 2
+  stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
   pointsLabel: {fileID: 4828554001462524992}
 --- !u!114 &3564142846316209451
 MonoBehaviour:
