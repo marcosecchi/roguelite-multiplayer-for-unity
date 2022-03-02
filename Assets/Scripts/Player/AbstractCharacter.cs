@@ -2,6 +2,7 @@ using System;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Prototype;
 using UnityEngine;
+using TheBitCave.MultiplayerRoguelite.Utils;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
@@ -11,7 +12,7 @@ namespace TheBitCave.MultiplayerRoguelite
         private CharacterController _characterController;
         private Animator _animator;
         private InputActions _inputActions;
-
+        
         [Header("Stats")]
         [SerializeField]
         private CharacterStatsSO stats;
@@ -20,6 +21,7 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             _characterController = GetComponent<CharacterController>();
             _animator = GetComponentInChildren<Animator>();
+            _inputActions = InputManager.Instance.Actions;
             var networkAnimator = GetComponent<NetworkAnimator>();
             if (networkAnimator != null) networkAnimator.animator = _animator;
         }
@@ -32,7 +34,6 @@ namespace TheBitCave.MultiplayerRoguelite
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
-            _inputActions = new InputActions();
             _inputActions.Player.Enable();
         }
 
