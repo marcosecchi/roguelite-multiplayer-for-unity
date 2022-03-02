@@ -39,7 +39,7 @@ namespace TheBitCave.MultiplayerRoguelite
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""CloseCombatAttack"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""e5394192-cf68-4f9d-83c4-b32a1790c63f"",
                     ""expectedControlType"": ""Button"",
@@ -175,7 +175,7 @@ namespace TheBitCave.MultiplayerRoguelite
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""CloseCombatAttack"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -186,7 +186,7 @@ namespace TheBitCave.MultiplayerRoguelite
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""CloseCombatAttack"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -797,7 +797,7 @@ namespace TheBitCave.MultiplayerRoguelite
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_CloseCombatAttack = m_Player.FindAction("CloseCombatAttack", throwIfNotFound: true);
+            m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -871,14 +871,14 @@ namespace TheBitCave.MultiplayerRoguelite
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_CloseCombatAttack;
+        private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_Run;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
             public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @CloseCombatAttack => m_Wrapper.m_Player_CloseCombatAttack;
+            public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @Run => m_Wrapper.m_Player_Run;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
@@ -892,9 +892,9 @@ namespace TheBitCave.MultiplayerRoguelite
                     @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @CloseCombatAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseCombatAttack;
-                    @CloseCombatAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseCombatAttack;
-                    @CloseCombatAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseCombatAttack;
+                    @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                    @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                    @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                     @Run.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
                     @Run.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
                     @Run.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRun;
@@ -905,9 +905,9 @@ namespace TheBitCave.MultiplayerRoguelite
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
-                    @CloseCombatAttack.started += instance.OnCloseCombatAttack;
-                    @CloseCombatAttack.performed += instance.OnCloseCombatAttack;
-                    @CloseCombatAttack.canceled += instance.OnCloseCombatAttack;
+                    @Attack.started += instance.OnAttack;
+                    @Attack.performed += instance.OnAttack;
+                    @Attack.canceled += instance.OnAttack;
                     @Run.started += instance.OnRun;
                     @Run.performed += instance.OnRun;
                     @Run.canceled += instance.OnRun;
@@ -1068,7 +1068,7 @@ namespace TheBitCave.MultiplayerRoguelite
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnCloseCombatAttack(InputAction.CallbackContext context);
+            void OnAttack(InputAction.CallbackContext context);
             void OnRun(InputAction.CallbackContext context);
         }
         public interface IUIActions

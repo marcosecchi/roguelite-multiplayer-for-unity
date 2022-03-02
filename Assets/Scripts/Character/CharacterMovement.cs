@@ -1,13 +1,14 @@
 using Mirror;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
     /// <summary>
     /// Character movement ability. Handles walking, running and rotating
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(AbstractCharacter))]
+    [AddComponentMenu(menuName: "Roguelite/Character Movement")]
     public class CharacterMovement : NetworkBehaviour
     {
         private CharacterController _characterController;
