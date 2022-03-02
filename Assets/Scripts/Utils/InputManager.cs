@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Utils
 {
+    /// <summary>
+    /// A persistent singleton class used to initialize and to handle player input 
+    /// </summary>
     public class InputManager : PersistentSingleton<InputManager>
     {
         private InputActions _actions;

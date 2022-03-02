@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 3564142846316209449}
   - component: {fileID: 3564142846316209448}
   - component: {fileID: -4146200391017729414}
+  - component: {fileID: 120099913044383136}
   - component: {fileID: 3564142846316209451}
   - component: {fileID: 3564142846316209450}
   - component: {fileID: 3564142846316209453}
@@ -172,7 +173,22 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
+  animator: {fileID: 3874993849603990165}
   pointsLabel: {fileID: 4828554001462524992}
+--- !u!114 &120099913044383136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564142846316209455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c83f1a68bd5c2b4aa23c3f238338cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &3564142846316209451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +255,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   clientAuthority: 1
-  animator: {fileID: 0}
+  animator: {fileID: 3874993849603990165}
 --- !u!1 &6509246211408452519
 GameObject:
   m_ObjectHideFlags: 0
