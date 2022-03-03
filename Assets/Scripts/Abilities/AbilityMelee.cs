@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
-    [AddComponentMenu(menuName: "Roguelite/Ability Close Combat")]
-    public class AbilityCloseCombat : AbstractAbility
+    [AddComponentMenu(menuName: "Roguelite/Ability Melee")]
+    public class AbilityMelee : AbilityAttack
     {
     }
 }

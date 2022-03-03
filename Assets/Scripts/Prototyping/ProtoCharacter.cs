@@ -7,7 +7,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
     [AddComponentMenu("")]
-    public class ProtoCharacter : AbstractCharacter
+    public class ProtoCharacter : BaseCharacter
     {
 
         [Header("HUD")]

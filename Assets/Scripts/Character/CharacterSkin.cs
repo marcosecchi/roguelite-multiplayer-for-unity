@@ -7,9 +7,6 @@ namespace TheBitCave.MultiplayerRoguelite
 {
     public class CharacterSkin : NetworkBehaviour
     {
-        [Header("Player Archetype")]
-        [SerializeField] protected CharacterArchetype type;
-        
         [Header("Sockets")]
         [SerializeField] protected Transform headSocket;
         [SerializeField] protected Transform bodySocket;

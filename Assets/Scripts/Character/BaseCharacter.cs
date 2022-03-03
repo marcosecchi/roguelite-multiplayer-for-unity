@@ -1,5 +1,6 @@
 using System;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Abilities;
 using TheBitCave.MultiplayerRoguelite.Prototype;
 using UnityEngine;
 using TheBitCave.MultiplayerRoguelite.Utils;
@@ -7,7 +8,9 @@ using UnityEngine.Serialization;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
-    public abstract class AbstractCharacter : NetworkBehaviour
+    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(AbilityAttack))]
+    public partial class BaseCharacter : NetworkBehaviour
     {
         [Header("Stats")]
         [SerializeField]
@@ -18,10 +21,14 @@ namespace TheBitCave.MultiplayerRoguelite
         private Animator animator;
         
         private InputActions _inputActions;
+        private CharacterController _characterController;
+        private AbilityAttack _attack;
 
         protected virtual void Awake()
         {
             _inputActions = InputManager.Instance.Actions;
+            _characterController = GetComponent<CharacterController>();
+            _attack = GetComponent<AbilityAttack>();
             var networkAnimator = GetComponent<NetworkAnimator>();
             if (networkAnimator != null) networkAnimator.animator = animator;
         }
@@ -53,7 +60,6 @@ namespace TheBitCave.MultiplayerRoguelite
 
         public Animator Animator => animator;
         public CharacterStatsSO Stats => stats;
-        public InputActions InputActions => _inputActions;
 
         #endregion
     }

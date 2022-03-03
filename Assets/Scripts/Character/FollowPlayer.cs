@@ -31,7 +31,7 @@ namespace TheBitCave.MultiplayerRoguelite
             while (_target == null)
             {
                 yield return new WaitForSeconds(.5f);
-                var t = FindObjectOfType<AbstractCharacter>();
+                var t = FindObjectOfType<BaseCharacter>();
                 if(t != null && t.isLocalPlayer) _target = t.transform;
             }
         }

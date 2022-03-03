@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
     [AddComponentMenu(menuName: "Roguelite/Ability Shoot")]
-    public class AbilityShoot : AbstractAbility
+    public class AbilityShoot : AbilityAttack
     {
     }
 }
