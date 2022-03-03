@@ -17,7 +17,6 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
 
         protected override void AttackStart()
         {
-            base.AttackStart();
             CmdThrow();
         }
 

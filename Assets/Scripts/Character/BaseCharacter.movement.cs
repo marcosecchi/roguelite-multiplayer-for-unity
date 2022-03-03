@@ -30,6 +30,7 @@ namespace TheBitCave.MultiplayerRoguelite
             // Animator update
             if (Animator == null) return;
             Animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, _characterController.velocity.magnitude);
+            
         }
     }
     

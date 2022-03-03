@@ -22,13 +22,13 @@ namespace TheBitCave.MultiplayerRoguelite
         
         private InputActions _inputActions;
         private CharacterController _characterController;
-        private AbilityAttack _attack;
+        private AbilityAttack _abilityAttack;
 
         protected virtual void Awake()
         {
             _inputActions = InputManager.Instance.Actions;
             _characterController = GetComponent<CharacterController>();
-            _attack = GetComponent<AbilityAttack>();
+            _abilityAttack = GetComponent<AbilityAttack>();
             var networkAnimator = GetComponent<NetworkAnimator>();
             if (networkAnimator != null) networkAnimator.animator = animator;
         }

@@ -15,19 +15,18 @@ namespace TheBitCave.MultiplayerRoguelite
         public override void OnStartClient()
         {
             if (!isLocalPlayer) return;
-            _inputActions.Player.Attack.started += OnAttack;
+            _inputActions.Player.Attack.started += OnAttackStarted;
         }
         
         public override void OnStopClient()
         {
             if (!isLocalPlayer) return;
-            _inputActions.Player.Attack.started -= OnAttack;
+            _inputActions.Player.Attack.started -= OnAttackStarted;
         }
         
-        private void OnAttack(InputAction.CallbackContext obj)
+        private void OnAttackStarted(InputAction.CallbackContext obj)
         {
-            Debug.Log("Attack!");
-            _attack.Attack();
+            _abilityAttack.Attack();
         }
 
     }
