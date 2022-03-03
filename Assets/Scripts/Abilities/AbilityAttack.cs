@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -5,35 +6,69 @@ using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
+    /// <summary>
+    /// Base component used to make an attack (cast a spell, close combat attack, etc.)
+    /// The attack is activated/deactivated by the character animator in order to synchronize it with
+    /// the corresponding animation.
+    /// </summary>
     [RequireComponent(typeof(BaseCharacter))]
     public abstract class AbilityAttack : NetworkBehaviour
     {
         protected BaseCharacter _character;
+        protected AnimationAttackEventsSender _animationEventSender;
 
         protected bool _isAttacking;
+
+        protected string _animatorParameter;
         
+        /// <summary>
+        /// Initializes the needed components.
+        /// </summary>
         protected virtual void Awake()
         {
             _character = GetComponent<BaseCharacter>();
+            _animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
         }
 
-        protected virtual void AttackStart()
+        public override void OnStartClient()
         {
-            Debug.Log("Attack Start");
-
+            base.OnStartClient();
+            if (!isLocalPlayer) return;
+            if (_animationEventSender != null) _animationEventSender.OnAttackStart += CmdAttackStart;
+            if (_animationEventSender != null) _animationEventSender.OnAttackEnd += CmdAttackEnd;
         }
 
-        protected virtual void AttackEnd()
+        public override void OnStopClient()
         {
-            Debug.Log("Attack End");
-
+            base.OnStopClient();
+            if (!isLocalPlayer) return;
+            if (_animationEventSender != null) _animationEventSender.OnAttackStart -= CmdAttackStart;
+            if (_animationEventSender != null) _animationEventSender.OnAttackEnd -= CmdAttackEnd;
         }
 
+        /// <summary>
+        /// Executed by an event dispatched by the animator
+        /// </summary>
+        [Command]
+        protected virtual void CmdAttackStart() { }
+
+        /// <summary>
+        /// Executed by an event dispatched by the animator
+        /// </summary>
+        [Command]
+        protected virtual void CmdAttackEnd()
+        {
+            _isAttacking = false;
+        }
+
+        /// <summary>
+        /// Starts the attack phase by activating the animator parameter
+        /// </summary>
         public virtual void Attack()
         {
             if (_isAttacking) return;
             _isAttacking = true;
-            AttackStart();
+            _character.Animator.SetTrigger(_animatorParameter);
         }
     }
     

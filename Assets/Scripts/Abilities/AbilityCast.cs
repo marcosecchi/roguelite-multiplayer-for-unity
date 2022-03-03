@@ -3,20 +3,21 @@ using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
-    [AddComponentMenu(menuName: "Roguelite/Ability Melee")]
-    public class AbilityMelee : AbilityAttack
+    public class AbilityCast : AbilityAttack
     {
+        [SerializeField] protected GameObject spellPrefab;
+        
         protected override void Awake()
         {
             base.Awake();
-            _animatorParameter = C.ANIMATOR_PARAMETER_MELEE;
+            _animatorParameter = C.ANIMATOR_PARAMETER_CAST;
         }
 
         [Command]
         protected override void CmdAttackStart()
         {
             base.CmdAttackStart();
-            Debug.Log("Melee Start");
+            Debug.Log("Cast Start");
 
         }
 
@@ -24,7 +25,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected override void CmdAttackEnd()
         {
             base.CmdAttackEnd();
-            Debug.Log("Melee End");
+            Debug.Log("Cast End");
 
         }
     }
