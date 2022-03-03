@@ -18,12 +18,11 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected override void AttackStart()
         {
             base.AttackStart();
-            CmdShoot();
-
+            CmdThrow();
         }
 
         [Command]
-        private void CmdShoot()
+        private void CmdThrow()
         {
             var go = Instantiate(weaponPrefab, spawnPoint.position, spawnPoint.rotation);
             NetworkServer.Spawn(go);
