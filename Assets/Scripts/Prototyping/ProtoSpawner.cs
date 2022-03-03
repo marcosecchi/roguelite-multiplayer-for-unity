@@ -16,6 +16,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
 
         [SerializeField] private float minSpawnTime = .5f;
         [SerializeField] private float maxSpawnTime = 2f;
+        [SerializeField] private bool autoStart;
 
         private Bounds _bounds;
 
@@ -30,8 +31,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         public override void OnStartServer()
         {
             base.OnStartServer();
-            _isSpawning = true;
-            StartCoroutine(nameof(SpawnSequence));
+            if(autoStart) StartSpawning();
         }
 
         public override void OnStopServer()
@@ -40,6 +40,12 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
             _isSpawning = false;
         }
 
+        public void StartSpawning()
+        {
+            _isSpawning = true;
+            if (isServer) StartCoroutine(nameof(SpawnSequence));
+        }
+        
         private IEnumerator SpawnSequence()
         {
             while (_isSpawning)

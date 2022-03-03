@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8565945044764080463}
   - component: {fileID: 5979733087385411202}
   - component: {fileID: 5182863286511486434}
-  - component: {fileID: 4446867723837773124}
   m_Layer: 0
   m_Name: ProtoDagger
   m_TagString: Untagged
@@ -51,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  speed: 8
+  force: 8
+  rigidbody: {fileID: 8565945044764080463}
 --- !u!54 &8565945044764080463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -98,40 +98,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: ac212834c2ed5114d93edba4c95aeb17
   hasSpawned: 0
---- !u!114 &4446867723837773124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487906046781796656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  clientAuthority: 0
-  sendInterval: 0.05
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 0
-  bufferTimeMultiplier: 1
-  bufferSizeLimit: 64
-  catchupThreshold: 4
-  catchupMultiplier: 0.1
-  onlySyncOnChange: 1
-  bufferResetMultiplier: 5
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!1001 &4725290189570889607
 PrefabInstance:
   m_ObjectHideFlags: 0

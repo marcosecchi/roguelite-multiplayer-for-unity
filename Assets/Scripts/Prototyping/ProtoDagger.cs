@@ -9,12 +9,12 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
     [RequireComponent(typeof(Rigidbody))]
     public class ProtoDagger : NetworkBehaviour
     {
-        public float speed = 1;
+        public float force = 8;
+        public Rigidbody rigidbody;
         
-        public override void OnStartClient()
+        private void Start()
         {
-            var velocity = transform.forward * speed;
-            GetComponent<Rigidbody>().velocity = velocity;
+            rigidbody.velocity = transform.forward * force;
         }
 
         [ServerCallback]
