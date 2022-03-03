@@ -17,6 +17,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected BaseCharacter _character;
         protected AnimationAttackEventsSender _animationEventSender;
 
+        [SyncVar]
         protected bool _isAttacking;
 
         protected string _animatorParameter;
@@ -34,29 +35,27 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             base.OnStartClient();
             if (!isLocalPlayer) return;
-            if (_animationEventSender != null) _animationEventSender.OnAttackStart += CmdAttackStart;
-            if (_animationEventSender != null) _animationEventSender.OnAttackEnd += CmdAttackEnd;
+            if (_animationEventSender != null) _animationEventSender.OnAttackStart += AttackStart;
+            if (_animationEventSender != null) _animationEventSender.OnAttackEnd += AttackEnd;
         }
 
         public override void OnStopClient()
         {
             base.OnStopClient();
             if (!isLocalPlayer) return;
-            if (_animationEventSender != null) _animationEventSender.OnAttackStart -= CmdAttackStart;
-            if (_animationEventSender != null) _animationEventSender.OnAttackEnd -= CmdAttackEnd;
+            if (_animationEventSender != null) _animationEventSender.OnAttackStart -= AttackStart;
+            if (_animationEventSender != null) _animationEventSender.OnAttackEnd -= AttackEnd;
         }
 
         /// <summary>
         /// Executed by an event dispatched by the animator
         /// </summary>
-        [Command]
-        protected virtual void CmdAttackStart() { }
+        protected virtual void AttackStart() { }
 
         /// <summary>
         /// Executed by an event dispatched by the animator
         /// </summary>
-        [Command]
-        protected virtual void CmdAttackEnd()
+        protected virtual void AttackEnd()
         {
             _isAttacking = false;
         }

@@ -12,18 +12,16 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             _animatorParameter = C.ANIMATOR_PARAMETER_MELEE;
         }
 
-        [Command]
-        protected override void CmdAttackStart()
+        protected override void AttackStart()
         {
-            base.CmdAttackStart();
+            base.AttackStart();
             Debug.Log("Melee Start");
 
         }
 
-        [Command]
-        protected override void CmdAttackEnd()
+        protected override void AttackEnd()
         {
-            base.CmdAttackEnd();
+            base.AttackEnd();
             Debug.Log("Melee End");
 
         }

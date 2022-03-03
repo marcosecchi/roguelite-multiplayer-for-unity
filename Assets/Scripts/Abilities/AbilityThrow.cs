@@ -7,6 +7,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     public class AbilityThrow : AbilityAttack
     {
         [SerializeField] protected GameObject weaponPrefab;
+        [SerializeField] protected Transform spawnPoint;
 
         protected override void Awake()
         {
@@ -14,20 +15,18 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             _animatorParameter = C.ANIMATOR_PARAMETER_THROW;
         }
 
-        [Command]
-        protected override void CmdAttackStart()
+        protected override void AttackStart()
         {
-            base.CmdAttackStart();
-            Debug.Log("Attack Throw");
+            base.AttackStart();
+            CmdShoot();
 
         }
 
         [Command]
-        protected override void CmdAttackEnd()
+        private void CmdShoot()
         {
-            base.CmdAttackEnd();
-            Debug.Log("Attack Throw");
-
+            var go = Instantiate(weaponPrefab, spawnPoint.position, spawnPoint.rotation);
+            NetworkServer.Spawn(go);
         }
     }
 }

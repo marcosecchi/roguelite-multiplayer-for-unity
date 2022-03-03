@@ -13,18 +13,16 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             _animatorParameter = C.ANIMATOR_PARAMETER_CAST;
         }
 
-        [Command]
-        protected override void CmdAttackStart()
+        protected override void AttackStart()
         {
-            base.CmdAttackStart();
+            base.AttackStart();
             Debug.Log("Cast Start");
 
         }
 
-        [Command]
-        protected override void CmdAttackEnd()
+        protected override void AttackEnd()
         {
-            base.CmdAttackEnd();
+            base.AttackEnd();
             Debug.Log("Cast End");
 
         }
