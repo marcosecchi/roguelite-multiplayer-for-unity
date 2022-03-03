@@ -67,7 +67,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             if (_isAttacking) return;
             _isAttacking = true;
-            _character.Animator.SetTrigger(_animatorParameter);
+            _character.NetworkAnimator.SetTrigger(_animatorParameter);
         }
     }
     

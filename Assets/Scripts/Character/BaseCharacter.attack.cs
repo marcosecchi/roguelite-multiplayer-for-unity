@@ -26,7 +26,7 @@ namespace TheBitCave.MultiplayerRoguelite
         
         private void OnAttackStarted(InputAction.CallbackContext obj)
         {
-            _abilityAttack.Attack();
+            if(_abilityAttack != null) _abilityAttack.Attack();
         }
 
     }

@@ -9,7 +9,6 @@ using UnityEngine.Serialization;
 namespace TheBitCave.MultiplayerRoguelite
 {
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(AbilityAttack))]
     public partial class BaseCharacter : NetworkBehaviour
     {
         [Header("Stats")]
@@ -23,14 +22,15 @@ namespace TheBitCave.MultiplayerRoguelite
         private InputActions _inputActions;
         private CharacterController _characterController;
         private AbilityAttack _abilityAttack;
+        private NetworkAnimator _networkAnimator;
 
         protected virtual void Awake()
         {
             _inputActions = InputManager.Instance.Actions;
             _characterController = GetComponent<CharacterController>();
             _abilityAttack = GetComponent<AbilityAttack>();
-            var networkAnimator = GetComponent<NetworkAnimator>();
-            if (networkAnimator != null) networkAnimator.animator = animator;
+            _networkAnimator = GetComponent<NetworkAnimator>();
+            if (_networkAnimator != null) _networkAnimator.animator = animator;
         }
 
         public override void OnStartServer()
@@ -59,6 +59,7 @@ namespace TheBitCave.MultiplayerRoguelite
         #region Getters and Setters
 
         public Animator Animator => animator;
+        public NetworkAnimator NetworkAnimator => _networkAnimator;
         public CharacterStatsSO Stats => stats;
 
         #endregion
