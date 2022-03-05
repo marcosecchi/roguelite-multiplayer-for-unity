@@ -16,7 +16,119 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e5c90714fd4f7984b960f7fd5727c169
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 95fda88169b8f94459b2005845c4d1b9
+    m_Address: Assets/Prefabs/Addressables/Body/Archer/Body01 - Archer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef5568893281d6d4a99bb80601adda8f
+    m_Address: Assets/Prefabs/Addressables/Body/Mage/Body02 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ac6d442b7f8e2647b99ee887e0a6085
+    m_Address: Assets/Prefabs/Addressables/Body/Mage/ArmRight01 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f383afc416eef34f8b01047a380ead0
+    m_Address: Assets/Prefabs/Addressables/Body/Minion/Body01 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 92e64467d062d9c43af55bfcb1046bee
+    m_Address: Assets/Prefabs/Addressables/Body/Mage/ArmLeft01 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b039436552c64c540a2cbf80396097a9
+    m_Address: Assets/Prefabs/Addressables/Body/Archer/ArmRight01 - Archer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a2ec8cce4ae5794f85093977ad84e2d
+    m_Address: Assets/Prefabs/Addressables/Body/Mage/Body01 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e968f76f2ceec5d4282ea9cb90aa8b74
+    m_Address: Assets/Prefabs/Addressables/Body/Archer/ArmLeft01 - Archer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6fa0c1b3f159fcc409393dd39461497e
+    m_Address: Assets/Prefabs/Addressables/Body/Minion/ArmRight01 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47d603043b170c6499a6f4752dcf1bca
+    m_Address: Assets/Prefabs/Addressables/Body/Minion/ArmLeft01 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
+    m_Address: Assets/Prefabs/Addressables/Body/Warrior/Body01 - Warrior.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f84c7475f095f104596d8cb1e40dd969
+    m_Address: Assets/Prefabs/Addressables/Body/Warrior/ArmRight01 - Warrior.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96545adfac164f84081a29c86f3b03d5
+    m_Address: Assets/Prefabs/Addressables/Body/Warrior/ArmLeft01 - Warrior.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 89879cbe41c06ae49a1232d9a565b67e
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Archer/Head01 - Archer Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dec017365b3364841ad3688c368d76d9
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Archer/Head02 - Archer Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea1567a2e80e1e44ba8c39291b3afb51
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Archer/Head03 - Archer Variant.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d6a669d9d2678f646aa395481298741c
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Base Charcter/Head01 - Character.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c96152098a4e0814ca975932268986df
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Base Charcter/Head02 - Character.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9e27d50687f20b545b7a6cd01e4a8204
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Base Charcter/Head03 - Character.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bb2f65bff08b884ea38e3a9b40f2b3d
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Base Charcter/Head04 - Character.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f161840edc36309488710da0d64a2cfb
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Mage/Head01 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7026c6a4e3bd7e4a9ba845d92946dab
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Mage/Head02 - Mage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8294376c2e067c443977e7a1c8d63a82
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Minion/Head01 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 97fad8593bde37a4e8c3e5177b5fc543
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Minion/Head02 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ce944fd1a8b85640b9737b6c4404ec8
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Minion/Head03 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5d6f28ff52beea4cb302fe894b8e3b2
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Minion/Head04 - Minion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 56dd941dc9a365d4fa949fd87ce43408
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Warrior/Head01 - Warrior.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a22c89aa0793a2e4d97212bad40982f8
+    m_Address: Assets/Prefabs/Addressables/Skeleton/Head/Warrior/Head02 - Warrior.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

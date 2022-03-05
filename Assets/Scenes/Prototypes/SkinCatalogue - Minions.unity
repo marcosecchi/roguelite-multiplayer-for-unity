@@ -4558,6 +4558,87 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &48364881112688263
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 443991918818066700, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: bodySocket
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 443991918818066700, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: headSocket
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 443991918818066700, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: armLeftSocket
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 443991918818066700, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: armRightSocket
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379336, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: sceneId
+      value: 360621706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379338, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379340, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_Name
+      value: BaseCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063455048423379340, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
 --- !u!1 &99453153313538734
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,7 +6285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7273655401122881089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 10.14}
+  m_LocalPosition: {x: 0, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
