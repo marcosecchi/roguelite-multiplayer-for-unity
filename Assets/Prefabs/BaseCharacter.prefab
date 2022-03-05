@@ -383,7 +383,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 48364881031283457}
   pointsLabel: {fileID: 8986440455936051427}
 --- !u!114 &1063455048423379336
 MonoBehaviour:
@@ -400,7 +400,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 9d6ed147c4ea1c04ca1fe857fe6ed4d8
+  m_AssetId: 83246864f7ddd43439f10baee42ca382
   hasSpawned: 0
 --- !u!114 &1063455048423379337
 MonoBehaviour:
@@ -466,10 +466,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  headSocket: {fileID: 0}
-  bodySocket: {fileID: 0}
-  armLeftSocket: {fileID: 0}
-  armRightSocket: {fileID: 0}
+  headSlot: {fileID: 6190599334536137263}
+  bodySlot: {fileID: 48364879740503115}
+  armLeftSlot: {fileID: 7008927194792899568}
+  armRightSlot: {fileID: 2093971764374123834}
 --- !u!1 &1194671815847329854
 GameObject:
   m_ObjectHideFlags: 0

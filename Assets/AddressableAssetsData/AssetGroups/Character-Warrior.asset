@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Character-Warrior
+  m_EditorClassIdentifier: 
+  m_GroupName: Character-Warrior
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e1f0aff4bdfccb6439868aff32888aee
+  m_SerializeEntries:
+  - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
+    m_Address: Body01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - body
+    - warrior
+  - m_GUID: f84c7475f095f104596d8cb1e40dd969
+    m_Address: ArmRight01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - armRight
+    - warrior
+  - m_GUID: 96545adfac164f84081a29c86f3b03d5
+    m_Address: ArmLeft01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - armLeft
+    - warrior
+  - m_GUID: 56dd941dc9a365d4fa949fd87ce43408
+    m_Address: Head01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - head
+    - warrior
+  - m_GUID: a22c89aa0793a2e4d97212bad40982f8
+    m_Address: Head02 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - head
+    - warrior
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8d459414f99ee784083ab2dc7b3ade50, type: 2}
+    - {fileID: 11400000, guid: 24af65552467d4543927392acfa9d560, type: 2}
