@@ -7,11 +7,8 @@ using UnityEngine.InputSystem;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
-    [RequireComponent(typeof(AbstractAbility))]
     public partial class BaseCharacter : NetworkBehaviour
     {
-        private AbstractAbility _activeAttack;
-        
         public override void OnStartClient()
         {
             if (!isLocalPlayer) return;

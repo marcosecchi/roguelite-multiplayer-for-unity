@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Interfaces;
+using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    [RequireComponent(typeof(ICharacterTypeable))]
     public class CharacterSkin : NetworkBehaviour
     {
         [Header("Sockets")]
@@ -14,12 +17,20 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform armLeftSlot;
         [SerializeField] protected Transform armRightSlot;
 
+        protected ICharacterTypeable character;
+
+        protected virtual void Awake()
+        {
+            character = GetComponent<ICharacterTypeable>();
+        }
+        
         public override void OnStartServer()
         {
             base.OnStartServer();
 
             // TODO: Remove from Sync operation
             // TODO: Add skin randomization
+            var characterLabel = CharacterUtils.GetCharacterLabel(character.Type);
             
             var op = Addressables.LoadAssetAsync<GameObject>("body");
             var prefab = op.WaitForCompletion();
