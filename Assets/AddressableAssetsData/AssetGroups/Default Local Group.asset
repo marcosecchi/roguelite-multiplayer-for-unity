@@ -16,39 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e5c90714fd4f7984b960f7fd5727c169
-  m_SerializeEntries:
-  - m_GUID: 81c76ad8213c3c64cbf90c0e30664599
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head01a.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 006c47b3701baea4e956eb41af7c379c
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head01b.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4729980594334d647b6f761fa303df0e
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head02a.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4445fce5a702b984c9ef2511c4879802
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head02b.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 58fbfa07e20f12a49a8bc4d8c9851ef8
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head03a.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7a646fa175fd5ef4082326928422a7c1
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head03b.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: bf1632821812690449f70d03038fe1cd
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head04a.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1ce164668f35ce240b3ada0b9ede4f55
-    m_Address: Assets/Prefabs/Addressables/Skeletons/Heads/Minions/Head04b.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
