@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -17,16 +16,24 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform armRightSlot;
 
         protected CharacterType characterType;
-        
+
         public virtual void Init(CharacterType type)
         {
             this.characterType = type;
+            StartCoroutine(nameof(CreateCharacter));
+        }
+
+        private IEnumerator CreateCharacter()
+        {
             // TODO: Remove from Sync operation
             // TODO: Add skin randomization
-            var characterLabel = CharacterUtils.GetCharacterLabel(type);
-       //     var labels = new string[] {C.ADDRESSABLE_LABEL_BODY, characterLabel};
-            var op = Addressables.LoadAssetAsync<GameObject>(C.ADDRESSABLE_LABEL_BODY);
-            var prefab = op.WaitForCompletion();
+            var characterLabel = CharacterUtils.GetCharacterLabel(characterType);
+            var labels = new List<string>(){C.ADDRESSABLE_LABEL_BODY, characterLabel};
+            
+            var handle = Addressables.LoadAssetsAsync<GameObject>(labels, null, Addressables.MergeMode.Intersection, true);
+            if (!handle.IsDone) yield return handle;
+            var list = new List<GameObject>(handle.Result);
+            var prefab = list[0];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             if (skin != null)
             {
@@ -34,12 +41,15 @@ namespace TheBitCave.MultiplayerRoguelite
                 AddBodyPart(skin.ArmLeft, armLeftSlot);
                 AddBodyPart(skin.ArmRight, armRightSlot);
             }
-
-       //     labels = new string[] {C.ADDRESSABLE_LABEL_HEAD, characterLabel};
-            op = Addressables.LoadAssetAsync<GameObject>(C.ADDRESSABLE_LABEL_HEAD);
-            prefab = op.WaitForCompletion();
+            Addressables.Release(handle);
+            
+            labels = new List<string>(){C.ADDRESSABLE_LABEL_HEAD, characterLabel};
+            handle = Addressables.LoadAssetsAsync<GameObject>(labels, null, Addressables.MergeMode.Intersection, true);
+            if (!handle.IsDone) yield return handle;
+            list = new List<GameObject>(handle.Result);
+            prefab = list[0];
             AddBodyPart(prefab, headSlot);
-            Addressables.Release(op);
+            Addressables.Release(handle);
         }
 
         protected virtual void AddBodyPart(GameObject prefab, Transform parent)
