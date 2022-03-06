@@ -17,24 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e1f0aff4bdfccb6439868aff32888aee
   m_SerializeEntries:
-  - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
-    m_Address: Body01 - Warrior
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - body
-    - warrior
-  - m_GUID: f84c7475f095f104596d8cb1e40dd969
-    m_Address: ArmRight01 - Warrior
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armRight
-    - warrior
-  - m_GUID: 96545adfac164f84081a29c86f3b03d5
-    m_Address: ArmLeft01 - Warrior
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armLeft
-    - warrior
   - m_GUID: 56dd941dc9a365d4fa949fd87ce43408
     m_Address: Head01 - Warrior
     m_ReadOnly: 0
@@ -46,6 +28,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
+    - warrior
+  - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
+    m_Address: Body01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - body
     - warrior
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}

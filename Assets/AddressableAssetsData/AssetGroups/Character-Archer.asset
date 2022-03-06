@@ -17,24 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e93351d376be38244ab94d3faeb23170
   m_SerializeEntries:
-  - m_GUID: b039436552c64c540a2cbf80396097a9
-    m_Address: ArmRight01 - Archer
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armRight
-    - archer
-  - m_GUID: e968f76f2ceec5d4282ea9cb90aa8b74
-    m_Address: ArmLeft01 - Archer
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armLeft
-    - archer
-  - m_GUID: 95fda88169b8f94459b2005845c4d1b9
-    m_Address: Body01 - Archer
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - body
-    - archer
   - m_GUID: 89879cbe41c06ae49a1232d9a565b67e
     m_Address: Head01 - Archer
     m_ReadOnly: 0
@@ -53,6 +35,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - head
     - archer
+  - m_GUID: 95fda88169b8f94459b2005845c4d1b9
+    m_Address: Body01 - Archer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - archer
+    - body
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

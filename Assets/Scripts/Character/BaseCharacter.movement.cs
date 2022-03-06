@@ -15,21 +15,21 @@ namespace TheBitCave.MultiplayerRoguelite
             if (!isLocalPlayer) return;
 
             // Player Input
-            var input = _inputActions.Player.Move.ReadValue<Vector2>();
-            var isRunning = _inputActions.Player.Run.inProgress;
+            var input = inputActions.Player.Move.ReadValue<Vector2>();
+            var isRunning = inputActions.Player.Run.inProgress;
             var speed = isRunning ? Stats.RunSpeed : Stats.WalkSpeed;
             
             // Character Movement
             var t = transform;
             var move = Mathf.Clamp01(input.y) * speed * t.forward;
-            _characterController.SimpleMove(move);
+            characterController.SimpleMove(move);
 
             var rotation = input.x * Stats.RotationSpeed * t.up;
             transform.Rotate(rotation);
             
             // Animator update
             if (Animator == null) return;
-            Animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, _characterController.velocity.magnitude);
+            Animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, characterController.velocity.magnitude);
             
         }
     }

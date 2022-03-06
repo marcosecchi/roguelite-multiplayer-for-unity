@@ -17,30 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 167b79f3045475a449a0fd5f579ade68
   m_SerializeEntries:
-  - m_GUID: ef5568893281d6d4a99bb80601adda8f
-    m_Address: Body02 - Mage
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - body
-    - mage
-  - m_GUID: 4ac6d442b7f8e2647b99ee887e0a6085
-    m_Address: ArmRight01 - Mage
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armRight
-    - mage
-  - m_GUID: 92e64467d062d9c43af55bfcb1046bee
-    m_Address: ArmLeft01 - Mage
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - armLeft
-    - mage
-  - m_GUID: 6a2ec8cce4ae5794f85093977ad84e2d
-    m_Address: Body01 - Mage
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - body
-    - mage
   - m_GUID: f161840edc36309488710da0d64a2cfb
     m_Address: Head01 - Mage
     m_ReadOnly: 0
@@ -52,6 +28,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
+    - mage
+  - m_GUID: 6a2ec8cce4ae5794f85093977ad84e2d
+    m_Address: Body01 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - body
+    - mage
+  - m_GUID: e5f9b480e028a02489788b060a07f334
+    m_Address: Body02 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - body
     - mage
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}

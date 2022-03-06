@@ -16,5 +16,11 @@ namespace TheBitCave.MultiplayerRoguelite.Utils
                 _ => C.ADDRESSABLE_LABEL_MINION
             };
         }
+
+        public static CharacterType GetRandomCharacterType()
+        {
+            // TODO: complete randomization
+            return CharacterType.Archer;
+        }
     }
 }

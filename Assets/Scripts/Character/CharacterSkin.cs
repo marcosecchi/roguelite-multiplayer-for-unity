@@ -8,7 +8,6 @@ using UnityEngine.AddressableAssets;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
-    [RequireComponent(typeof(ICharacterTypeable))]
     public class CharacterSkin : NetworkBehaviour
     {
         [Header("Sockets")]
@@ -17,42 +16,35 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform armLeftSlot;
         [SerializeField] protected Transform armRightSlot;
 
-        protected ICharacterTypeable character;
-
-        protected virtual void Awake()
-        {
-            character = GetComponent<ICharacterTypeable>();
-        }
+        protected CharacterType characterType;
         
-        public override void OnStartServer()
+        public virtual void Init(CharacterType type)
         {
-            base.OnStartServer();
-
+            this.characterType = type;
             // TODO: Remove from Sync operation
             // TODO: Add skin randomization
-            var characterLabel = CharacterUtils.GetCharacterLabel(character.Type);
-            
-            var op = Addressables.LoadAssetAsync<GameObject>("body");
+            var characterLabel = CharacterUtils.GetCharacterLabel(type);
+       //     var labels = new string[] {C.ADDRESSABLE_LABEL_BODY, characterLabel};
+            var op = Addressables.LoadAssetAsync<GameObject>(C.ADDRESSABLE_LABEL_BODY);
             var prefab = op.WaitForCompletion();
-            AddBodyPart(prefab, bodySlot);
+            var skin = prefab.GetComponent<CharacterSkinBodyElements>();
+            if (skin != null)
+            {
+                AddBodyPart(skin.Body, bodySlot);
+                AddBodyPart(skin.ArmLeft, armLeftSlot);
+                AddBodyPart(skin.ArmRight, armRightSlot);
+            }
 
-            op = Addressables.LoadAssetAsync<GameObject>("armLeft");
-            prefab = op.WaitForCompletion();
-            AddBodyPart(prefab, armLeftSlot);
-            
-            op = Addressables.LoadAssetAsync<GameObject>("armRight");
-            prefab = op.WaitForCompletion();
-            AddBodyPart(prefab, armRightSlot);
-            
-            op = Addressables.LoadAssetAsync<GameObject>("head");
+       //     labels = new string[] {C.ADDRESSABLE_LABEL_HEAD, characterLabel};
+            op = Addressables.LoadAssetAsync<GameObject>(C.ADDRESSABLE_LABEL_HEAD);
             prefab = op.WaitForCompletion();
             AddBodyPart(prefab, headSlot);
-            
             Addressables.Release(op);
         }
 
         protected virtual void AddBodyPart(GameObject prefab, Transform parent)
         {
+            parent.RemoveAllChildren();
             var go = Instantiate(prefab, parent);
             go.transform.localPosition = Vector3.zero;
             go.transform.localRotation = Quaternion.identity;

@@ -90,8 +90,6 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - body
-    - armRight
-    - armLeft
     - head
     - mage
     - minion
