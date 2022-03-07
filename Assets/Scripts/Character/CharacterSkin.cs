@@ -15,51 +15,41 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform armLeftSlot;
         [SerializeField] protected Transform armRightSlot;
 
-        protected CharacterType characterType;
+        [SyncVar(hook = nameof(OnBodyIndexChange))]
+        protected int selectedBodyIndex = -1;
 
-        public virtual void Init(CharacterType type)
+        [SyncVar(hook = nameof(OnHeadIndexChange))]
+        protected int selectedHeadIndex = -1;
+
+        [SyncVar]
+        protected string characterType = C.CHARACTER_NONE;
+
+        [ServerCallback]
+        public virtual void Generate(string type)
         {
             characterType = type;
-            CreateCharacter();
-            StartCoroutine(nameof(CreateCharacter));
+            var list = SkinManager.Instance.GetBodyList(characterType);
+            selectedBodyIndex = Random.Range(0, list.Count);
+            list = SkinManager.Instance.GetHeadList(characterType);
+            selectedHeadIndex = Random.Range(0, list.Count);
+        }
+        
+        protected virtual void OnBodyIndexChange(int _, int newValue)
+        {
+            var list = SkinManager.Instance.GetBodyList(characterType);
+            var prefab = list[newValue];
+            var skin = prefab.GetComponent<CharacterSkinBodyElements>();
+            if (skin == null) return;
+            AddBodyPart(skin.Body, bodySlot);
+            AddBodyPart(skin.ArmLeft, armLeftSlot);
+            AddBodyPart(skin.ArmRight, armRightSlot);
         }
 
-        private void CreateCharacter()
+        protected virtual void OnHeadIndexChange(int _, int newValue)
         {
-            // TODO: Remove from Sync operation
-            // TODO: Add skin randomization
-
-            /*
-            var characterLabel = CharacterUtils.GetCharacterLabel(characterType);
-            var labels = new List<string>(){C.ADDRESSABLE_LABEL_BODY, characterLabel};
-            
-            var handle = Addressables.LoadAssetsAsync<GameObject>(labels, null, Addressables.MergeMode.Intersection, true);
-            if (!handle.IsDone) yield return handle;
-            var list = new List<GameObject>(handle.Result);
-            var prefab = list[0];
-            */
-            var list = SkinManager.Instance.GetBodyList(characterType);
-            var prefab = list[Random.Range(0, list.Count)];
-            var skin = prefab.GetComponent<CharacterSkinBodyElements>();
-            if (skin != null)
-            {
-                AddBodyPart(skin.Body, bodySlot);
-                AddBodyPart(skin.ArmLeft, armLeftSlot);
-                AddBodyPart(skin.ArmRight, armRightSlot);
-            }
-//            Addressables.Release(handle);
-
-            /*
-            labels = new List<string>(){C.ADDRESSABLE_LABEL_HEAD, characterLabel};
-            handle = Addressables.LoadAssetsAsync<GameObject>(labels, null, Addressables.MergeMode.Intersection, true);
-            if (!handle.IsDone) yield return handle;
-            list = new List<GameObject>(handle.Result);
-            prefab = list[0];
-            */
-            list = SkinManager.Instance.GetHeadList(characterType);
-            prefab = list[Random.Range(0, list.Count)];
+            var list = SkinManager.Instance.GetHeadList(characterType);
+            var prefab = list[newValue];
             AddBodyPart(prefab, headSlot);
- //           Addressables.Release(handle);
         }
 
         protected virtual void AddBodyPart(GameObject prefab, Transform parent)

@@ -8,9 +8,7 @@ namespace TheBitCave.MultiplayerRoguelite
 {
     public class Character : BaseCharacter, ICharacterTypeable
     {
-        [Header("Character Type")]
-        [SerializeField] protected CharacterType type;
-        
+        protected string type;
         protected CharacterSkin skin;
 
         protected override void Awake()
@@ -26,13 +24,13 @@ namespace TheBitCave.MultiplayerRoguelite
             type = CharacterUtils.GetRandomCharacterType();
             if (skin != null)
             {
-                skin.Init(type);
+                skin.Generate(type);
             }
         }
 
         #region ITypeable implementation 
         
-        public virtual CharacterType Type => type;
+        public virtual string Type => type;
         
         #endregion
     }

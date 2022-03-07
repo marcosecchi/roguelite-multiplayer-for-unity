@@ -8,6 +8,9 @@ namespace  TheBitCave.MultiplayerRoguelite.Prototype
     public class CharacterStatsSO : ScriptableObject
     {
         [SerializeField]
+        private int level = 1;
+
+        [SerializeField]
         private float walkSpeed = 3;
 
         [SerializeField]
@@ -16,6 +19,7 @@ namespace  TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField]
         private float rotationSpeed = 3;
 
+        public float Level => level;
         public float WalkSpeed => walkSpeed;
         public float RunSpeed => runSpeed;
         public float RotationSpeed => rotationSpeed;
