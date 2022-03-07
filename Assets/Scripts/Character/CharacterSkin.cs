@@ -21,12 +21,11 @@ namespace TheBitCave.MultiplayerRoguelite
         [SyncVar(hook = nameof(OnHeadIndexChange))]
         protected int selectedHeadIndex = -1;
 
-        [SyncVar]
         protected string characterType = C.CHARACTER_NONE;
 
-        [ServerCallback]
         public virtual void Generate(string type)
         {
+            if (!isServer) return;
             characterType = type;
             var list = SkinManager.Instance.GetBodyList(characterType);
             selectedBodyIndex = Random.Range(0, list.Count);
@@ -39,7 +38,6 @@ namespace TheBitCave.MultiplayerRoguelite
             var list = SkinManager.Instance.GetBodyList(characterType);
             var prefab = list[newValue];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
-            if (skin == null) return;
             AddBodyPart(skin.Body, bodySlot);
             AddBodyPart(skin.ArmLeft, armLeftSlot);
             AddBodyPart(skin.ArmRight, armRightSlot);

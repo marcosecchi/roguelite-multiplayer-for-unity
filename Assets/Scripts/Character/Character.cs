@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using TheBitCave.MultiplayerRoguelite.Interfaces;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
@@ -8,7 +9,8 @@ namespace TheBitCave.MultiplayerRoguelite
 {
     public class Character : BaseCharacter, ICharacterTypeable
     {
-        protected string type;
+        [SyncVar] protected string type;
+
         protected CharacterSkin skin;
 
         protected override void Awake()
