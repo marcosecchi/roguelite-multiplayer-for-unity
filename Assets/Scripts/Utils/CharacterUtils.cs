@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Utils
@@ -16,11 +18,13 @@ namespace TheBitCave.MultiplayerRoguelite.Utils
                 _ => C.ADDRESSABLE_LABEL_MINION
             };
         }
-
+ 
         public static CharacterType GetRandomCharacterType()
         {
             // TODO: complete randomization
             return CharacterType.Archer;
         }
+
+        public static IEnumerable<CharacterType> CharacterTypes => Enum.GetValues(typeof(CharacterType)).Cast<CharacterType>();
     }
 }

@@ -19,14 +19,17 @@ namespace TheBitCave.MultiplayerRoguelite
 
         public virtual void Init(CharacterType type)
         {
-            this.characterType = type;
+            characterType = type;
+            CreateCharacter();
             StartCoroutine(nameof(CreateCharacter));
         }
 
-        private IEnumerator CreateCharacter()
+        private void CreateCharacter()
         {
             // TODO: Remove from Sync operation
             // TODO: Add skin randomization
+
+            /*
             var characterLabel = CharacterUtils.GetCharacterLabel(characterType);
             var labels = new List<string>(){C.ADDRESSABLE_LABEL_BODY, characterLabel};
             
@@ -34,6 +37,9 @@ namespace TheBitCave.MultiplayerRoguelite
             if (!handle.IsDone) yield return handle;
             var list = new List<GameObject>(handle.Result);
             var prefab = list[0];
+            */
+            var list = SkinManager.Instance.GetBodyList(characterType);
+            var prefab = list[Random.Range(0, list.Count)];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             if (skin != null)
             {
@@ -41,15 +47,19 @@ namespace TheBitCave.MultiplayerRoguelite
                 AddBodyPart(skin.ArmLeft, armLeftSlot);
                 AddBodyPart(skin.ArmRight, armRightSlot);
             }
-            Addressables.Release(handle);
-            
+//            Addressables.Release(handle);
+
+            /*
             labels = new List<string>(){C.ADDRESSABLE_LABEL_HEAD, characterLabel};
             handle = Addressables.LoadAssetsAsync<GameObject>(labels, null, Addressables.MergeMode.Intersection, true);
             if (!handle.IsDone) yield return handle;
             list = new List<GameObject>(handle.Result);
             prefab = list[0];
+            */
+            list = SkinManager.Instance.GetHeadList(characterType);
+            prefab = list[Random.Range(0, list.Count)];
             AddBodyPart(prefab, headSlot);
-            Addressables.Release(handle);
+ //           Addressables.Release(handle);
         }
 
         protected virtual void AddBodyPart(GameObject prefab, Transform parent)
