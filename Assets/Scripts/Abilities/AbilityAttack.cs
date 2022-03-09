@@ -14,37 +14,37 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     [RequireComponent(typeof(BaseCharacter))]
     public abstract class AbilityAttack : NetworkBehaviour
     {
-        protected BaseCharacter _character;
-        protected AnimationAttackEventsSender _animationEventSender;
+        protected BaseCharacter character;
+        protected AnimationAttackEventsSender animationEventSender;
 
         [SyncVar]
-        protected bool _isAttacking;
+        protected bool isAttacking;
 
-        protected string _animatorParameter;
+        protected string animatorParameter;
         
         /// <summary>
         /// Initializes the needed components.
         /// </summary>
         protected virtual void Awake()
         {
-            _character = GetComponent<BaseCharacter>();
-            _animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
+            character = GetComponent<BaseCharacter>();
+            animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
         }
 
         public override void OnStartClient()
         {
             base.OnStartClient();
             if (!isLocalPlayer) return;
-            if (_animationEventSender != null) _animationEventSender.OnAttackStart += AttackStart;
-            if (_animationEventSender != null) _animationEventSender.OnAttackEnd += AttackEnd;
+            if (animationEventSender != null) animationEventSender.OnAttackStart += AttackStart;
+            if (animationEventSender != null) animationEventSender.OnAttackEnd += AttackEnd;
         }
 
         public override void OnStopClient()
         {
             base.OnStopClient();
             if (!isLocalPlayer) return;
-            if (_animationEventSender != null) _animationEventSender.OnAttackStart -= AttackStart;
-            if (_animationEventSender != null) _animationEventSender.OnAttackEnd -= AttackEnd;
+            if (animationEventSender != null) animationEventSender.OnAttackStart -= AttackStart;
+            if (animationEventSender != null) animationEventSender.OnAttackEnd -= AttackEnd;
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         /// </summary>
         protected virtual void AttackEnd()
         {
-            _isAttacking = false;
+            isAttacking = false;
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         /// </summary>
         public virtual void Attack()
         {
-            if (_isAttacking) return;
-            _isAttacking = true;
-            _character.NetworkAnimator.SetTrigger(_animatorParameter);
+            if (isAttacking) return;
+            isAttacking = true;
+            character.NetworkAnimator.SetTrigger(animatorParameter);
         }
     }
     

@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48364881031283456}
   - component: {fileID: 48364881031283457}
+  - component: {fileID: 8655514597887445283}
   m_Layer: 0
   m_Name: AnimatedModel
   m_TagString: Untagged
@@ -279,6 +280,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8655514597887445283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48364881031283458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa9a6cf862873041a6b06054fff3c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &48364881398908576
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +324,37 @@ Transform:
   m_Father: {fileID: 48364881031283456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &600067681070032618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6968334824308090760}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6968334824308090760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600067681070032618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.331, y: 0, z: 0.349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1063455048423379338}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063455048423379340
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,9 +370,9 @@ GameObject:
   - component: {fileID: 1063455048423379337}
   - component: {fileID: 1063455048423379342}
   - component: {fileID: 443991918818066700}
-  - component: {fileID: 3454107801817133696}
+  - component: {fileID: 5111422181650273960}
   m_Layer: 0
-  m_Name: BaseCharacter
+  m_Name: CharacterArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 48364881031283456}
+  - {fileID: 6968334824308090760}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,7 +429,7 @@ MonoBehaviour:
   syncInterval: 0.1
   stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
   animator: {fileID: 48364881031283457}
-  type: mage
+  type: 0
 --- !u!114 &1063455048423379336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +515,7 @@ MonoBehaviour:
   bodySlot: {fileID: 48364879740503115}
   armLeftSlot: {fileID: 7008927194792899568}
   armRightSlot: {fileID: 2093971764374123834}
---- !u!114 &3454107801817133696
+--- !u!114 &5111422181650273960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,11 +524,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1063455048423379340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eec9a46c36eee74996cb9d4fba6f186, type: 3}
+  m_Script: {fileID: 11500000, guid: 54af7f2175bab9646b9d425abd9d4bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  weaponPrefab: {fileID: 487906046781796656, guid: ac212834c2ed5114d93edba4c95aeb17, type: 3}
+  spawnPoint: {fileID: 6968334824308090760}
 --- !u!1 &1194671815847329854
 GameObject:
   m_ObjectHideFlags: 0

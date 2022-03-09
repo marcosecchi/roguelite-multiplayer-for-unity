@@ -13,7 +13,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected override void Awake()
         {
             base.Awake();
-            _animatorParameter = C.ANIMATOR_PARAMETER_SHOOT;
+            animatorParameter = C.ANIMATOR_PARAMETER_SHOOT;
         }
 
         protected override void AttackStart()

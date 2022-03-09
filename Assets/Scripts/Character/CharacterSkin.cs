@@ -21,40 +21,38 @@ namespace TheBitCave.MultiplayerRoguelite
 
         [SyncVar]
         private string _type;
-        
+
+        [SyncVar]
+        private int _selectedBodyIndex;
+
+        [SyncVar]
+        private int _selectedHeadIndex;
+
         public override void OnStartServer()
         {
             base.OnStartServer();
             _type = GetComponent<ICharacterTypeable>().Type;
+            var list = SkinManager.Instance.GetBodyList(_type);
+            _selectedBodyIndex = Random.Range(0, list.Count);
+            list = SkinManager.Instance.GetHeadList(_type);
+            _selectedHeadIndex = Random.Range(0, list.Count);
         }
 
         public override void OnStartClient()
         {
             base.OnStartClient();
+
+            // Body generation
             var list = SkinManager.Instance.GetBodyList(_type);
-            var selectedBodyIndex = Random.Range(0, list.Count);
-            GenerateBody(_type, selectedBodyIndex);
-            list = SkinManager.Instance.GetHeadList(_type);
-            var selectedHeadIndex = Random.Range(0, list.Count);
-            GenerateHead(_type, selectedHeadIndex);
-        }
-        
-        private void GenerateBody(string type, int index)
-        {
-            if (!isClient) return;
-            var list = SkinManager.Instance.GetBodyList(type);
-            var prefab = list[index];
+            var prefab = list[_selectedBodyIndex];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             AddBodyPart(skin.Body, bodySlot);
             AddBodyPart(skin.ArmLeft, armLeftSlot);
             AddBodyPart(skin.ArmRight, armRightSlot);
-        }
 
-        private void GenerateHead(string type, int index)
-        {
-            if (!isClient) return;
-            var list = SkinManager.Instance.GetHeadList(type);
-            var prefab = list[index];
+            // Head generation
+            list = SkinManager.Instance.GetHeadList(_type);
+            prefab = list[_selectedHeadIndex];
             AddBodyPart(prefab, headSlot);
         }
 
