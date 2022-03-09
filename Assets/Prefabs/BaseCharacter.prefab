@@ -384,7 +384,7 @@ MonoBehaviour:
   syncInterval: 0.1
   stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
   animator: {fileID: 48364881031283457}
-  type: 0
+  type: mage
 --- !u!114 &1063455048423379336
 MonoBehaviour:
   m_ObjectHideFlags: 0

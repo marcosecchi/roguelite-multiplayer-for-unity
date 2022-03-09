@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Interfaces;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Random = UnityEngine.Random;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    [RequireComponent(typeof(ICharacterTypeable))]
     public class CharacterSkin : NetworkBehaviour
     {
         [Header("Sockets")]
@@ -14,43 +18,50 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform bodySlot;
         [SerializeField] protected Transform armLeftSlot;
         [SerializeField] protected Transform armRightSlot;
-
-        [SyncVar(hook = nameof(OnBodyIndexChange))]
-        protected int selectedBodyIndex = -1;
-
-        [SyncVar(hook = nameof(OnHeadIndexChange))]
-        protected int selectedHeadIndex = -1;
-
-        protected string characterType = C.CHARACTER_NONE;
-
-        public virtual void Generate(string type)
+        
+        private void Update()
         {
             if (!isServer) return;
-            characterType = type;
-            var list = SkinManager.Instance.GetBodyList(characterType);
-            selectedBodyIndex = Random.Range(0, list.Count);
-            list = SkinManager.Instance.GetHeadList(characterType);
-            selectedHeadIndex = Random.Range(0, list.Count);
+        }
+
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+            var type = GetComponent<ICharacterTypeable>().Type;
+            StartCoroutine(GenerateSkin(type));
         }
         
-        protected virtual void OnBodyIndexChange(int _, int newValue)
+        private IEnumerator GenerateSkin(string type)
         {
-            var list = SkinManager.Instance.GetBodyList(characterType);
-            var prefab = list[newValue];
+            yield return new WaitForSeconds(.5f);
+            var list = SkinManager.Instance.GetBodyList(type);
+            var selectedBodyIndex = Random.Range(0, list.Count);
+            RpcSkinBody(type, selectedBodyIndex);
+            list = SkinManager.Instance.GetHeadList(type);
+            var selectedHeadIndex = Random.Range(0, list.Count);
+            RpcSkinHead(type, selectedHeadIndex);
+        }
+        
+        [ClientRpc]
+        private void RpcSkinBody(string type, int index)
+        {
+            var list = SkinManager.Instance.GetBodyList(type);
+            var prefab = list[index];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             AddBodyPart(skin.Body, bodySlot);
             AddBodyPart(skin.ArmLeft, armLeftSlot);
             AddBodyPart(skin.ArmRight, armRightSlot);
         }
 
-        protected virtual void OnHeadIndexChange(int _, int newValue)
+        [ClientRpc]
+        private void RpcSkinHead(string type, int index)
         {
-            var list = SkinManager.Instance.GetHeadList(characterType);
-            var prefab = list[newValue];
+            var list = SkinManager.Instance.GetHeadList(type);
+            var prefab = list[index];
             AddBodyPart(prefab, headSlot);
         }
 
-        protected virtual void AddBodyPart(GameObject prefab, Transform parent)
+        private void AddBodyPart(GameObject prefab, Transform parent)
         {
             parent.RemoveAllChildren();
             var go = Instantiate(prefab, parent);
