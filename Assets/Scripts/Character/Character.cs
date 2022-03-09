@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Mirror;
 using TheBitCave.MultiplayerRoguelite.Interfaces;
-using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite
@@ -10,7 +6,7 @@ namespace TheBitCave.MultiplayerRoguelite
     public class Character : BaseCharacter, ICharacterTypeable
     {
         [SerializeField]
-        protected string type = C.CHARACTER_MAGE;
+        protected CharacterType type;
 
         protected CharacterSkin skin;
 
@@ -22,7 +18,7 @@ namespace TheBitCave.MultiplayerRoguelite
         
         #region ITypeable implementation 
         
-        public virtual string Type => type.ToLower();
+        public virtual string Type => C.GetStringifiedCharacter(type);
         
         #endregion
     }

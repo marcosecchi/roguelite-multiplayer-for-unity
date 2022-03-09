@@ -17,5 +17,16 @@ namespace TheBitCave.MultiplayerRoguelite
             CHARACTER_WARRIOR
         };
 
+        public static string GetStringifiedCharacter(CharacterType type)
+        {
+            return type switch
+            {
+                CharacterType.Archer => CHARACTER_ARCHER,
+                CharacterType.Mage => CHARACTER_MAGE,
+                CharacterType.Warrior => CHARACTER_WARRIOR,
+                _ => CHARACTER_NONE
+            };
+        }
+
     }
 }

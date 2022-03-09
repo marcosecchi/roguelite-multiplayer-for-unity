@@ -18,33 +18,30 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField] protected Transform bodySlot;
         [SerializeField] protected Transform armLeftSlot;
         [SerializeField] protected Transform armRightSlot;
-        
-        private void Update()
-        {
-            if (!isServer) return;
-        }
 
+        [SyncVar]
+        private string _type;
+        
         public override void OnStartServer()
         {
             base.OnStartServer();
-            var type = GetComponent<ICharacterTypeable>().Type;
-            StartCoroutine(GenerateSkin(type));
+            _type = GetComponent<ICharacterTypeable>().Type;
         }
-        
-        private IEnumerator GenerateSkin(string type)
+
+        public override void OnStartClient()
         {
-            yield return new WaitForSeconds(.5f);
-            var list = SkinManager.Instance.GetBodyList(type);
+            base.OnStartClient();
+            var list = SkinManager.Instance.GetBodyList(_type);
             var selectedBodyIndex = Random.Range(0, list.Count);
-            RpcSkinBody(type, selectedBodyIndex);
-            list = SkinManager.Instance.GetHeadList(type);
+            GenerateBody(_type, selectedBodyIndex);
+            list = SkinManager.Instance.GetHeadList(_type);
             var selectedHeadIndex = Random.Range(0, list.Count);
-            RpcSkinHead(type, selectedHeadIndex);
+            GenerateHead(_type, selectedHeadIndex);
         }
         
-        [ClientRpc]
-        private void RpcSkinBody(string type, int index)
+        private void GenerateBody(string type, int index)
         {
+            if (!isClient) return;
             var list = SkinManager.Instance.GetBodyList(type);
             var prefab = list[index];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
@@ -53,15 +50,15 @@ namespace TheBitCave.MultiplayerRoguelite
             AddBodyPart(skin.ArmRight, armRightSlot);
         }
 
-        [ClientRpc]
-        private void RpcSkinHead(string type, int index)
+        private void GenerateHead(string type, int index)
         {
+            if (!isClient) return;
             var list = SkinManager.Instance.GetHeadList(type);
             var prefab = list[index];
             AddBodyPart(prefab, headSlot);
         }
 
-        private void AddBodyPart(GameObject prefab, Transform parent)
+        private static void AddBodyPart(GameObject prefab, Transform parent)
         {
             parent.RemoveAllChildren();
             var go = Instantiate(prefab, parent);
