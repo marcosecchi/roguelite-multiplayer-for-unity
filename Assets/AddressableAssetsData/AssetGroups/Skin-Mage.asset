@@ -41,12 +41,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - body
     - mage
-  - m_GUID: d711db59a7bc8244aa22d3a632711c1c
-    m_Address: Body03 - Mage
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - mage
-    - body
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

@@ -45,8 +45,8 @@ MonoBehaviour:
     m_Address: Body02 - Archer
     m_ReadOnly: 0
     m_SerializedLabels:
-    - archer
     - body
+    - archer
   - m_GUID: ebc8762564f623048be917641d30cf53
     m_Address: Head04 - Archer
     m_ReadOnly: 0
