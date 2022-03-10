@@ -25,7 +25,7 @@ public class _TempNetworkManager : NetworkManager
         }
         var message = new TempMessage
         {
-            characterType = C.CHARACTER_ARCHER
+            characterType = C.GetRandomCharacter()
         };
 
         NetworkClient.Send(message);
@@ -33,9 +33,10 @@ public class _TempNetworkManager : NetworkManager
 
     void OnCreateCharacter(NetworkConnection conn, TempMessage message)
     {
-        var prefab = AssetManager.Instance.GetCharacterPrefab(C.CHARACTER_ARCHER);
+        Debug.Log(message.characterType);
+        var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType);
         var go = Instantiate(prefab);
-        go.name = prefab.name + " - " + conn.identity.netId;
+    //    go.name = prefab.name + " - " + conn.identity.netId;
         NetworkServer.AddPlayerForConnection(conn, go);
     }
 }

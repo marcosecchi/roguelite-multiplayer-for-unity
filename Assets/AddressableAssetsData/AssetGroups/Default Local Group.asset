@@ -21,8 +21,15 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Addressables/Characters/CharacterArcher.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - archer
     - character
+    - minion
+    - mage
+    - warrior
+  - m_GUID: e4157b5dcd7f08749990cbb14c45b64b
+    m_Address: Assets/Prefabs/Addressables/Characters/Character - Archer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - archer
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

@@ -370,9 +370,8 @@ GameObject:
   - component: {fileID: 1063455048423379337}
   - component: {fileID: 1063455048423379342}
   - component: {fileID: 443991918818066700}
-  - component: {fileID: 5111422181650273960}
   m_Layer: 0
-  m_Name: CharacterArcher
+  m_Name: Character - Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,22 +514,6 @@ MonoBehaviour:
   bodySlot: {fileID: 48364879740503115}
   armLeftSlot: {fileID: 7008927194792899568}
   armRightSlot: {fileID: 2093971764374123834}
---- !u!114 &5111422181650273960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063455048423379340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54af7f2175bab9646b9d425abd9d4bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  weaponPrefab: {fileID: -5691235245424348166, guid: ac212834c2ed5114d93edba4c95aeb17, type: 3}
-  spawnPoint: {fileID: 6968334824308090760}
 --- !u!1 &1194671815847329854
 GameObject:
   m_ObjectHideFlags: 0

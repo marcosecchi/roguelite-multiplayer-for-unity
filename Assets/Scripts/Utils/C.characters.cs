@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace TheBitCave.MultiplayerRoguelite
 {
     public partial class C
@@ -21,11 +23,17 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             return type switch
             {
+                CharacterType.Minion => CHARACTER_MINION,
                 CharacterType.Archer => CHARACTER_ARCHER,
                 CharacterType.Mage => CHARACTER_MAGE,
                 CharacterType.Warrior => CHARACTER_WARRIOR,
                 _ => CHARACTER_NONE
             };
+        }
+
+        public static string GetRandomCharacter()
+        {
+            return characterTypes[Random.Range(0, characterTypes.Length)];
         }
 
     }
