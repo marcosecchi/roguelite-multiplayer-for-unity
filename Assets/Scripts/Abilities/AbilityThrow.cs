@@ -1,4 +1,5 @@
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -6,7 +7,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     [AddComponentMenu(menuName: "Roguelite/Ability Throw")]
     public class AbilityThrow : AbilityAttack
     {
-        [SerializeField] protected GameObject weaponPrefab;
+        [SerializeField] protected ThrowableWeapon weaponPrefab;
         [SerializeField] protected Transform spawnPoint;
 
         protected override void Awake()
@@ -23,8 +24,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         [Command]
         private void CmdThrow()
         {
-            var go = Instantiate(weaponPrefab, spawnPoint.position, spawnPoint.rotation);
-            NetworkServer.Spawn(go);
+            var weapon = Instantiate(weaponPrefab, spawnPoint.position, spawnPoint.rotation);
+            weapon.OwnerId = netId;
+            NetworkServer.Spawn(weapon.gameObject);
         }
     }
 }

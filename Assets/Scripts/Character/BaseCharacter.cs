@@ -30,7 +30,6 @@ namespace TheBitCave.MultiplayerRoguelite
             characterController = GetComponent<CharacterController>();
             abilityAttack = GetComponent<AbilityAttack>();
             networkAnimator = GetComponent<NetworkAnimator>();
-            if (networkAnimator != null) networkAnimator.animator = animator;
         }
         
         public override void OnStartLocalPlayer()
