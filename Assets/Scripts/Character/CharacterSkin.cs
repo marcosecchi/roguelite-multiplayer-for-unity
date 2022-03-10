@@ -32,9 +32,9 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             base.OnStartServer();
             _type = GetComponent<ICharacterTypeable>().Type;
-            var list = SkinManager.Instance.GetBodyList(_type);
+            var list = AssetManager.Instance.GetBodyList(_type);
             _selectedBodyIndex = Random.Range(0, list.Count);
-            list = SkinManager.Instance.GetHeadList(_type);
+            list = AssetManager.Instance.GetHeadList(_type);
             _selectedHeadIndex = Random.Range(0, list.Count);
         }
 
@@ -43,7 +43,7 @@ namespace TheBitCave.MultiplayerRoguelite
             base.OnStartClient();
 
             // Body generation
-            var list = SkinManager.Instance.GetBodyList(_type);
+            var list = AssetManager.Instance.GetBodyList(_type);
             var prefab = list[_selectedBodyIndex];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             AddBodyPart(skin.Body, bodySlot);
@@ -51,7 +51,7 @@ namespace TheBitCave.MultiplayerRoguelite
             AddBodyPart(skin.ArmRight, armRightSlot);
 
             // Head generation
-            list = SkinManager.Instance.GetHeadList(_type);
+            list = AssetManager.Instance.GetHeadList(_type);
             prefab = list[_selectedHeadIndex];
             AddBodyPart(prefab, headSlot);
         }

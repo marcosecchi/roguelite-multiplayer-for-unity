@@ -10,48 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Character-Base
+  m_Name: Skin-Mage
   m_EditorClassIdentifier: 
-  m_GroupName: Character-Base
+  m_GroupName: Skin-Mage
   m_Data:
     m_SerializedData: []
-  m_GUID: 745a84a4f1d38c6439875c4a47911274
+  m_GUID: 167b79f3045475a449a0fd5f579ade68
   m_SerializeEntries:
-  - m_GUID: d6a669d9d2678f646aa395481298741c
-    m_Address: Head01 - Character
+  - m_GUID: f161840edc36309488710da0d64a2cfb
+    m_Address: Head01 - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - mage
-    - archer
-    - warrior
-  - m_GUID: c96152098a4e0814ca975932268986df
-    m_Address: Head02 - Character
+  - m_GUID: a7026c6a4e3bd7e4a9ba845d92946dab
+    m_Address: Head02 - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - mage
-    - archer
-    - warrior
-  - m_GUID: 9e27d50687f20b545b7a6cd01e4a8204
-    m_Address: Head03 - Character
+  - m_GUID: 6a2ec8cce4ae5794f85093977ad84e2d
+    m_Address: Body01 - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
-    - head
+    - body
     - mage
-    - archer
-    - warrior
-  - m_GUID: 9bb2f65bff08b884ea38e3a9b40f2b3d
-    m_Address: Head04 - Character
+  - m_GUID: e5f9b480e028a02489788b060a07f334
+    m_Address: Body02 - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
-    - head
+    - body
     - mage
-    - archer
-    - warrior
+  - m_GUID: d711db59a7bc8244aa22d3a632711c1c
+    m_Address: Body03 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - mage
+    - body
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: c943e40dffbbe554f9545f50bf17eaf5, type: 2}
-    - {fileID: 11400000, guid: 78d37c2bcd36ad1408a10d9475e90ed3, type: 2}
+    - {fileID: 11400000, guid: 46e93e6f181857f42a74c7974af16bf9, type: 2}
+    - {fileID: 11400000, guid: aea1036fcc64ecb4393bd0d2205bf466, type: 2}

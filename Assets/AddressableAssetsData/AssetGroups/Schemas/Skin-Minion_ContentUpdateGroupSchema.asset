@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: Character-Archer_ContentUpdateGroupSchema
+  m_Name: Skin-Minion_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: e0ed51cbbffb79d4b83dd543bd066b15, type: 2}
+  m_Group: {fileID: 11400000, guid: 6893a3f11d58d0149ad52ce9ff010903, type: 2}
   m_StaticContent: 0

@@ -95,6 +95,7 @@ MonoBehaviour:
     - minion
     - archer
     - warrior
+    - character
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: c533e11f10114cd47b09d9209d315c56, type: 2}

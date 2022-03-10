@@ -16,7 +16,13 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e5c90714fd4f7984b960f7fd5727c169
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 83246864f7ddd43439f10baee42ca382
+    m_Address: Assets/Prefabs/Addressables/Characters/CharacterArcher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - archer
+    - character
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

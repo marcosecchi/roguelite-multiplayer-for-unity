@@ -10,40 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Character-Archer
+  m_Name: Skin-Minion
   m_EditorClassIdentifier: 
-  m_GroupName: Character-Archer
+  m_GroupName: Skin-Minion
   m_Data:
     m_SerializedData: []
-  m_GUID: e93351d376be38244ab94d3faeb23170
+  m_GUID: 6aac358b2286c2940a8b4367d80087d7
   m_SerializeEntries:
-  - m_GUID: 89879cbe41c06ae49a1232d9a565b67e
-    m_Address: Head01 - Archer
+  - m_GUID: 8294376c2e067c443977e7a1c8d63a82
+    m_Address: Head01 - Minion
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
-    - archer
-  - m_GUID: dec017365b3364841ad3688c368d76d9
-    m_Address: Head02 - Archer
+    - minion
+  - m_GUID: 97fad8593bde37a4e8c3e5177b5fc543
+    m_Address: Head02 - Minion
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
-    - archer
-  - m_GUID: ea1567a2e80e1e44ba8c39291b3afb51
-    m_Address: Head03 - Archer
+    - minion
+  - m_GUID: 3ce944fd1a8b85640b9737b6c4404ec8
+    m_Address: Head03 - Minion
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
-    - archer
-  - m_GUID: 95fda88169b8f94459b2005845c4d1b9
-    m_Address: Body01 - Archer
+    - minion
+  - m_GUID: f5d6f28ff52beea4cb302fe894b8e3b2
+    m_Address: Head04 - Minion
     m_ReadOnly: 0
     m_SerializedLabels:
-    - archer
+    - head
+    - minion
+  - m_GUID: 6f383afc416eef34f8b01047a380ead0
+    m_Address: Body01 - Minion
+    m_ReadOnly: 0
+    m_SerializedLabels:
     - body
+    - minion
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: be4f48002068afc4198956fc16dcc092, type: 2}
-    - {fileID: 11400000, guid: fc7d7c9a9eb4d3b42b0a8fe60346070d, type: 2}
+    - {fileID: 11400000, guid: e242283f54202f3498a816baa50fb6d0, type: 2}
+    - {fileID: 11400000, guid: 81012786c9f6cad4ab813a82e85c0343, type: 2}
