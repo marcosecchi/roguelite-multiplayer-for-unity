@@ -1,5 +1,6 @@
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Utils;
+using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
@@ -10,7 +11,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         {
             base.OnStartServer();
         
-            NetworkServer.RegisterHandler<ProtoMessage>(OnCreateCharacter);
+            NetworkServer.RegisterHandler<ProtoMessage>(OnCharacterCreationReady);
         }
 
         public override void OnClientConnect()
@@ -19,6 +20,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
 
             foreach (var type in C.characterTypes)
             {
+                Debug.Log("Registering character: " + type);
                 var go = AssetManager.Instance.GetCharacterPrefab(type);
                 if(go == null) continue;
                 NetworkClient.RegisterPrefab(go);
@@ -27,15 +29,16 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
             {
                 characterType = C.GetRandomCharacter()
             };
+            Debug.Log("Creating character: " + message.characterType);
 
             NetworkClient.Send(message);
         }
 
-        private static void OnCreateCharacter(NetworkConnection conn, ProtoMessage message)
+        private void OnCharacterCreationReady(NetworkConnection conn, ProtoMessage message)
         {
             var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType);
             var go = Instantiate(prefab);
-            //    go.name = prefab.name + " - " + conn.identity.netId;
+            go.transform.position = GetStartPosition().position;
             NetworkServer.AddPlayerForConnection(conn, go);
         }
     }
