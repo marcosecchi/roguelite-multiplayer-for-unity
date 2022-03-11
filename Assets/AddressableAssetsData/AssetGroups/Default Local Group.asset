@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: e5c90714fd4f7984b960f7fd5727c169
   m_SerializeEntries:
   - m_GUID: 83246864f7ddd43439f10baee42ca382
-    m_Address: Assets/Prefabs/Addressables/Characters/CharacterArcher.prefab
+    m_Address: Assets/Prefabs/Addressables/Characters/Character - Base.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - character
@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - character
     - mage
+  - m_GUID: c85f839e7c432e34a937f028f6cb146d
+    m_Address: Assets/Prefabs/Addressables/Characters/Character - Thief.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - thief
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

@@ -8,6 +8,7 @@ namespace TheBitCave.MultiplayerRoguelite
         Minion,
         Archer,
         Mage,
+        Thief,
         Warrior
     }
 }

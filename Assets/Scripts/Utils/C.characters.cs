@@ -9,6 +9,7 @@ namespace TheBitCave.MultiplayerRoguelite
         public const string CHARACTER_MINION = "minion";
         public const string CHARACTER_ARCHER = "archer";
         public const string CHARACTER_MAGE = "mage";
+        public const string CHARACTER_THIEF = "thief";
         public const string CHARACTER_WARRIOR = "warrior";
 
         public static readonly string[] characterTypes =
@@ -16,6 +17,7 @@ namespace TheBitCave.MultiplayerRoguelite
             CHARACTER_MINION,
             CHARACTER_ARCHER,
             CHARACTER_MAGE,
+            CHARACTER_THIEF,
             CHARACTER_WARRIOR
         };
 
@@ -26,6 +28,7 @@ namespace TheBitCave.MultiplayerRoguelite
                 CharacterType.Minion => CHARACTER_MINION,
                 CharacterType.Archer => CHARACTER_ARCHER,
                 CharacterType.Mage => CHARACTER_MAGE,
+                CharacterType.Thief => CHARACTER_THIEF,
                 CharacterType.Warrior => CHARACTER_WARRIOR,
                 _ => CHARACTER_NONE
             };
