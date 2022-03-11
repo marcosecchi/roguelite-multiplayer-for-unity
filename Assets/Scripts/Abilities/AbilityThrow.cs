@@ -9,7 +9,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     {
         [SerializeField] protected ThrowableWeapon weaponPrefab;
         [SerializeField] protected Transform spawnPoint;
-
+        
         protected override void Awake()
         {
             base.Awake();
@@ -28,5 +28,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             weapon.OwnerId = netId;
             NetworkServer.Spawn(weapon.gameObject);
         }
+
+        public override WeaponType WeaponType => WeaponType.Thrown;
     }
 }

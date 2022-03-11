@@ -1,4 +1,5 @@
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -26,5 +27,8 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             Debug.Log("Cast End");
 
         }
+        
+        public override WeaponType WeaponType => WeaponType.Spell;
+
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -21,7 +22,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected bool isAttacking;
 
         protected string animatorParameter;
-        
+
+        public abstract WeaponType WeaponType { get; }
+
         /// <summary>
         /// Initializes the needed components.
         /// </summary>

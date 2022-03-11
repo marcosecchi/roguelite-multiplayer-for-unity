@@ -5,14 +5,9 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
 {
     public abstract class BaseWeapon : NetworkBehaviour, IOwnable
     {
-        [SyncVar]
-        protected uint ownerId;
+        [field: SyncVar]
+        public uint OwnerId { get; set; }
 
-        public uint OwnerId
-        {
-            get => ownerId;
-            set => ownerId = value;
-        }
+        public abstract WeaponType Type { get; }
     }
-    
 }

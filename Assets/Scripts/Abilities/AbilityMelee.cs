@@ -1,4 +1,5 @@
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -16,7 +17,6 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             base.AttackStart();
             Debug.Log("Melee Start");
-
         }
 
         protected override void AttackEnd()
@@ -25,5 +25,8 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             Debug.Log("Melee End");
 
         }
+        
+        public override WeaponType WeaponType => WeaponType.Melee;
+
     }
 }

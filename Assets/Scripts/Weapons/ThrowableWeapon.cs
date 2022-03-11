@@ -31,6 +31,8 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
             }
             NetworkServer.Destroy(gameObject);
         }
+
+        public override WeaponType Type => WeaponType.Thrown;
     }
     
 }

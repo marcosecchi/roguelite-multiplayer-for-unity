@@ -1,4 +1,5 @@
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -28,5 +29,8 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             var go = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
             NetworkServer.Spawn(go);
         }
+        
+        public override WeaponType WeaponType => WeaponType.Ranged;
+
     }
 }
