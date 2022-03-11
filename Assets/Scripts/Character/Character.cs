@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    /// <summary>
+    /// An extension of the base character that can have a type and can be skinned
+    /// </summary>
     public class Character : BaseCharacter, ICharacterTypeable
     {
         [SerializeField]

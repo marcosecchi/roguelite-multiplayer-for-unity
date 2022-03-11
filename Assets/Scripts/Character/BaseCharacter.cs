@@ -1,10 +1,8 @@
-using System;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Abilities;
 using TheBitCave.MultiplayerRoguelite.Prototype;
 using UnityEngine;
 using TheBitCave.MultiplayerRoguelite.Utils;
-using UnityEngine.Serialization;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
@@ -30,6 +28,12 @@ namespace TheBitCave.MultiplayerRoguelite
             characterController = GetComponent<CharacterController>();
             abilityAttack = GetComponent<AbilityAttack>();
             networkAnimator = GetComponent<NetworkAnimator>();
+        }
+
+        public override void OnStartServer()
+        {
+            var health = GetComponent<Health>();
+            if (health != null) health.StartingHitPoints = stats.StartingHitPoints;
         }
         
         public override void OnStartLocalPlayer()

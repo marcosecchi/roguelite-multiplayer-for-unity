@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Abilities;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
@@ -11,6 +9,9 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
     {
         [SerializeField]
         protected float force = 8;
+
+        [SerializeField]
+        protected float damageAmount = 3;
 
         protected Rigidbody rigidbody;
 
@@ -23,6 +24,11 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
         [ServerCallback]
         private void OnCollisionEnter(Collision collision)
         {
+            var health = collision.gameObject.GetComponent<Health>();
+            if (health != null)
+            {
+                health.Damage(damageAmount, OwnerId);
+            }
             NetworkServer.Destroy(gameObject);
         }
     }

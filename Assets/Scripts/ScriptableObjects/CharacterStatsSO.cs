@@ -10,6 +10,7 @@ namespace  TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField]
         private int level = 1;
 
+        [Header("Movement")]
         [SerializeField]
         private float walkSpeed = 3;
 
@@ -19,10 +20,15 @@ namespace  TheBitCave.MultiplayerRoguelite.Prototype
         [SerializeField]
         private float rotationSpeed = 3;
 
+        [Header("Health")]
+        [SerializeField]
+        private float startingHitPoints = 10;
+
         public float Level => level;
         public float WalkSpeed => walkSpeed;
         public float RunSpeed => runSpeed;
         public float RotationSpeed => rotationSpeed;
+        public float StartingHitPoints => startingHitPoints;
     }
     
 }
