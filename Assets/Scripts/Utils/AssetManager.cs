@@ -57,6 +57,8 @@ namespace TheBitCave.MultiplayerRoguelite.Utils
                 _characterDictionary.Add(chComponent.Type, character);
             }
 
+            Debug.Log("Assets Ready");
+            
             OnInitComplete();
         }
 
