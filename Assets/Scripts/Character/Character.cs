@@ -21,7 +21,8 @@ namespace TheBitCave.MultiplayerRoguelite
         
         #region ITypeable implementation 
         
-        public virtual string Type => C.GetStringifiedCharacter(type);
+        public virtual CharacterType Type => type;
+        public virtual string TypeStringified => C.GetStringifiedCharacter(type);
         
         #endregion
     }

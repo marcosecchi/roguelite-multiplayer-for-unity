@@ -22,7 +22,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected bool isAttacking;
 
         protected string animatorParameter;
-
+ 
         public abstract WeaponType WeaponType { get; }
 
         /// <summary>

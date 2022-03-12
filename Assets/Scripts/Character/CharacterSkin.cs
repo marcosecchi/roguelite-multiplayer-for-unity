@@ -31,7 +31,7 @@ namespace TheBitCave.MultiplayerRoguelite
         public override void OnStartServer()
         {
             base.OnStartServer();
-            _type = GetComponent<ICharacterTypeable>().Type;
+            _type = GetComponent<ICharacterTypeable>().TypeStringified;
             var list = AssetManager.Instance.GetBodyList(_type);
             _selectedBodyIndex = Random.Range(0, list.Count);
             list = AssetManager.Instance.GetHeadList(_type);

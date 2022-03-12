@@ -5,6 +5,6 @@ namespace TheBitCave.MultiplayerRoguelite.Interfaces
     /// </summary>
     public interface ICharacterTypeable
     {
-        string Type { get; }
+        string TypeStringified { get; }
     }
 }

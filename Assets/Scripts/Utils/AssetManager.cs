@@ -54,7 +54,7 @@ namespace TheBitCave.MultiplayerRoguelite.Utils
             {
                 var chComponent = character.GetComponent<Character>();
                 if(chComponent == null) continue;
-                _characterDictionary.Add(chComponent.Type, character);
+                _characterDictionary.Add(chComponent.TypeStringified, character);
             }
 
             Debug.Log("Assets Ready");

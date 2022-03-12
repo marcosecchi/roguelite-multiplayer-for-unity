@@ -7,6 +7,7 @@ using TheBitCave.MultiplayerRoguelite.Utils;
 namespace TheBitCave.MultiplayerRoguelite
 {
     [RequireComponent(typeof(CharacterController))]
+    [AddComponentMenu("")]
     public partial class BaseCharacter : NetworkBehaviour
     {
         [Header("Stats")]
