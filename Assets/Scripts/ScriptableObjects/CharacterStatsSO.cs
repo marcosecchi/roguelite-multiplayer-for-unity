@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace  TheBitCave.MultiplayerRoguelite.Prototype
+namespace  TheBitCave.MultiplayerRoguelite.Data
 {
     [CreateAssetMenu(fileName = "CharacterStats", menuName = "Roguelite/Data/Character Stats")]
     public class CharacterStatsSO : ScriptableObject
     {
         [Header("Main Settings")]
         [SerializeField]
+        [Range(1, 5)]
         private int level = 1;
 
         [SerializeField]

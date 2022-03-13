@@ -7,7 +7,5 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
     {
         [field: SyncVar]
         public uint OwnerId { get; set; }
-
-        public abstract WeaponType Type { get; }
     }
 }

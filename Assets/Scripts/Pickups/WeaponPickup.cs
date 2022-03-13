@@ -11,9 +11,6 @@ namespace TheBitCave.MultiplayerRoguelite
     public class WeaponPickup : BasePickup
     {
         [SerializeField]
-        protected WeaponType type;
-
-        [SerializeField]
         protected CharacterType pickableBy;
 
         // TODO: Add Weapon identifier
@@ -25,7 +22,7 @@ namespace TheBitCave.MultiplayerRoguelite
             if (character == null || character.Type != pickableBy) return;
 
             var attack = other.GetComponent<AbilityRangedAttack>();
-            if (attack == null || type != attack.WeaponType) return;
+            if (attack == null) return;
             
             Pick(other.gameObject);
         }
@@ -34,7 +31,7 @@ namespace TheBitCave.MultiplayerRoguelite
         protected override void Pick(GameObject picker)
         {
             // TODO: Complete process
-            Debug.Log("Picked: " + type);
+            Debug.Log("Picked");
         }
     }
     

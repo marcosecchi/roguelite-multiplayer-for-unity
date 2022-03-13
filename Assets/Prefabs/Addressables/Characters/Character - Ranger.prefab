@@ -69,29 +69,3 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d7e4826d4ba7a2049849a567d3e07401, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
---- !u!1 &1874603207569341510 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1063455048423379340, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
-  m_PrefabInstance: {fileID: 1495699838059507146}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8355830045496711290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874603207569341510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54af7f2175bab9646b9d425abd9d4bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  weaponPrefab: {fileID: -5691235245424348166, guid: ac212834c2ed5114d93edba4c95aeb17, type: 3}
-  spawnPoint: {fileID: 8391812004078897730}
---- !u!4 &8391812004078897730 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6968334824308090760, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
-  m_PrefabInstance: {fileID: 1495699838059507146}
-  m_PrefabAsset: {fileID: 0}

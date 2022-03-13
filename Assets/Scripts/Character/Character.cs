@@ -1,7 +1,7 @@
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Abilities;
+using TheBitCave.MultiplayerRoguelite.Data;
 using TheBitCave.MultiplayerRoguelite.Interfaces;
-using TheBitCave.MultiplayerRoguelite.Prototype;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,7 +25,8 @@ namespace TheBitCave.MultiplayerRoguelite
         
         protected InputActions inputActions;
         protected CharacterController characterController;
-        protected AbilityRangedAttack abilityRangedAttack;
+        protected AbilityRangedAttack rangedAttack;
+        protected AbilityCloseCombatAttack closeCombatAttack;
 
         [SyncVar]
         protected bool isInCloseCombatRange;
@@ -64,7 +65,8 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             inputActions = InputManager.Instance.Actions;
             characterController = GetComponent<CharacterController>();
-            abilityRangedAttack = GetComponent<AbilityRangedAttack>();
+            rangedAttack = GetComponent<AbilityRangedAttack>();
+            closeCombatAttack = GetComponent<AbilityCloseCombatAttack>();
         }
 
         protected virtual void OnEnable()
@@ -118,17 +120,15 @@ namespace TheBitCave.MultiplayerRoguelite
 
         protected virtual void OnAttackStarted(InputAction.CallbackContext obj)
         {
-            abilityRangedAttack = GetComponent<AbilityRangedAttack>();
-
-            Debug.Log(abilityRangedAttack);
-            if (isInCloseCombatRange)
+            if (isInCloseCombatRange && closeCombatAttack)
             {
+                Debug.Log("Attack Close Combat");
                 // TODO: Implement close combat attack
             }
-            else if (abilityRangedAttack != null)
+            else if (rangedAttack != null)
             {
                 Debug.Log("Attack Ranged");
-                abilityRangedAttack.Attack();
+                rangedAttack.Attack();
             }
         }
         
