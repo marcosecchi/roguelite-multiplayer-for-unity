@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Characters
+  m_EditorClassIdentifier: 
+  m_GroupName: Characters
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d47ca977e89fd134497a92a16d2c219e
+  m_SerializeEntries:
+  - m_GUID: e4157b5dcd7f08749990cbb14c45b64b
+    m_Address: Character - Archer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - ranger
+  - m_GUID: 533aa52d09a919b419f31d1bfa25224f
+    m_Address: Character - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - warrior
+    - character
+  - m_GUID: 67aa12d87c7a2374eb8a0e7ef947c17d
+    m_Address: Character - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - mage
+  - m_GUID: c85f839e7c432e34a937f028f6cb146d
+    m_Address: Character - Thief
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - thief
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6f0ce0f91c4d59b4ea1b2f6add92a007, type: 2}
+    - {fileID: 11400000, guid: 40bca37ec9bb9494587306e01c6b0539, type: 2}
