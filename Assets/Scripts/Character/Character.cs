@@ -18,9 +18,6 @@ namespace TheBitCave.MultiplayerRoguelite
         [SerializeField]
         protected CharacterStatsSO stats;
 
-        [SerializeField]
-        protected CharacterType type;
-
         [Header("Components")]
         [SerializeField]
         protected Animator animator;
@@ -75,8 +72,8 @@ namespace TheBitCave.MultiplayerRoguelite
 
         #region ITypeable implementation 
         
-        public virtual CharacterType Type => type;
-        public virtual string TypeStringified => C.GetStringifiedCharacter(type);
+        public virtual CharacterType Type => stats.Type;
+        public virtual string TypeStringified => C.GetStringifiedCharacter(stats.Type);
         
         #endregion
     }

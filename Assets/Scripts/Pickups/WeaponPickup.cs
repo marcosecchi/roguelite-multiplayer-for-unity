@@ -14,7 +14,7 @@ namespace TheBitCave.MultiplayerRoguelite
         protected WeaponType type;
 
         [SerializeField]
-        protected CharacterType pickableBy = CharacterType.Any;
+        protected CharacterType pickableBy;
 
         // TODO: Add Weapon identifier
         
@@ -22,8 +22,7 @@ namespace TheBitCave.MultiplayerRoguelite
         protected override void OnTriggerEnter(Collider other)
         {
             var character = other.GetComponent<Character>();
-            if (character == null) return;
-            if (pickableBy != CharacterType.Any && character.Type != pickableBy) return;
+            if (character == null || character.Type != pickableBy) return;
 
             var attack = other.GetComponent<AbilityAttack>();
             if (attack == null || type != attack.WeaponType) return;

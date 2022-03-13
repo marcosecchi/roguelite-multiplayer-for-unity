@@ -9,8 +9,6 @@ namespace TheBitCave.MultiplayerRoguelite
         Archer,
         Mage,
         Thief,
-        Warrior,
-        None,
-        Any
+        Warrior
     }
 }
