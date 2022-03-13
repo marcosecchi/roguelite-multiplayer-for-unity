@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
     [AddComponentMenu(menuName: "Roguelite/Ability Cast")]
-    public class AbilityCast : AbilityAttack
+    public class AbilityCast : AbilityRangedAttack
     {
         [SerializeField] protected GameObject spellPrefab;
         

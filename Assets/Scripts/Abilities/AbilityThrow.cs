@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
     [AddComponentMenu(menuName: "Roguelite/Ability Throw")]
-    public class AbilityThrow : AbilityAttack
+    public class AbilityThrow : AbilityRangedAttack
     {
         [SerializeField] protected ThrowableWeapon weaponPrefab;
         [SerializeField] protected Transform spawnPoint;

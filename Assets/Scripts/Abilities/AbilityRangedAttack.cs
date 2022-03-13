@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
@@ -13,16 +10,19 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     /// the corresponding animation.
     /// </summary>
     [RequireComponent(typeof(Character))]
-    public abstract class AbilityAttack : NetworkBehaviour
+    public abstract class AbilityRangedAttack : NetworkBehaviour
     {
         protected Character character;
+        protected NetworkAnimator networkAnimator;
         protected AnimationAttackEventsSender animationEventSender;
 
         [SyncVar]
         protected bool isAttacking;
 
         protected string animatorParameter;
- 
+
+        public bool IsAttacking => isAttacking;
+        
         public abstract WeaponType WeaponType { get; }
 
         /// <summary>
@@ -31,6 +31,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected virtual void Awake()
         {
             character = GetComponent<Character>();
+            networkAnimator = GetComponent<NetworkAnimator>();
             animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
         }
 
@@ -70,7 +71,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             if (isAttacking) return;
             isAttacking = true;
-            character.NetworkAnimator.SetTrigger(animatorParameter);
+
+            if (networkAnimator == null) return;
+            networkAnimator.SetTrigger(animatorParameter);
         }
     }
     

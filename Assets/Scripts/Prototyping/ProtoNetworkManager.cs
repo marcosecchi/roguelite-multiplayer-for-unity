@@ -29,7 +29,6 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
             {
                 characterType = C.GetRandomCharacter()
             };
-
             NetworkClient.Send(message);
         }
 

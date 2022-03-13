@@ -4,6 +4,7 @@ using TheBitCave.MultiplayerRoguelite.Interfaces;
 using TheBitCave.MultiplayerRoguelite.Prototype;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
@@ -24,19 +25,12 @@ namespace TheBitCave.MultiplayerRoguelite
         
         protected InputActions inputActions;
         protected CharacterController characterController;
-        protected AbilityAttack abilityAttack;
-        protected NetworkAnimator networkAnimator;
-        
-        protected CharacterSkin skin;
+        protected AbilityRangedAttack abilityRangedAttack;
 
-        protected virtual void Awake()
-        {
-            inputActions = InputManager.Instance.Actions;
-            characterController = GetComponent<CharacterController>();
-            abilityAttack = GetComponent<AbilityAttack>();
-            networkAnimator = GetComponent<NetworkAnimator>();
-            skin = GetComponent<CharacterSkin>();
-        }
+        [SyncVar]
+        protected bool isInCloseCombatRange;
+        
+        #region Mirror Callbacks
 
         public override void OnStartServer()
         {
@@ -44,35 +38,111 @@ namespace TheBitCave.MultiplayerRoguelite
             if (health != null) health.StartingHitPoints = stats.StartingHitPoints;
         }
         
+        public override void OnStartClient()
+        {
+            if (!isLocalPlayer) return;
+            inputActions.Player.Attack.started += OnAttackStarted;
+        }
+        
+        public override void OnStopClient()
+        {
+            if (!isLocalPlayer) return;
+            inputActions.Player.Attack.started -= OnAttackStarted;
+        }
+
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
             inputActions.Player.Enable();
         }
-        
-        private void OnEnable()
+
+        #endregion
+
+        #region Unity Callbacks
+
+        protected virtual void Awake()
+        {
+            inputActions = InputManager.Instance.Actions;
+            characterController = GetComponent<CharacterController>();
+            abilityRangedAttack = GetComponent<AbilityRangedAttack>();
+        }
+
+        protected virtual void OnEnable()
         {
             if (!isLocalPlayer) return;
             inputActions.Player.Enable();
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (!isLocalPlayer) return;
             inputActions.Player.Disable();
         }
+        
+        /// <summary>
+        /// Handles local player input
+        /// </summary>
+        protected virtual void FixedUpdate()
+        {
+            // Handle local player input
+            if (isLocalPlayer)
+            {
+                // Player Input
+                var input = inputActions.Player.Move.ReadValue<Vector2>();
+                var isRunning = inputActions.Player.Run.inProgress;
+                var speed = isRunning ? Stats.RunSpeed : Stats.WalkSpeed;
+            
+                // Character Movement
+                var t = transform;
+                var move = Mathf.Clamp01(input.y) * speed * t.forward;
+                characterController.SimpleMove(move);
 
+                var rotation = input.x * Stats.RotationSpeed * t.up;
+                transform.Rotate(rotation);
+            
+                // Animator update
+                if (animator == null) return;
+                animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, characterController.velocity.magnitude);
+            }
+            // Handle server operations 
+            else if (isServer)
+            {
+                // TODO: Implement close combat range checking
+                isInCloseCombatRange = false;
+            }
+        }
+
+        #endregion
+
+        #region Attack
+
+        protected virtual void OnAttackStarted(InputAction.CallbackContext obj)
+        {
+            abilityRangedAttack = GetComponent<AbilityRangedAttack>();
+
+            Debug.Log(abilityRangedAttack);
+            if (isInCloseCombatRange)
+            {
+                // TODO: Implement close combat attack
+            }
+            else if (abilityRangedAttack != null)
+            {
+                Debug.Log("Attack Ranged");
+                abilityRangedAttack.Attack();
+            }
+        }
+        
+        #endregion
+        
         #region Getters and Setters
 
-        public Animator Animator => animator;
-        public NetworkAnimator NetworkAnimator => networkAnimator;
         public CharacterStatsSO Stats => stats;
 
         #endregion
 
         #region ITypeable implementation 
         
-        public virtual CharacterType Type => stats.Type;
+        public CharacterType Type => stats.Type;
         public virtual string TypeStringified => C.GetStringifiedCharacter(stats.Type);
         
         #endregion

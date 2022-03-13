@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace TheBitCave.MultiplayerRoguelite.Utils
 {
@@ -54,7 +52,6 @@ namespace TheBitCave.MultiplayerRoguelite.Utils
             {
                 var chComponent = character.GetComponent<Character>();
                 if(chComponent == null) continue;
-                Debug.Log(chComponent.Type);
                 _characterDictionary.Add(chComponent.TypeStringified, character);
             }
 

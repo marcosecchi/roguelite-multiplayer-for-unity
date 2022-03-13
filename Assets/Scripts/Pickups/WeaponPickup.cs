@@ -24,7 +24,7 @@ namespace TheBitCave.MultiplayerRoguelite
             var character = other.GetComponent<Character>();
             if (character == null || character.Type != pickableBy) return;
 
-            var attack = other.GetComponent<AbilityAttack>();
+            var attack = other.GetComponent<AbilityRangedAttack>();
             if (attack == null || type != attack.WeaponType) return;
             
             Pick(other.gameObject);
