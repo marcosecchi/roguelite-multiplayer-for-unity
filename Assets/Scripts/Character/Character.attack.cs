@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Mirror;
-using TheBitCave.MultiplayerRoguelite.Abilities;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
-    public partial class BaseCharacter : NetworkBehaviour
+    public partial class Character
     {
         public override void OnStartClient()
         {
@@ -25,6 +20,5 @@ namespace TheBitCave.MultiplayerRoguelite
         {
             if(abilityAttack != null) abilityAttack.Attack();
         }
-
     }
 }

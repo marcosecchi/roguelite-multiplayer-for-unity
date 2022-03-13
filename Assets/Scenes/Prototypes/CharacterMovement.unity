@@ -4289,7 +4289,7 @@ MonoBehaviour:
   sceneId: 2232653558
   serverOnly: 0
   visible: 0
-  m_AssetId: 36d226d3d589b034780cc498d23c0b9f
+  m_AssetId: 
   hasSpawned: 0
 --- !u!4 &7252289153342307
 Transform:
@@ -4356,7 +4356,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   type: 3
-  pickablePy: 6
+  pickableBy: 6
 --- !u!1 &3456957432268519961
 GameObject:
   m_ObjectHideFlags: 0

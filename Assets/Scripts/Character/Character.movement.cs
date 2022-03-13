@@ -1,9 +1,10 @@
 using Mirror;
+using TheBitCave.MultiplayerRoguelite.Interfaces;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
-    public partial class BaseCharacter : NetworkBehaviour
+    public partial class Character
     {
         /// <summary>
         /// Handles local player input
@@ -30,8 +31,6 @@ namespace TheBitCave.MultiplayerRoguelite
             // Animator update
             if (Animator == null) return;
             Animator.SetFloat(C.ANIMATOR_PARAMETER_SPEED, characterController.velocity.magnitude);
-            
         }
     }
-    
 }

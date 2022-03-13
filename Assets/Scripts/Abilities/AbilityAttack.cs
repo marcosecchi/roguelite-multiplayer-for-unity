@@ -12,10 +12,10 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     /// The attack is activated/deactivated by the character animator in order to synchronize it with
     /// the corresponding animation.
     /// </summary>
-    [RequireComponent(typeof(BaseCharacter))]
+    [RequireComponent(typeof(Character))]
     public abstract class AbilityAttack : NetworkBehaviour
     {
-        protected BaseCharacter character;
+        protected Character character;
         protected AnimationAttackEventsSender animationEventSender;
 
         [SyncVar]
@@ -30,7 +30,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         /// </summary>
         protected virtual void Awake()
         {
-            character = GetComponent<BaseCharacter>();
+            character = GetComponent<Character>();
             animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
         }
 
