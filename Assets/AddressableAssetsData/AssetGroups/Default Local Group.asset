@@ -27,8 +27,8 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Addressables/Characters/Character - Archer.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - archer
     - character
+    - ranger
   - m_GUID: 533aa52d09a919b419f31d1bfa25224f
     m_Address: Assets/Prefabs/Addressables/Characters/Character - Warrior.prefab
     m_ReadOnly: 0

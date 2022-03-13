@@ -57,12 +57,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063455048423379340, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: m_Name
-      value: Character - Archer
+      value: Character - Ranger
       objectReference: {fileID: 0}
     - target: {fileID: 8028059290884200870, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8028059290884200870, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: d7e4826d4ba7a2049849a567d3e07401, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
 --- !u!1 &1874603207569341510 stripped

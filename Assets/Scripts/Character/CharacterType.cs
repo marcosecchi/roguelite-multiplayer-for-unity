@@ -6,8 +6,8 @@ namespace TheBitCave.MultiplayerRoguelite
     public enum CharacterType
     {
         Minion,
-        Archer,
         Mage,
+        Ranger,
         Thief,
         Warrior
     }

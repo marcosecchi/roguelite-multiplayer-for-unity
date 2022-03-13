@@ -6,7 +6,6 @@ using UnityEngine;
 namespace  TheBitCave.MultiplayerRoguelite.Prototype
 {
     [CreateAssetMenu(fileName = "CharacterStats", menuName = "Roguelite/Data/Character Stats")]
-    [Serializable]
     public class CharacterStatsSO : ScriptableObject
     {
         [Header("Main Settings")]
