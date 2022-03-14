@@ -1,6 +1,7 @@
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Abilities;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
 {
@@ -8,17 +9,17 @@ namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
     public class ThrowableWeapon : BaseWeapon
     {
         [SerializeField]
-        protected float force = 8;
+        private float moveForce = 8;
 
         [SerializeField]
-        protected float damageAmount = 3;
+        private float damageAmount = 3;
 
-        protected Rigidbody rigidbody;
+        private Rigidbody _rigidbody;
 
-        protected virtual void Awake()
+        private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
-            rigidbody.velocity = transform.forward * force;
+            _rigidbody = GetComponent<Rigidbody>();
+            _rigidbody.velocity = transform.forward * moveForce;
         }
         
         [ServerCallback]

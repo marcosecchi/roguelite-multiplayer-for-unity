@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorParameter: 4
   weaponModelPrefab: {fileID: 4519038757325399263, guid: de34f53073641c941a9895ce57809d51, type: 3}
-  bulletPrefab: {fileID: -5691235245424348166, guid: ac212834c2ed5114d93edba4c95aeb17, type: 3}
+  bulletPrefab: {fileID: -5691235245424348166, guid: 0517bd5783e568b4686974865fde76ed, type: 3}
