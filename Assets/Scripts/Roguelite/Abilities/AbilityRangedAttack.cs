@@ -14,6 +14,8 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     [AddComponentMenu(menuName: "Roguelite/Ability Ranged Attack")]
     public class AbilityRangedAttack : AbilityBaseAttack
     {
+        [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
+
         [SerializeField] protected Transform spawnPoint;
         
         protected RangedWeaponStatsSO dataAsRanged;
@@ -41,6 +43,17 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             var weapon = Instantiate(dataAsRanged.BulletPrefab, spawnPoint.position, spawnPoint.rotation);
             weapon.OwnerId = netId;
             NetworkServer.Spawn(weapon.gameObject);
+        }
+        
+        protected virtual void OnWeaponChangeRequest(string _, string newValue)
+        {
+            ChangeWeapon(newValue);
+            Debug.Log("Change Weapon: "  +newValue);
+        }
+
+        public override void ChangeWeapon(string weaponName)
+        {
+            base.ChangeWeapon(weaponName);
         }
     }
 }

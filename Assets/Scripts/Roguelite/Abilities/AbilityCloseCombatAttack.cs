@@ -1,6 +1,5 @@
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Data;
-using TheBitCave.MultiplayerRoguelite.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
@@ -13,6 +12,8 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     [AddComponentMenu(menuName: "Roguelite/Ability Close Combat")]
     public class AbilityCloseCombatAttack: AbilityBaseAttack
     {
+        [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
+        
         protected CloseCombatWeaponStatsSO dataAsCloseCombat;
 
         /// <summary>
@@ -30,8 +31,18 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected override void AttackStart()
         {
             // TODO: Implement close combat attack 
-            Debug.Log("Attack Starts");
+   //         Debug.Log("Attack Starts");
         }
 
+        protected virtual void OnWeaponChangeRequest(string _, string newValue)
+        {
+            Debug.Log("Change Weapon: "  +newValue);
+            ChangeWeapon(newValue);
+        }
+
+        public override void ChangeWeapon(string weaponName)
+        {
+            base.ChangeWeapon(weaponName);
+        }
     }
 }

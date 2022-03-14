@@ -4,6 +4,8 @@ using Mirror;
 using TheBitCave.MultiplayerRoguelite.Data;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace TheBitCave.MultiplayerRoguelite.Abilities
 {
@@ -15,9 +17,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
 
         protected NetworkAnimator networkAnimator;
         protected AnimationAttackEventsSender animationEventSender;
-
-        [SyncVar]
-        protected bool isAttacking;
+        [SyncVar] protected bool isAttacking;
         
         public bool IsAttacking => isAttacking;
                 
@@ -71,6 +71,19 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             handSlot.RemoveAllChildren();
             Instantiate(data.WeaponPrefab, handSlot);
             networkAnimator.SetTrigger(data.AnimatorParameter);
+        }
+
+        public virtual void ChangeWeapon(string weaponName)
+        {
+            var handle = Addressables.LoadAssetAsync<BaseWeaponStatsSO>(weaponName);
+            handle.Completed += OnWeaponDataLoaded;
+        }
+
+        protected virtual void OnWeaponDataLoaded(AsyncOperationHandle<BaseWeaponStatsSO> operation)
+        {
+            if (operation.Status != AsyncOperationStatus.Succeeded) return;
+            data = operation.Result;
+            Debug.Log("Weapon loaded!");
         }
     }
 }

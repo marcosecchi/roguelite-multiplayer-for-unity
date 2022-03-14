@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Interfaces;
 using TheBitCave.MultiplayerRoguelite.Utils;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using Random = UnityEngine.Random;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    [AddComponentMenu(menuName: "Roguelite/Character Skin")]
     [RequireComponent(typeof(ICharacterTypeable))]
     public class CharacterSkin : NetworkBehaviour
     {

@@ -1,39 +1,54 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Abilities;
-using TheBitCave.MultiplayerRoguelite.WeaponSystem;
+using TheBitCave.MultiplayerRoguelite.Data;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace TheBitCave.MultiplayerRoguelite
 {
+    [AddComponentMenu(menuName: "Roguelite/WeaponPickup")]
     public class WeaponPickup : BasePickup
     {
-        [SerializeField]
-        protected CharacterType pickableBy;
-
-        // TODO: Add Weapon identifier
+        private enum Type
+        {
+            Ranged,
+            CloseCombat
+        }
         
+        [SerializeField] protected BaseWeaponStatsSO weapon;       
+        [SerializeField] protected CharacterType pickableBy;
+
+        private Type _type;
+        
+        protected override void Awake()
+        {
+            base.Awake();
+            _type = weapon as RangedWeaponStatsSO != null ? Type.Ranged : Type.CloseCombat;
+        }
+
         [ServerCallback]
         protected override void OnTriggerEnter(Collider other)
         {
             var character = other.GetComponent<Character>();
             if (character == null || character.Type != pickableBy) return;
-
-            var attack = other.GetComponent<AbilityRangedAttack>();
-            if (attack == null) return;
-            
             Pick(other.gameObject);
+            // TODO: implement activation system (A button)
         }
 
         [Server]
         protected override void Pick(GameObject picker)
         {
-            // TODO: Complete process
-            Debug.Log("Picked");
+            if (_type == Type.Ranged)
+            {
+                var attack = picker.GetComponent<AbilityRangedAttack>();
+                if (attack == null) return;
+                attack.ChangeWeapon(weapon.name);
+            }
+            else
+            {
+                var attack = picker.GetComponent<AbilityCloseCombatAttack>();
+                if (attack == null) return;
+                attack.ChangeWeapon(weapon.name);
+            }
         }
     }
-    
 }
