@@ -143,7 +143,7 @@ namespace TheBitCave.MultiplayerRoguelite
         #region ITypeable implementation 
         
         public CharacterType Type => stats.Type;
-        public virtual string TypeStringified => C.GetStringifiedCharacter(stats.Type);
+        public virtual string TypeStringified => C.GetCharacterLabel(stats.Type);
         
         #endregion
     }

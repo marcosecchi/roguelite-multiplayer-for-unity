@@ -21,7 +21,7 @@ namespace TheBitCave.MultiplayerRoguelite
             CHARACTER_WARRIOR
         };
 
-        public static string GetStringifiedCharacter(CharacterType type)
+        public static string GetCharacterLabel(CharacterType type)
         {
             return type switch
             {
@@ -34,7 +34,7 @@ namespace TheBitCave.MultiplayerRoguelite
             };
         }
 
-        public static string GetRandomCharacter()
+        public static string GetRandomCharacterLabel()
         {
             return characterTypes[Random.Range(0, characterTypes.Length)];
         }
