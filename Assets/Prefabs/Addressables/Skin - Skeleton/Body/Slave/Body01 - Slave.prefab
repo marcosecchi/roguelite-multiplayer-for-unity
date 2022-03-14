@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6315735309622818281}
   - component: {fileID: 1888409552136698864}
   m_Layer: 0
-  m_Name: Body01 - Minion
+  m_Name: Body01 - Slave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

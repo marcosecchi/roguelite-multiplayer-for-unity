@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - character
     - thief
+  - m_GUID: 83246864f7ddd43439f10baee42ca382
+    m_Address: Character - Minion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - minion
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

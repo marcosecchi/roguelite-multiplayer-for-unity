@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 4297301733558667191}
   - component: {fileID: -8519103515951704714}
   m_Layer: 0
-  m_Name: Character - Base
+  m_Name: Character - Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  stats: {fileID: 11400000, guid: 505398a5804b3ba479f1baf17170663a, type: 2}
+  stats: {fileID: 11400000, guid: ec16db933e709814fa8240dbff464fc7, type: 2}
   animator: {fileID: 48364881031283457}
 --- !u!114 &1063455048423379336
 MonoBehaviour:

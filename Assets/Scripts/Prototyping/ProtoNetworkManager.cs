@@ -35,6 +35,7 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
         private void OnCharacterCreationReady(NetworkConnection conn, ProtoMessage message)
         {
             var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType);
+            Debug.Log(">>>>>" + message.characterType);
             var go = Instantiate(prefab);
             go.transform.position = GetStartPosition().position;
             NetworkServer.AddPlayerForConnection(conn, go);

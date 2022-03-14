@@ -1,20 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &104101815376356947
+--- !u!1001 &8417638220672024314
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7871178390947433841, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+    - target: {fileID: 7871178391304667522, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
+      propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2100000, guid: 428264882c1b77a49a6e9ec4eb25127e, type: 2}
+      objectReference: {fileID: -5825542003230368125, guid: 976a3e86bc820ce459e5b619984c62d0, type: 3}
     - target: {fileID: 7871178391960863252, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
       propertyPath: m_Name
-      value: Head01 - Character
+      value: Head04
       objectReference: {fileID: 0}
+    - target: {fileID: 7871178391960863252, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871178391960863254, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7474061523158701381, guid: b426f5ccbd70c2e4faab3396ba2dfc34, type: 3}
     - target: {fileID: 7871178391960863255, guid: 8294376c2e067c443977e7a1c8d63a82, type: 3}
       propertyPath: m_RootOrder
       value: 0
