@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &559231226235844286
+--- !u!1 &285134596916088480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 903281215290190852}
-  - component: {fileID: 4262308431381701537}
-  - component: {fileID: 2072277767465490283}
+  - component: {fileID: 630170568727712794}
+  - component: {fileID: 4544425999074646975}
+  - component: {fileID: 1798620804283641717}
   m_Layer: 0
-  m_Name: dagger_rare
+  m_Name: dagger_uncommon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &903281215290190852
+--- !u!4 &630170568727712794
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559231226235844286}
+  m_GameObject: {fileID: 285134596916088480}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2138341939864627400}
+  m_Father: {fileID: 4311045612706079415}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4262308431381701537
+--- !u!33 &4544425999074646975
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559231226235844286}
-  m_Mesh: {fileID: -566631599461145685, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
---- !u!23 &2072277767465490283
+  m_GameObject: {fileID: 285134596916088480}
+  m_Mesh: {fileID: -3876179119698450957, guid: e758e3c7f8d805040a5b0f8a00afeb68, type: 3}
+--- !u!23 &1798620804283641717
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559231226235844286}
+  m_GameObject: {fileID: 285134596916088480}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,10 +61,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db7caa451d7b2a94cbce99b94fe98c7a, type: 2}
-  - {fileID: 2100000, guid: d07d3e9f9be906947baedc4a619a683b, type: 2}
+  - {fileID: 2100000, guid: 81bc61c43d989e94da5ce99f0c8932b4, type: 2}
+  - {fileID: 2100000, guid: e5cf3ef1885560d4788a97617e14d550, type: 2}
   - {fileID: 2100000, guid: f48425d017b6db249b83152d8c0f652a, type: 2}
-  - {fileID: 2100000, guid: 03dfde3c4fb88ad4a8af0f669b553ed3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1795283166216055211
+--- !u!1 &4509549126792422356
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,27 +93,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2138341939864627400}
+  - component: {fileID: 4311045612706079415}
   m_Layer: 0
-  m_Name: Dagger - Rare
+  m_Name: ThrowingDagger - Uncommon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2138341939864627400
+--- !u!4 &4311045612706079415
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795283166216055211}
+  m_GameObject: {fileID: 4509549126792422356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 903281215290190852}
+  - {fileID: 630170568727712794}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
