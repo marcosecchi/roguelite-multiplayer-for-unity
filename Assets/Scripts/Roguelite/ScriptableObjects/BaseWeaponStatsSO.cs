@@ -19,7 +19,8 @@ namespace TheBitCave.MultiplayerRoguelite.Data
         [SerializeField]
         protected GameObject weaponModelPrefab;
 
-        public string AnimatorParameter => animatorParameter.ToString();
+        public AttackAnimatorParameter AnimatorParameter => animatorParameter;
+        public string StringifiedAnimatorParameter => animatorParameter.ToString();
         public GameObject WeaponPrefab => weaponModelPrefab;
     }
     

@@ -6,7 +6,9 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
 {
     public class ProtoNetworkManager : NetworkManager
     {
-    
+
+        public CharacterType characterType = CharacterType.Thief;
+        
         public override void OnStartServer()
         {
             base.OnStartServer();
@@ -27,7 +29,8 @@ namespace TheBitCave.MultiplayerRoguelite.Prototype
             }
             var message = new ProtoMessage
             {
-                characterType = C.GetRandomCharacterLabel()
+                characterType = characterType.ToString().ToLower()
+//                characterType = C.GetRandomCharacterLabel()
             };
             NetworkClient.Send(message);
         }

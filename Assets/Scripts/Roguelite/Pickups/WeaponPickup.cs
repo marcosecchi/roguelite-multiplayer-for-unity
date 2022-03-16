@@ -49,6 +49,7 @@ namespace TheBitCave.MultiplayerRoguelite
                 if (attack == null) return;
                 attack.ChangeWeapon(weapon.name);
             }
+            NetworkServer.Destroy(gameObject);
         }
     }
 }

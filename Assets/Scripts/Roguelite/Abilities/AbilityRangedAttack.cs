@@ -17,24 +17,25 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
 
         [SerializeField] protected Transform spawnPoint;
+
+        protected RangedWeaponStatsSO dataAsRanged => data as RangedWeaponStatsSO;
         
-        protected RangedWeaponStatsSO dataAsRanged;
-
-        /// <summary>
-        /// Initializes the needed components.
-        /// </summary>
-        protected override void Awake()
-        {
-            base.Awake();
-            dataAsRanged = data as RangedWeaponStatsSO;
-        }
-
-        /// <summary>
-        /// Executed by an event dispatched by the animator
-        /// </summary>
         protected override void AttackStart()
         {
             CmdAttackExecute();
+            if (weaponModel != null && dataAsRanged.AnimatorParameter == AttackAnimatorParameter.Throw)
+            {
+                weaponModel.SetActive(false);
+            }
+        }
+
+        protected override void AttackEnd()
+        {
+            base.AttackEnd();
+            if (weaponModel != null && dataAsRanged.AnimatorParameter == AttackAnimatorParameter.Throw)
+            {
+                weaponModel.SetActive(true);
+            }
         }
 
         [Command]
@@ -48,12 +49,6 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         protected virtual void OnWeaponChangeRequest(string _, string newValue)
         {
             ChangeWeapon(newValue);
-            Debug.Log("Change Weapon: "  +newValue);
-        }
-
-        public override void ChangeWeapon(string weaponName)
-        {
-            base.ChangeWeapon(weaponName);
         }
     }
 }

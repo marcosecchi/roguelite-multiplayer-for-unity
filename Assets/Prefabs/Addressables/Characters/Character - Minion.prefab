@@ -348,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600067681070032618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: 1}
+  m_LocalPosition: {x: 0.5, y: 0.73, z: 1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  data: {fileID: 11400000, guid: 0045c52ad86649548a70902451529b44, type: 2}
+  data: {fileID: 11400000, guid: cc924d4ac8e7b2f4abe22ba405416bff, type: 2}
   handSlot: {fileID: 48364879587999139}
   spawnPoint: {fileID: 6968334824308090760}
 --- !u!1 &1194671815847329854

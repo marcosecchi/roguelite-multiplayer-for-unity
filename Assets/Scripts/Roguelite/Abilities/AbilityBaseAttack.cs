@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Data;
 using TheBitCave.MultiplayerRoguelite.Utils;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -14,6 +15,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     {
         [SerializeField] protected BaseWeaponStatsSO data;
         [SerializeField] protected Transform handSlot;
+        protected GameObject weaponModel;
 
         protected NetworkAnimator networkAnimator;
         protected AnimationAttackEventsSender animationEventSender;
@@ -28,6 +30,11 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             networkAnimator = GetComponent<NetworkAnimator>();
             animationEventSender = GetComponentInChildren<AnimationAttackEventsSender>();
+
+            if (data != null && data.WeaponPrefab != null)
+            {
+                ChangeWeapon(data.name);
+            }
         }
         
         public override void OnStartClient()
@@ -68,9 +75,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             if (isAttacking || data == null) return;
             isAttacking = true;
-            handSlot.RemoveAllChildren();
-            Instantiate(data.WeaponPrefab, handSlot);
-            networkAnimator.SetTrigger(data.AnimatorParameter);
+     //       handSlot.RemoveAllChildren();
+     //       Instantiate(data.WeaponPrefab, handSlot);
+            networkAnimator.SetTrigger(data.StringifiedAnimatorParameter);
         }
 
         public virtual void ChangeWeapon(string weaponName)
@@ -79,11 +86,33 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             handle.Completed += OnWeaponDataLoaded;
         }
 
+        /// <summary>
+        /// Handles the weapon data just loaded by the Addressables system
+        /// </summary>
+        /// <param name="operation">The async operation containing the weapon data</param>
         protected virtual void OnWeaponDataLoaded(AsyncOperationHandle<BaseWeaponStatsSO> operation)
         {
+            // TODO: Implement a fallback in case the weapon has not been successfully loaded
             if (operation.Status != AsyncOperationStatus.Succeeded) return;
             data = operation.Result;
-            Debug.Log("Weapon loaded!");
+            ChangeWeaponModel(data.WeaponPrefab);
+        }
+
+        /// <summary>
+        /// Adds an instance of the weapon model on the player's hand
+        /// </summary>
+        /// <param name="prefab">The weapon model prefab</param>
+        protected virtual void ChangeWeaponModel(GameObject prefab)
+        {
+            if (weaponModel != null)
+            {
+                Destroy(weaponModel);
+            }
+
+            weaponModel = Instantiate(prefab, handSlot);
+            prefab.transform.position = Vector3.zero;
+            prefab.transform.rotation = quaternion.identity;
+            ;
         }
     }
 }

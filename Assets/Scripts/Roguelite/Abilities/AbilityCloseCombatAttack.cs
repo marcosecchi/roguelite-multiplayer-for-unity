@@ -14,16 +14,7 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
     {
         [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
         
-        protected CloseCombatWeaponStatsSO dataAsCloseCombat;
-
-        /// <summary>
-        /// Initializes the needed components.
-        /// </summary>
-        protected override void Awake()
-        {
-            base.Awake();
-            dataAsCloseCombat = data as CloseCombatWeaponStatsSO;
-        }
+        protected CloseCombatWeaponStatsSO dataAsCloseCombat => data as CloseCombatWeaponStatsSO;
 
         /// <summary>
         /// Executed by an event dispatched by the animator
