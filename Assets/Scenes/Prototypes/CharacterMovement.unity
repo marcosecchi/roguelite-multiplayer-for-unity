@@ -656,7 +656,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26880
+  m_Name: pb_Mesh86070
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -969,7 +969,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26836
+  m_Name: pb_Mesh86026
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1241,7 +1241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.32371667, y: -0.0000000074799384, z: 0.0000000025591815, w: 0.94615406}
+  m_LocalRotation: {x: 0.32371667, y: 0.0000000074799384, z: -0.0000000025591815, w: 0.94615406}
   m_LocalPosition: {x: 4.75, y: 6.2, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1715,7 +1715,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26864
+  m_Name: pb_Mesh86054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2684,7 +2684,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26752
+  m_Name: pb_Mesh85946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3192,7 +3192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26902
+  m_Name: pb_Mesh86092
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3871,7 +3871,7 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 487906046781796656, guid: ac212834c2ed5114d93edba4c95aeb17, type: 3}
-  characterType: 3
+  characterType: 2
 --- !u!4 &1701322206
 Transform:
   m_ObjectHideFlags: 0
@@ -3933,7 +3933,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1961722, y: 1}
+    m_SensorSize: {x: 0.8833922, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3949,7 +3949,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816866283}
-  m_LocalRotation: {x: 0.32371667, y: -0.0000000074799384, z: 0.0000000025591815, w: 0.94615406}
+  m_LocalRotation: {x: 0.32371667, y: 0.0000000074799384, z: -0.0000000025591815, w: 0.94615406}
   m_LocalPosition: {x: 4.75, y: 6.2, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3964,7 +3964,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26820
+  m_Name: pb_Mesh86010
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4227,6 +4227,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde02baa39c2811468abc628c6d8dae4, type: 3}
+--- !u!1001 &626923799658741281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887229441056293281, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286907394336965073, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: m_Name
+      value: Pickup - Bow Common
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603470342237386409, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
+      propertyPath: sceneId
+      value: 304078976
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3376b112469b4fc47ac17cb5c8c1e856, type: 3}
 --- !u!1001 &7293395071203796247
 PrefabInstance:
   m_ObjectHideFlags: 0

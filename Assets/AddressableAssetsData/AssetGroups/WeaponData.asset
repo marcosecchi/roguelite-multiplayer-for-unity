@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: ThrowingDagger_Uncommon
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ac58627cdc4c34a4590623efff50cdb9
+    m_Address: Bow_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

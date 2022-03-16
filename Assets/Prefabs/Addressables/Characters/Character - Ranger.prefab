@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character - Ranger
       objectReference: {fileID: 0}
+    - target: {fileID: 6968334824308090760, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
     - target: {fileID: 8028059290884200870, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: type
       value: 1
