@@ -27,6 +27,7 @@ namespace TheBitCave.MultiplayerRoguelite
         protected CharacterController characterController;
         protected AbilityRangedAttack rangedAttack;
         protected AbilityCloseCombatAttack closeCombatAttack;
+        protected DamageableProximityChecker damageableProximityChecker;
 
         [SyncVar]
         protected bool isInCloseCombatRange;
@@ -67,18 +68,34 @@ namespace TheBitCave.MultiplayerRoguelite
             characterController = GetComponent<CharacterController>();
             rangedAttack = GetComponent<AbilityRangedAttack>();
             closeCombatAttack = GetComponent<AbilityCloseCombatAttack>();
+            damageableProximityChecker = GetComponent<DamageableProximityChecker>();
         }
 
         protected virtual void OnEnable()
         {
-            if (!isLocalPlayer) return;
-            inputActions.Player.Enable();
+            if (isLocalPlayer)
+            {
+                inputActions.Player.Enable();
+            }
+            if (damageableProximityChecker != null)
+            {
+                damageableProximityChecker.OnDamageableEnter += OnDamageableIn;
+                damageableProximityChecker.OnDamageableExit += OnDamageableOut;
+                
+            }
         }
 
         protected virtual void OnDisable()
         {
-            if (!isLocalPlayer) return;
-            inputActions.Player.Disable();
+            if (isLocalPlayer)
+            {
+                inputActions.Player.Disable();
+            }
+            if (damageableProximityChecker != null)
+            {
+                damageableProximityChecker.OnDamageableEnter -= OnDamageableIn;
+                damageableProximityChecker.OnDamageableExit -= OnDamageableOut;
+            }
         }
         
         /// <summary>
@@ -130,6 +147,16 @@ namespace TheBitCave.MultiplayerRoguelite
                 Debug.Log("Attack Ranged");
                 rangedAttack.Attack();
             }
+        }
+
+        protected virtual void OnDamageableIn()
+        {
+            Debug.Log("Damageable found");
+        }
+
+        protected virtual void OnDamageableOut()
+        {
+            Debug.Log("Damageable lost");
         }
         
         #endregion

@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 443991918818066700}
   - component: {fileID: 4297301733558667191}
   - component: {fileID: -8519103515951704714}
+  - component: {fileID: 7846167498695481586}
   m_Layer: 0
   m_Name: Character - Minion
   m_TagString: Untagged
@@ -548,6 +549,21 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: cc924d4ac8e7b2f4abe22ba405416bff, type: 2}
   handSlot: {fileID: 48364879587999139}
   spawnPoint: {fileID: 6968334824308090760}
+--- !u!114 &7846167498695481586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063455048423379340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc17ab72c046e774190408a40faeb002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  checkDistance: 1
 --- !u!1 &1194671815847329854
 GameObject:
   m_ObjectHideFlags: 0
