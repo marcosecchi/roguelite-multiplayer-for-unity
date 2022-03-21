@@ -151,12 +151,24 @@ namespace TheBitCave.MultiplayerRoguelite
 
         protected virtual void OnDamageableIn()
         {
-            Debug.Log("Damageable found");
+            isInCloseCombatRange = true;
+            UpdateWeaponModels();
         }
 
         protected virtual void OnDamageableOut()
         {
-            Debug.Log("Damageable lost");
+            isInCloseCombatRange = false;
+            UpdateWeaponModels();
+        }
+
+        /// <summary>
+        /// Shows/hides weapons depending on character state (in close combat/ranged)
+        /// </summary>
+        public virtual void UpdateWeaponModels()
+        {
+            Debug.Log(isInCloseCombatRange);
+            closeCombatAttack.SetWeaponVisibility(isInCloseCombatRange);
+            rangedAttack.SetWeaponVisibility(!isInCloseCombatRange);
         }
         
         #endregion

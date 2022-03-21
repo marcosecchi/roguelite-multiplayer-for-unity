@@ -33,6 +33,10 @@ MonoBehaviour:
     m_Address: Bow_Common
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 3c90a84878dd9e343bc857c3c93ed7dc
+    m_Address: Axe_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

@@ -1,3 +1,4 @@
+using System.Linq;
 using Mirror;
 using TheBitCave.MultiplayerRoguelite.Abilities;
 using TheBitCave.MultiplayerRoguelite.Data;
@@ -15,7 +16,7 @@ namespace TheBitCave.MultiplayerRoguelite
         }
         
         [SerializeField] protected BaseWeaponStatsSO weapon;       
-        [SerializeField] protected CharacterType pickableBy;
+        [SerializeField] protected CharacterType[] pickableBy;
 
         private Type _type;
         
@@ -29,9 +30,12 @@ namespace TheBitCave.MultiplayerRoguelite
         protected override void OnTriggerEnter(Collider other)
         {
             var character = other.GetComponent<Character>();
-            if (character == null || character.Type != pickableBy) return;
-            Pick(other.gameObject);
-            // TODO: implement activation system (A button)
+            if (character == null) return;
+            if (pickableBy.Any(characterType => character.Type == characterType))
+            {
+                Pick(other.gameObject);
+                // TODO: implement activation system (A button)
+            }
         }
 
         [Server]
@@ -49,7 +53,15 @@ namespace TheBitCave.MultiplayerRoguelite
                 if (attack == null) return;
                 attack.ChangeWeapon(weapon.name);
             }
+            RpcUpdateWeaponModels(picker);
             NetworkServer.Destroy(gameObject);
+        }
+
+        [ClientRpc]
+        protected void RpcUpdateWeaponModels(GameObject picker)
+        {
+            picker.GetComponent<Character>()?.UpdateWeaponModels();
+            
         }
     }
 }

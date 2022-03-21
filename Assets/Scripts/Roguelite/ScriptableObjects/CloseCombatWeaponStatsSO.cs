@@ -8,5 +8,6 @@ namespace TheBitCave.MultiplayerRoguelite.Data
     [CreateAssetMenu(fileName = "CharacterStats", menuName = "Roguelite/Data/Close Combat Weapon Stats")]
     public class CloseCombatWeaponStatsSO : BaseWeaponStatsSO
     {
+        [SerializeField] protected float damage = 1;
     }
 }

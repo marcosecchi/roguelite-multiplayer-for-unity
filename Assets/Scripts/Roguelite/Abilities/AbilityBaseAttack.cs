@@ -16,13 +16,13 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         [SerializeField] protected BaseWeaponStatsSO data;
         [SerializeField] protected Transform handSlot;
         protected GameObject weaponModel;
-
+        
         protected NetworkAnimator networkAnimator;
         protected AnimationAttackEventsSender animationEventSender;
         [SyncVar] protected bool isAttacking;
         
         public bool IsAttacking => isAttacking;
-                
+        
         /// <summary>
         /// Initializes the needed components.
         /// </summary>
@@ -37,6 +37,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             }
         }
         
+        /// <summary>
+        /// Registers all listeners
+        /// </summary>
         public override void OnStartClient()
         {
             base.OnStartClient();
@@ -45,6 +48,9 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
             if (animationEventSender != null) animationEventSender.OnAttackEnd += AttackEnd;
         }
 
+        /// <summary>
+        /// Deregisters all listeners
+        /// </summary>
         public override void OnStopClient()
         {
             base.OnStopClient();
@@ -75,11 +81,13 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         {
             if (isAttacking || data == null) return;
             isAttacking = true;
-     //       handSlot.RemoveAllChildren();
-     //       Instantiate(data.WeaponPrefab, handSlot);
             networkAnimator.SetTrigger(data.StringifiedAnimatorParameter);
         }
 
+        /// <summary>
+        /// Loads the new weapon
+        /// </summary>
+        /// <param name="weaponName"></param>
         public virtual void ChangeWeapon(string weaponName)
         {
             var handle = Addressables.LoadAssetAsync<BaseWeaponStatsSO>(weaponName);
@@ -87,12 +95,23 @@ namespace TheBitCave.MultiplayerRoguelite.Abilities
         }
 
         /// <summary>
+        /// Shows/hides the weapon, depending on character state (close combat/range)
+        /// </summary>
+        /// <param name="isVisible"></param>
+        public virtual void SetWeaponVisibility(bool isVisible)
+        {
+            if (handSlot == null) return;
+            handSlot.gameObject.SetActive(isVisible);
+        }
+        
+        /// <summary>
         /// Handles the weapon data just loaded by the Addressables system
         /// </summary>
         /// <param name="operation">The async operation containing the weapon data</param>
         protected virtual void OnWeaponDataLoaded(AsyncOperationHandle<BaseWeaponStatsSO> operation)
         {
             // TODO: Implement a fallback in case the weapon has not been successfully loaded
+            // TODO: Destroy old weapon, if any 
             if (operation.Status != AsyncOperationStatus.Succeeded) return;
             data = operation.Result;
             ChangeWeaponModel(data.WeaponPrefab);
