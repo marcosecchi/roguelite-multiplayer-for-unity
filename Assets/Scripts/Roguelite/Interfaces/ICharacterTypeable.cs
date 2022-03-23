@@ -1,4 +1,4 @@
-namespace TheBitCave.MultiplayerRoguelite.Interfaces
+namespace TheBitCave.BattleRoyale.Interfaces
 {
     /// <summary>
     /// Interface used to assign a type (i.e.: a character class)

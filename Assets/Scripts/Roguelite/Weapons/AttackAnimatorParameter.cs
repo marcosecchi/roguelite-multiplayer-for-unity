@@ -1,4 +1,4 @@
-namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
+namespace TheBitCave.BattleRoyale.WeaponSystem
 {
     /// <summary>
     /// A list of values used to pass parameters to the Animator component

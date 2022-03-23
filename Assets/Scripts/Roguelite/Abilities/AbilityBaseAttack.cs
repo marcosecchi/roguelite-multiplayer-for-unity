@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Data;
-using TheBitCave.MultiplayerRoguelite.Utils;
+using TheBitCave.BattleRoyale.Data;
+using TheBitCave.BattleRoyale.Utils;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     [RequireComponent(typeof(NetworkAnimator))]
     public abstract class AbilityBaseAttack : NetworkBehaviour

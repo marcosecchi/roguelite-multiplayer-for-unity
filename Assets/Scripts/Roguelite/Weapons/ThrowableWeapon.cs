@@ -1,9 +1,9 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Abilities;
+using TheBitCave.BattleRoyale.Abilities;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
+namespace TheBitCave.BattleRoyale.WeaponSystem
 {
     [RequireComponent(typeof(Rigidbody))]
     public class ThrowableWeapon : BaseWeapon

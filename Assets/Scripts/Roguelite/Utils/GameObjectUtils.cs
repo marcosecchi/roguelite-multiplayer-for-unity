@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Utils
+namespace TheBitCave.BattleRoyale.Utils
 {
     public static class GameObjectUtils
     {

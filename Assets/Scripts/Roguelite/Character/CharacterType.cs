@@ -1,6 +1,6 @@
 using System;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     /// <summary>
     /// A list of possible characters

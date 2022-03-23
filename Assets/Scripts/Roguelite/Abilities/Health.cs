@@ -1,10 +1,10 @@
 using System;
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
-using TheBitCave.MultiplayerRoguelite.Utils;
+using TheBitCave.BattleRoyale.Interfaces;
+using TheBitCave.BattleRoyale.Utils;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     [AddComponentMenu(menuName: "Roguelite/Health")]
     public class Health : NetworkBehaviour, IDamageable

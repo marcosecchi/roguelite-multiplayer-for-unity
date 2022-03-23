@@ -1,7 +1,7 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
+using TheBitCave.BattleRoyale.Interfaces;
 
-namespace TheBitCave.MultiplayerRoguelite.WeaponSystem
+namespace TheBitCave.BattleRoyale.WeaponSystem
 {
     public abstract class BaseWeapon : NetworkBehaviour, IOwnable
     {

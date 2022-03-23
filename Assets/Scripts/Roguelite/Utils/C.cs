@@ -1,4 +1,4 @@
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     public partial class C
     {

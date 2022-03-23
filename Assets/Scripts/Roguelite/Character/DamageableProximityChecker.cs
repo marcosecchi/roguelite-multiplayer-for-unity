@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
+using TheBitCave.BattleRoyale.Interfaces;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     public class DamageableProximityChecker : NetworkBehaviour
     {

@@ -1,4 +1,4 @@
-namespace TheBitCave.MultiplayerRoguelite.Interfaces
+namespace TheBitCave.BattleRoyale.Interfaces
 {
     /// <summary>
     /// An interface used to set the owner of an object (i.e.: the owner of a bullet, etc.)

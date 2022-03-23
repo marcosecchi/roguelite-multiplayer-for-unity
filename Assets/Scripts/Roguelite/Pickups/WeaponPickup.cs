@@ -1,10 +1,10 @@
 using System.Linq;
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Abilities;
-using TheBitCave.MultiplayerRoguelite.Data;
+using TheBitCave.BattleRoyale.Abilities;
+using TheBitCave.BattleRoyale.Data;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     [AddComponentMenu(menuName: "Roguelite/WeaponPickup")]
     public class WeaponPickup : BasePickup

@@ -4,7 +4,7 @@ using Mirror;
 using TMPro;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Prototype
+namespace TheBitCave.BattleRoyale.Prototype
 {
     [AddComponentMenu("")]
     public class ProtoCharacter : Character

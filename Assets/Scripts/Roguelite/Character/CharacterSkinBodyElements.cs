@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     [AddComponentMenu("")]
     public class CharacterSkinBodyElements : MonoBehaviour

@@ -1,7 +1,7 @@
 using Mirror;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Prototype
+namespace TheBitCave.BattleRoyale.Prototype
 {
     [AddComponentMenu("")]
     public class ProtoPickup : BasePickup

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     public abstract class AbstractAbility : NetworkBehaviour
     {

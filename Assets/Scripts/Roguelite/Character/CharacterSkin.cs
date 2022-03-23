@@ -1,9 +1,9 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
-using TheBitCave.MultiplayerRoguelite.Utils;
+using TheBitCave.BattleRoyale.Interfaces;
+using TheBitCave.BattleRoyale.Utils;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     [AddComponentMenu(menuName: "Roguelite/Character Skin")]
     [RequireComponent(typeof(ICharacterTypeable))]

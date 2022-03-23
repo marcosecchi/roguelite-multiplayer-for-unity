@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TheBitCave.MultiplayerRoguelite.Data
+namespace TheBitCave.BattleRoyale.Data
 {
     [CreateAssetMenu(fileName = "CurveData", menuName = "Roguelite/Data/Curve")]
     public class CurveSO : ScriptableObject

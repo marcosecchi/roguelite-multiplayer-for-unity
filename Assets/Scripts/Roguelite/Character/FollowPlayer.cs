@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     /// <summary>
     /// Behaviour utility used by Cinemachine to lock on the target local player

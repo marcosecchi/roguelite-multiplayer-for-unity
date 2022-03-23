@@ -1,8 +1,8 @@
 using Mirror;
+using TheBitCave.BattleRoyale.Data;
 using UnityEngine;
-using TheBitCave.MultiplayerRoguelite.Data;
 
-namespace TheBitCave.MultiplayerRoguelite.Prototype
+namespace TheBitCave.BattleRoyale.Prototype
 {
     [AddComponentMenu("")]
     public class ProtoFloater : MonoBehaviour

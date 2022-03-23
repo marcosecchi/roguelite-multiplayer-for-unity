@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace TheBitCave.MultiplayerRoguelite.Utils
+namespace TheBitCave.BattleRoyale.Utils
 {
     public class AssetManager: PersistentSingleton<AssetManager>
     {

@@ -1,7 +1,7 @@
-using TheBitCave.MultiplayerRoguelite.WeaponSystem;
+using TheBitCave.BattleRoyale.WeaponSystem;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Data
+namespace TheBitCave.BattleRoyale.Data
 {
     /// <summary>
     /// Data used to create ranged attacks (i.e.: throw daggers, cast spells, etc.)

@@ -1,8 +1,8 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Utils;
+using TheBitCave.BattleRoyale.Utils;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Prototype
+namespace TheBitCave.BattleRoyale.Prototype
 {
     public class ProtoNetworkManager : NetworkManager
     {

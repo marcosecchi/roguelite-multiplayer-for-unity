@@ -1,12 +1,12 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Abilities;
-using TheBitCave.MultiplayerRoguelite.Data;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
-using TheBitCave.MultiplayerRoguelite.Utils;
+using TheBitCave.BattleRoyale.Abilities;
+using TheBitCave.BattleRoyale.Data;
+using TheBitCave.BattleRoyale.Interfaces;
+using TheBitCave.BattleRoyale.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace TheBitCave.MultiplayerRoguelite
+namespace TheBitCave.BattleRoyale
 {
     /// <summary>
     /// The main controller for every character: handles movement, attacks and other features.

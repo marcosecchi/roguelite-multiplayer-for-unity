@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Utils
+namespace TheBitCave.BattleRoyale.Utils
 {
     public class PersistentSingleton<T> : MonoBehaviour where T : Component
     {

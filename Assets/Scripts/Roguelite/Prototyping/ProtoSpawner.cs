@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace TheBitCave.MultiplayerRoguelite.Prototype
+namespace TheBitCave.BattleRoyale.Prototype
 {
     [AddComponentMenu("")]
     public class ProtoSpawner : NetworkBehaviour

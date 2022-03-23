@@ -1,8 +1,8 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Data;
+using TheBitCave.BattleRoyale.Data;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     /// <summary>
     /// Basic system to activate a close combat attack.

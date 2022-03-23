@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TheBitCave.MultiplayerRoguelite.WeaponSystem;
+using TheBitCave.BattleRoyale.WeaponSystem;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Data
+namespace TheBitCave.BattleRoyale.Data
 {
     public abstract class BaseWeaponStatsSO : ScriptableObject
     {

@@ -1,9 +1,9 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Data;
-using TheBitCave.MultiplayerRoguelite.WeaponSystem;
+using TheBitCave.BattleRoyale.Data;
+using TheBitCave.BattleRoyale.WeaponSystem;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     /// <summary>
     /// Base component used to make a ranged attack (cast a spell, throw a knife, etc.)

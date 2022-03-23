@@ -1,8 +1,8 @@
 using Mirror;
-using TheBitCave.MultiplayerRoguelite.Interfaces;
+using TheBitCave.BattleRoyale.Interfaces;
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Abilities
+namespace TheBitCave.BattleRoyale.Abilities
 {
     /// <summary>
     /// Ability used to damage an IDamageable element on touch.

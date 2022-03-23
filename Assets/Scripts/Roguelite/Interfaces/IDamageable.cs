@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TheBitCave.MultiplayerRoguelite.Interfaces
+namespace TheBitCave.BattleRoyale.Interfaces
 {
     /// <summary>
     /// Interface to implement a damage system
