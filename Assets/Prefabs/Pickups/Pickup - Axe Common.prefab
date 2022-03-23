@@ -160,7 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  weapon: {fileID: 11400000, guid: 3c90a84878dd9e343bc857c3c93ed7dc, type: 2}
+  closeCombatWeapon: {fileID: 11400000, guid: 3c90a84878dd9e343bc857c3c93ed7dc, type: 2}
+  rangedWeapon: {fileID: 0}
   pickableBy: 04000000
 --- !u!1001 &9167300162873226473
 PrefabInstance:

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using TheBitCave.BattleRoyale.Data;
-using TheBitCave.BattleRoyale.Utils;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -131,7 +128,6 @@ namespace TheBitCave.BattleRoyale.Abilities
             weaponModel = Instantiate(prefab, handSlot);
             prefab.transform.position = Vector3.zero;
             prefab.transform.rotation = quaternion.identity;
-            ;
         }
     }
 }

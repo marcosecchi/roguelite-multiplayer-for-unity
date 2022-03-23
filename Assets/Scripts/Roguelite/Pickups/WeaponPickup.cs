@@ -9,23 +9,10 @@ namespace TheBitCave.BattleRoyale
     [AddComponentMenu(menuName: "Roguelite/WeaponPickup")]
     public class WeaponPickup : BasePickup
     {
-        private enum Type
-        {
-            Ranged,
-            CloseCombat
-        }
-        
-        [SerializeField] protected BaseWeaponStatsSO weapon;       
+        [SerializeField] protected CloseCombatWeaponStatsSO closeCombatWeapon;       
+        [SerializeField] protected RangedWeaponStatsSO rangedWeapon;       
         [SerializeField] protected CharacterType[] pickableBy;
-
-        private Type _type;
         
-        protected override void Awake()
-        {
-            base.Awake();
-            _type = weapon as RangedWeaponStatsSO != null ? Type.Ranged : Type.CloseCombat;
-        }
-
         [ServerCallback]
         protected override void OnTriggerEnter(Collider other)
         {
@@ -41,17 +28,17 @@ namespace TheBitCave.BattleRoyale
         [Server]
         protected override void Pick(GameObject picker)
         {
-            if (_type == Type.Ranged)
+            if (rangedWeapon != null)
             {
                 var attack = picker.GetComponent<AbilityRangedAttack>();
                 if (attack == null) return;
-                attack.ChangeWeapon(weapon.name);
+                attack.ChangeWeapon(rangedWeapon.name);
             }
-            else
+            if (closeCombatWeapon != null)
             {
                 var attack = picker.GetComponent<AbilityCloseCombatAttack>();
                 if (attack == null) return;
-                attack.ChangeWeapon(weapon.name);
+                attack.ChangeWeapon(closeCombatWeapon.name);
             }
             RpcUpdateWeaponModels(picker);
             NetworkServer.Destroy(gameObject);
@@ -61,7 +48,6 @@ namespace TheBitCave.BattleRoyale
         protected void RpcUpdateWeaponModels(GameObject picker)
         {
             picker.GetComponent<Character>()?.UpdateWeaponModels();
-            
         }
     }
 }
