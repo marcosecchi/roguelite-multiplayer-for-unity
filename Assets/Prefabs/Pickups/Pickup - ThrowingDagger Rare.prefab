@@ -174,18 +174,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -225,26 +213,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: db7caa451d7b2a94cbce99b94fe98c7a, type: 2}
-    - target: {fileID: -7511558181221131132, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: d07d3e9f9be906947baedc4a619a683b, type: 2}
-    - target: {fileID: -7511558181221131132, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: f48425d017b6db249b83152d8c0f652a, type: 2}
-    - target: {fileID: -7511558181221131132, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 03dfde3c4fb88ad4a8af0f669b553ed3, type: 2}
     - target: {fileID: 919132149155446097, guid: f0e8713ebe4e3334992d68cb32a67627, type: 3}
       propertyPath: m_Name
       value: dagger_rare

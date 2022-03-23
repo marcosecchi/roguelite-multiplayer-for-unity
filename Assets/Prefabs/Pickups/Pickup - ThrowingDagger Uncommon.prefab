@@ -221,18 +221,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: e758e3c7f8d805040a5b0f8a00afeb68, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 81bc61c43d989e94da5ce99f0c8932b4, type: 2}
-    - target: {fileID: -7511558181221131132, guid: e758e3c7f8d805040a5b0f8a00afeb68, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5cf3ef1885560d4788a97617e14d550, type: 2}
-    - target: {fileID: -7511558181221131132, guid: e758e3c7f8d805040a5b0f8a00afeb68, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: f48425d017b6db249b83152d8c0f652a, type: 2}
     - target: {fileID: 919132149155446097, guid: e758e3c7f8d805040a5b0f8a00afeb68, type: 3}
       propertyPath: m_Name
       value: dagger_uncommon
