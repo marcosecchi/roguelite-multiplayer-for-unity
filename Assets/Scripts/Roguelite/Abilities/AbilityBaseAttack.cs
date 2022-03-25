@@ -108,7 +108,6 @@ namespace TheBitCave.BattleRoyale.Abilities
         protected virtual void OnWeaponDataLoaded(AsyncOperationHandle<BaseWeaponStatsSO> operation)
         {
             // TODO: Implement a fallback in case the weapon has not been successfully loaded
-            // TODO: Destroy old weapon, if any 
             if (operation.Status != AsyncOperationStatus.Succeeded) return;
             data = operation.Result;
             ChangeWeaponModel(data.WeaponPrefab);
@@ -120,11 +119,7 @@ namespace TheBitCave.BattleRoyale.Abilities
         /// <param name="prefab">The weapon model prefab</param>
         protected virtual void ChangeWeaponModel(GameObject prefab)
         {
-            if (weaponModel != null)
-            {
-                Destroy(weaponModel);
-            }
-
+            if (weaponModel != null) Destroy(weaponModel);
             weaponModel = Instantiate(prefab, handSlot);
             prefab.transform.position = Vector3.zero;
             prefab.transform.rotation = quaternion.identity;

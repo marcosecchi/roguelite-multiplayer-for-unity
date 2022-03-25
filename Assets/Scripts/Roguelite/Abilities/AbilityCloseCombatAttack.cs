@@ -21,8 +21,8 @@ namespace TheBitCave.BattleRoyale.Abilities
         /// </summary>
         protected override void AttackStart()
         {
-            // TODO: Implement close combat attack 
-   //         Debug.Log("Attack Starts");
+            if (!isAttacking) return;
+            CmdAttackExecute();
         }
 
         protected virtual void OnWeaponChangeRequest(string _, string newValue)
@@ -35,5 +35,12 @@ namespace TheBitCave.BattleRoyale.Abilities
         {
             base.ChangeWeapon(weaponName);
         }
+        
+        [Command]
+        private void CmdAttackExecute()
+        {
+            // TODO: Implement attack phase
+        }
+
     }
 }

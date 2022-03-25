@@ -22,7 +22,9 @@ namespace TheBitCave.BattleRoyale.Abilities
         
         protected override void AttackStart()
         {
+            if (!isAttacking) return;
             CmdAttackExecute();
+            // Hides the weapon model, but only if it is a throwing weapon
             if (weaponModel != null && dataAsRanged.AnimatorParameter == AttackAnimatorParameter.Throw)
             {
                 weaponModel.SetActive(false);

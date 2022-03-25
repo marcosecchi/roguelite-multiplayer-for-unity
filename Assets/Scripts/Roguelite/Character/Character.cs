@@ -140,6 +140,7 @@ namespace TheBitCave.BattleRoyale
             if (isInCloseCombatRange && closeCombatAttack)
             {
                 Debug.Log("Attack Close Combat");
+                closeCombatAttack.Attack();
                 // TODO: Implement close combat attack
             }
             else if (rangedAttack != null)
