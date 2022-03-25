@@ -69,6 +69,7 @@ namespace TheBitCave.BattleRoyale
             rangedAttack = GetComponent<AbilityRangedAttack>();
             closeCombatAttack = GetComponent<AbilityCloseCombatAttack>();
             damageableProximityChecker = GetComponent<DamageableProximityChecker>();
+            OnDamageableOut();
         }
 
         protected virtual void OnEnable()
