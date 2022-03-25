@@ -8,10 +8,13 @@ namespace TheBitCave.BattleRoyale.Abilities
     /// Ability used to damage an IDamageable element on touch.
     /// </summary>
     [RequireComponent(typeof(Collider))]
-    public class DamageOnTouch : NetworkBehaviour
+    public class DamageOnTouch : MonoBehaviour
     {
         private Collider _collider;
 
+        private float _damageValue;
+        private uint _provoker;
+        
         private void Awake()
         {
             _collider = GetComponent<Collider>();
@@ -19,8 +22,10 @@ namespace TheBitCave.BattleRoyale.Abilities
             _collider.enabled = false;
         }
 
-        public void StartAttack()
+        public void StartAttack(float damageValue, uint provoker)
         {
+            _damageValue = damageValue;
+            _provoker = provoker;
             _collider.enabled = true;
         }
 
@@ -29,14 +34,13 @@ namespace TheBitCave.BattleRoyale.Abilities
             _collider.enabled = false;
         }
 
-        [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
             var damageable = other.GetComponent<IDamageable>();
 
             if (damageable != null)
             {
-                
+                damageable.Damage(_damageValue, _provoker);
             }
         }
     }

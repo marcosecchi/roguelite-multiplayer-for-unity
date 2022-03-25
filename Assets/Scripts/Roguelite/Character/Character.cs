@@ -140,13 +140,10 @@ namespace TheBitCave.BattleRoyale
         {
             if (isInCloseCombatRange && closeCombatAttack)
             {
-                Debug.Log("Attack Close Combat");
                 closeCombatAttack.Attack();
-                // TODO: Implement close combat attack
             }
             else if (rangedAttack != null)
             {
-                Debug.Log("Attack Ranged");
                 rangedAttack.Attack();
             }
         }
@@ -168,7 +165,6 @@ namespace TheBitCave.BattleRoyale
         /// </summary>
         public virtual void UpdateWeaponModels()
         {
-            Debug.Log(isInCloseCombatRange);
             closeCombatAttack.SetWeaponVisibility(isInCloseCombatRange);
             rangedAttack.SetWeaponVisibility(!isInCloseCombatRange);
         }

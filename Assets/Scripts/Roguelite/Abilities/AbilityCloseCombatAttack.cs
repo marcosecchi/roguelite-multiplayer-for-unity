@@ -12,6 +12,8 @@ namespace TheBitCave.BattleRoyale.Abilities
     [AddComponentMenu(menuName: "Roguelite/Ability Close Combat")]
     public class AbilityCloseCombatAttack: AbilityBaseAttack
     {
+        [SerializeField] protected DamageOnTouch damageArea;
+        
         [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
         
         protected CloseCombatWeaponStatsSO dataAsCloseCombat => data as CloseCombatWeaponStatsSO;
@@ -25,9 +27,18 @@ namespace TheBitCave.BattleRoyale.Abilities
             CmdAttackExecute();
         }
 
+        /// <summary>
+        /// Executed by an event dispatched by the animator
+        /// </summary>
+        protected override void AttackEnd()
+        {
+            base.AttackEnd();
+            if(damageArea != null) damageArea.EndAttack();
+        }
+
         protected virtual void OnWeaponChangeRequest(string _, string newValue)
         {
-            Debug.Log("Change Weapon: "  +newValue);
+            Debug.Log("Change Weapon: " + newValue);
             ChangeWeapon(newValue);
         }
 
@@ -39,7 +50,7 @@ namespace TheBitCave.BattleRoyale.Abilities
         [Command]
         private void CmdAttackExecute()
         {
-            // TODO: Implement attack phase
+            if(damageArea != null) damageArea.StartAttack(dataAsCloseCombat.Damage, netId);
         }
 
     }

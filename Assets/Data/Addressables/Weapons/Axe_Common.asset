@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorParameter: 3
   weaponModelPrefab: {fileID: 4519038757325399263, guid: 5e8cffee4b049784cb223d7a7ed3f697, type: 3}
+  damage: 4

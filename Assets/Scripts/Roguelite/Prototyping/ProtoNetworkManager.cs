@@ -22,7 +22,7 @@ namespace TheBitCave.BattleRoyale.Prototype
 
             foreach (var type in C.characterTypes)
             {
-                Debug.Log("Registering character: " + type);
+//                Debug.Log("Registering character: " + type);
                 var go = AssetManager.Instance.GetCharacterPrefab(type);
                 if(go == null) continue;
                 NetworkClient.RegisterPrefab(go);

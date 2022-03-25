@@ -9,5 +9,7 @@ namespace TheBitCave.BattleRoyale.Data
     public class CloseCombatWeaponStatsSO : BaseWeaponStatsSO
     {
         [SerializeField] protected float damage = 1;
+
+        public float Damage => damage;
     }
 }
