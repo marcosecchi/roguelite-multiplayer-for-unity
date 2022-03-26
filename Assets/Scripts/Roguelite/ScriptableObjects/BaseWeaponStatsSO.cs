@@ -19,9 +19,16 @@ namespace TheBitCave.BattleRoyale.Data
         [SerializeField]
         protected GameObject weaponModelPrefab;
 
+        /// <summary>
+        /// A gameObject that should be spawned on attack activation
+        /// </summary>
+        [SerializeField]
+        protected GameObject vfx;
+
         public AttackAnimatorParameter AnimatorParameter => animatorParameter;
         public string StringifiedAnimatorParameter => animatorParameter.ToString();
         public GameObject WeaponPrefab => weaponModelPrefab;
+        public GameObject Vfx => vfx;
     }
     
 }

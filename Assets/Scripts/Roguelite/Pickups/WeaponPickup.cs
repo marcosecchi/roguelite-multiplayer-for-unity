@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TheBitCave.BattleRoyale
 {
-    [AddComponentMenu(menuName: "Roguelite/WeaponPickup")]
+    [AddComponentMenu(menuName: "BattleRoyale/WeaponPickup")]
     public class WeaponPickup : BasePickup
     {
         [SerializeField] protected CloseCombatWeaponStatsSO closeCombatWeapon;       

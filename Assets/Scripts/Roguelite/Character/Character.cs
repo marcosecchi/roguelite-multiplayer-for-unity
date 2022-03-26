@@ -12,7 +12,7 @@ namespace TheBitCave.BattleRoyale
     /// The main controller for every character: handles movement, attacks and other features.
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
-    [AddComponentMenu(menuName: "Roguelite/Character")]
+    [AddComponentMenu(menuName: "BattleRoyale/Character")]
     public partial class Character : NetworkBehaviour, ICharacterTypeable
     {
         [Header("Stats")]

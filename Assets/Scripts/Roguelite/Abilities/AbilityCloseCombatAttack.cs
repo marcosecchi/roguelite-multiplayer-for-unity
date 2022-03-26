@@ -9,7 +9,7 @@ namespace TheBitCave.BattleRoyale.Abilities
     /// The attack is activated/deactivated by the character animator in order to synchronize it with
     /// the corresponding animation.
     /// </summary>
-    [AddComponentMenu(menuName: "Roguelite/Ability Close Combat")]
+    [AddComponentMenu(menuName: "BattleRoyale/Ability Close Combat")]
     public class AbilityCloseCombatAttack: AbilityBaseAttack
     {
         [SerializeField] protected DamageOnTouch damageArea;
@@ -50,6 +50,11 @@ namespace TheBitCave.BattleRoyale.Abilities
         [Command]
         private void CmdAttackExecute()
         {
+            if(damageArea != null)
+            {
+                var t = damageArea.transform;
+                RpcCreateVfx(t.position, t.rotation);
+            }
             if(damageArea != null) damageArea.StartAttack(dataAsCloseCombat.Damage, netId);
         }
 

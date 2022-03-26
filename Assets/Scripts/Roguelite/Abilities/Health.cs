@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TheBitCave.BattleRoyale.Abilities
 {
-    [AddComponentMenu(menuName: "Roguelite/Health")]
+    [AddComponentMenu(menuName: "BattleRoyale/Health")]
     public class Health : NetworkBehaviour, IDamageable
     {
         public event IDamageable.DamageTaken OnDamageTaken;

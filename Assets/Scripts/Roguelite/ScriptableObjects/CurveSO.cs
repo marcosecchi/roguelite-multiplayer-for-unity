@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace TheBitCave.BattleRoyale.Data
 {
-    [CreateAssetMenu(fileName = "CurveData", menuName = "Roguelite/Data/Curve")]
+    [CreateAssetMenu(fileName = "CurveData", menuName = "BattleRoyale/Data/Curve")]
     public class CurveSO : ScriptableObject
     {
         [FormerlySerializedAs("Curve")] [SerializeField]

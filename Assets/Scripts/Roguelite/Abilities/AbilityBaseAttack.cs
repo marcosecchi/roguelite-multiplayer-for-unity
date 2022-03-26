@@ -124,5 +124,17 @@ namespace TheBitCave.BattleRoyale.Abilities
             prefab.transform.position = Vector3.zero;
             prefab.transform.rotation = quaternion.identity;
         }
+
+        /// <summary>
+        /// Instantiate a visual effect (if any) on the client
+        /// <param name="position">The position of the generated effect</param>
+        /// <param name="rotation">The rotation of the generated effect</param>
+        /// </summary>
+        [ClientRpc]
+        protected virtual void RpcCreateVfx(Vector3 position, Quaternion rotation)
+        {
+            if (data.Vfx == null) return;
+            Instantiate(data.Vfx, position, rotation);
+        }
     }
 }

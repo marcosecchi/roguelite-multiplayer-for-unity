@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TheBitCave.BattleRoyale
 {
-    [AddComponentMenu(menuName: "Roguelite/Character Skin")]
+    [AddComponentMenu(menuName: "BattleRoyale/Character Skin")]
     [RequireComponent(typeof(ICharacterTypeable))]
     public class CharacterSkin : NetworkBehaviour
     {

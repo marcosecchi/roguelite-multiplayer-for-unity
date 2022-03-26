@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace  TheBitCave.BattleRoyale.Data
 {
-    [CreateAssetMenu(fileName = "CharacterStats", menuName = "Roguelite/Data/Character Stats")]
+    [CreateAssetMenu(fileName = "CharacterStats", menuName = "BattleRoyale/Data/Character Stats")]
     public class CharacterStatsSO : ScriptableObject
     {
         [Header("Main Settings")]

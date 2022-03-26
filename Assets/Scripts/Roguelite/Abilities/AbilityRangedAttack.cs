@@ -11,7 +11,7 @@ namespace TheBitCave.BattleRoyale.Abilities
     /// the corresponding animation.
     /// </summary>
     [RequireComponent(typeof(Character))]
-    [AddComponentMenu(menuName: "Roguelite/Ability Ranged Attack")]
+    [AddComponentMenu(menuName: "BattleRoyale/Ability Ranged Attack")]
     public class AbilityRangedAttack : AbilityBaseAttack
     {
         [SyncVar(hook = "OnWeaponChangeRequest")] protected string weaponPath;
@@ -46,6 +46,8 @@ namespace TheBitCave.BattleRoyale.Abilities
             var weapon = Instantiate(dataAsRanged.BulletPrefab, spawnPoint.position, spawnPoint.rotation);
             weapon.OwnerId = netId;
             NetworkServer.Spawn(weapon.gameObject);
+            var t = spawnPoint.transform;
+            RpcCreateVfx(t.position, t.rotation);
         }
         
         protected virtual void OnWeaponChangeRequest(string _, string newValue)
