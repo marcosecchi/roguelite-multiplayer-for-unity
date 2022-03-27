@@ -1,8 +1,6 @@
 using Mirror;
-using TheBitCave.BattleRoyale.Abilities;
 using TheBitCave.BattleRoyale.Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace TheBitCave.BattleRoyale.WeaponSystem
 {
@@ -16,6 +14,9 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         [SerializeField]
         private float damageAmount = 3;
 
+        [SerializeField]
+        private GameObject vfx;
+
         private Rigidbody _rigidbody;
         private Collider _collider;
 
@@ -27,12 +28,28 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
             _collider.isTrigger = true;
         }
         
-        [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
+            var t = transform;
+            RpcCreateVfx(t.position, t.rotation);
+            if (!isServer) return;
             var damageable = other.GetComponent<IDamageable>();
             damageable?.Damage(damageAmount, OwnerId);
             NetworkServer.Destroy(gameObject);
         }
+        
+        /// <summary>
+        /// Instantiate a visual effect (if any) on the client
+        /// <param name="position">The position of the generated effect</param>
+        /// <param name="rotation">The rotation of the generated effect</param>
+        /// </summary>
+        [Client]
+        protected virtual void RpcCreateVfx(Vector3 position, Quaternion rotation)
+        {
+            Debug.Log(vfx);
+            if (vfx == null) return;
+            Instantiate(vfx, position, rotation);
+        }
+
     }
 }

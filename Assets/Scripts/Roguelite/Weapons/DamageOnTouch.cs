@@ -34,7 +34,6 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
             _collider.enabled = false;
         }
 
-        [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
             var damageable = other.GetComponent<IDamageable>();

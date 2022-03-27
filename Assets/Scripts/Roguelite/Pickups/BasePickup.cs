@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using UnityEditor.Build.Pipeline;
 using UnityEngine;
 
 namespace TheBitCave.BattleRoyale
@@ -28,9 +29,9 @@ namespace TheBitCave.BattleRoyale
         /// After that, all clients will be notified
         /// </summary>
         /// <param name="other"></param>
-        [ServerCallback]
         protected virtual void OnTriggerEnter(Collider other)
         {
+            if(!isServer) return;
             Pick(other.gameObject);
         }
 

@@ -2,6 +2,7 @@ using Mirror;
 using TheBitCave.BattleRoyale.Data;
 using TheBitCave.BattleRoyale.WeaponSystem;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace TheBitCave.BattleRoyale.Abilities
 {
@@ -50,6 +51,20 @@ namespace TheBitCave.BattleRoyale.Abilities
             RpcCreateVfx(t.position, t.rotation);
         }
         
+        /// <summary>
+        /// Handles the weapon data just loaded by the Addressables system
+        /// </summary>
+        /// <param name="operation">The async operation containing the weapon data</param>
+        protected override void OnWeaponDataLoaded(AsyncOperationHandle<BaseWeaponStatsSO> operation)
+        {
+            base.OnWeaponDataLoaded(operation);
+            var ni = dataAsRanged.BulletPrefab.GetComponent<NetworkIdentity>();
+            if (ni != null && !NetworkClient.prefabs.ContainsKey(ni.assetId))
+            {
+                NetworkClient.RegisterPrefab(dataAsRanged.BulletPrefab.gameObject);
+            }
+        }
+
         protected virtual void OnWeaponChangeRequest(string _, string newValue)
         {
             ChangeWeapon(newValue);

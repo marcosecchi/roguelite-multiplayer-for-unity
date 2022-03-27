@@ -10,9 +10,9 @@ namespace TheBitCave.BattleRoyale.Prototype
         
         // ServerCallback because we don't want a warning
         // if OnTriggerEnter is called on the client
-        [ServerCallback]
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
+            if (!isServer) return;
             var controller = other.GetComponent<ProtoCharacter>();
             if (controller == null) return;
             controller.AddPoints(points);

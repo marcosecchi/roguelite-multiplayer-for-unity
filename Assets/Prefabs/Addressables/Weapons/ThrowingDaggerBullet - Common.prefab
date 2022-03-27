@@ -52,6 +52,7 @@ MonoBehaviour:
   syncInterval: 0.1
   moveForce: 8
   damageAmount: 3
+  vfx: {fileID: 6551202318204462179, guid: f9b7b61cb3cf0344e927141e3dd40bda, type: 3}
 --- !u!54 &8565945044764080463
 Rigidbody:
   m_ObjectHideFlags: 0
