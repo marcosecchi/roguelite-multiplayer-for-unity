@@ -12,8 +12,8 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
     {
         private Collider _collider;
 
-        private float _damageValue;
-        private uint _provoker;
+        private float _damageAmount;
+        private uint _ownerId;
         
         private void Awake()
         {
@@ -22,10 +22,10 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
             _collider.enabled = false;
         }
 
-        public void StartAttack(float damageValue, uint provoker)
+        public void StartAttack(float damageAmount, uint ownerId)
         {
-            _damageValue = damageValue;
-            _provoker = provoker;
+            _damageAmount = damageAmount;
+            _ownerId = ownerId;
             _collider.enabled = true;
         }
 
@@ -34,10 +34,11 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
             _collider.enabled = false;
         }
 
+        [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
             var damageable = other.GetComponent<IDamageable>();
-            damageable?.Damage(_damageValue, _provoker);
+            damageable?.Damage(_damageAmount, _ownerId);
         }
     }
 }
