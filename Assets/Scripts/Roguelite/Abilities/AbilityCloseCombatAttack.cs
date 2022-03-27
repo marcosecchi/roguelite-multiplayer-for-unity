@@ -1,5 +1,6 @@
 using Mirror;
 using TheBitCave.BattleRoyale.Data;
+using TheBitCave.BattleRoyale.WeaponSystem;
 using UnityEngine;
 
 namespace TheBitCave.BattleRoyale.Abilities

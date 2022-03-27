@@ -2,7 +2,7 @@ using Mirror;
 using TheBitCave.BattleRoyale.Interfaces;
 using UnityEngine;
 
-namespace TheBitCave.BattleRoyale.Abilities
+namespace TheBitCave.BattleRoyale.WeaponSystem
 {
     /// <summary>
     /// Ability used to damage an IDamageable element on touch.
@@ -37,11 +37,7 @@ namespace TheBitCave.BattleRoyale.Abilities
         private void OnTriggerEnter(Collider other)
         {
             var damageable = other.GetComponent<IDamageable>();
-
-            if (damageable != null)
-            {
-                damageable.Damage(_damageValue, _provoker);
-            }
+            damageable?.Damage(_damageValue, _provoker);
         }
     }
 }
