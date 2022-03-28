@@ -16,6 +16,9 @@ namespace  TheBitCave.BattleRoyale.Data
         [SerializeField]
         private CharacterType characterType;
 
+        [SerializeField]
+        private CharacterAlignment characterAlignment;
+
         [Header("Movement")]
         [SerializeField]
         private float walkSpeed = 3;
@@ -32,6 +35,7 @@ namespace  TheBitCave.BattleRoyale.Data
 
         public float Level => level;
         public CharacterType Type => characterType;
+        public CharacterAlignment Alignment => characterAlignment;
         public float WalkSpeed => walkSpeed;
         public float RunSpeed => runSpeed;
         public float RotationSpeed => rotationSpeed;

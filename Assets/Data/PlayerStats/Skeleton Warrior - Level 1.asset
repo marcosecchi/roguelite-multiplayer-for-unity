@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be6340cd299cb7b408e79b8c897bb01a, type: 3}
-  m_Name: Stats Thief - Level 1
+  m_Name: Skeleton Warrior - Level 1
   m_EditorClassIdentifier: 
   level: 1
-  characterType: 3
+  characterType: 4
+  characterAlignment: 1
   walkSpeed: 6
   runSpeed: 10
   rotationSpeed: 2

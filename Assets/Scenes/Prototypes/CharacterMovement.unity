@@ -1282,7 +1282,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3237167, y: -0.000000049409124, z: 0.000000016904814, w: 0.94615406}
+  m_LocalRotation: {x: 0.32371667, y: -0.0000000032581318, z: 0.0000000011147347, w: 0.94615406}
   m_LocalPosition: {x: 4.75, y: 6.2, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3938,7 +3938,7 @@ MonoBehaviour:
   autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs: []
-  characterType: 4
+  characterType: 3
 --- !u!4 &1701322206
 Transform:
   m_ObjectHideFlags: 0
@@ -4000,7 +4000,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1872791, y: 1}
+    m_SensorSize: {x: 1.4707208, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4016,7 +4016,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816866283}
-  m_LocalRotation: {x: 0.3237167, y: -0.000000049409124, z: 0.000000016904814, w: 0.94615406}
+  m_LocalRotation: {x: 0.32371667, y: -0.0000000032581318, z: 0.0000000011147347, w: 0.94615406}
   m_LocalPosition: {x: 4.75, y: 6.2, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

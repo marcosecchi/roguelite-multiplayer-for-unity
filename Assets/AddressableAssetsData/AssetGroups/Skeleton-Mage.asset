@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Skin-Mage
+  m_Name: Skeleton-Mage
   m_EditorClassIdentifier: 
-  m_GroupName: Skin-Mage
+  m_GroupName: Skeleton-Mage
   m_Data:
     m_SerializedData: []
   m_GUID: 167b79f3045475a449a0fd5f579ade68

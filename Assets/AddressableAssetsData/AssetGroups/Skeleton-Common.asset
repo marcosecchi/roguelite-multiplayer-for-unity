@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Skin-Minion
+  m_Name: Skeleton-Common
   m_EditorClassIdentifier: 
-  m_GroupName: Skin-Minion
+  m_GroupName: Skeleton-Common
   m_Data:
     m_SerializedData: []
   m_GUID: 745a84a4f1d38c6439875c4a47911274

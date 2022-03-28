@@ -7,10 +7,10 @@ namespace TheBitCave.BattleRoyale
     /// </summary>
     public enum CharacterType
     {
-        Minion,
+        None,
         Mage,
         Ranger,
         Thief,
-        Warrior
+        Warrior,
     }
 }
