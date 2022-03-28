@@ -25,7 +25,7 @@ namespace TheBitCave.BattleRoyale
 
         public static readonly string[] alignmentTypes =
         {
-            ALIGNMENT_GOOD,
+//            ALIGNMENT_GOOD,
             ALIGNMENT_EVIL
         };
 

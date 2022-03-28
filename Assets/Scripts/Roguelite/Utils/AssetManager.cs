@@ -7,71 +7,64 @@ namespace TheBitCave.BattleRoyale.Utils
 {
     public class AssetManager: PersistentSingleton<AssetManager>
     {
+        /// <summary>
+        /// A class used to store character data and skin prefabs
+        /// </summary>
         class CharacterCatalogue
         {
-            public Dictionary<string, List<GameObject>> headDictionary = new Dictionary<string, List<GameObject>>();
-            public Dictionary<string, List<GameObject>> bodyDictionary = new Dictionary<string, List<GameObject>>();
-            public Dictionary<string, GameObject> characterDictionary = new Dictionary<string, GameObject>();
+            public readonly Dictionary<string, List<GameObject>> headDictionary = new();
+            public readonly Dictionary<string, List<GameObject>> bodyDictionary = new();
+            public readonly Dictionary<string, GameObject> characterDictionary = new();
         }
 
         public delegate void InitComplete();
         public event InitComplete SkinManagerComplete;
 
-        private Dictionary<string, CharacterCatalogue> _characterCatalogue = new();
+        private readonly Dictionary<string, CharacterCatalogue> _characterCatalogue = new();
         
-        
-//        private Dictionary<string, List<GameObject>> _headDictionary;
-//        private Dictionary<string, List<GameObject>> _bodyDictionary;
-//        private Dictionary<string, GameObject> _characterDictionary;
-
         private void Start()
         {
             StartCoroutine(nameof(Init));
         }
 
-        public IEnumerator Init()
+        /// <summary>
+        /// Creates a skin and character catalogue from the Addressables system
+        /// </summary>
+        private IEnumerator Init()
         {
-            var evil = C.GetCharacterAlignmentLabel(CharacterAlignment.Evil);
-            var good = C.GetCharacterAlignmentLabel(CharacterAlignment.Good);
-            _characterCatalogue.Add(evil, new CharacterCatalogue());
-            _characterCatalogue.Add(good, new CharacterCatalogue());
-
             // Skin catalogue generation
-//            _headDictionary = new Dictionary<string, List<GameObject>>();
-//            _bodyDictionary = new Dictionary<string, List<GameObject>>();
-
-// TODO: Add Good  catalogue generation
-            var alignment = evil;
-            _characterCatalogue.TryGetValue(alignment, out var catalogue);
-
-            foreach (var type in C.characterTypes)
+            foreach (var alignment in C.alignmentTypes)
             {
-                var skinLabels = new List<string>(){C.ADDRESSABLE_LABEL_BODY, type, alignment};
+                var catalogue = new CharacterCatalogue();
+                _characterCatalogue.Add(alignment, catalogue);
+
+                foreach (var type in C.characterTypes)
+                {
+                    var skinLabels = new List<string>(){C.ADDRESSABLE_LABEL_BODY, type, alignment};
             
-                var skinHandle = Addressables.LoadAssetsAsync<GameObject>(skinLabels, null, Addressables.MergeMode.Intersection, true);
-                if (!skinHandle.IsDone) yield return skinHandle;
-                var skinList = new List<GameObject>(skinHandle.Result);
-                catalogue.bodyDictionary.Add(type, skinList);
+                    var skinHandle = Addressables.LoadAssetsAsync<GameObject>(skinLabels, null, Addressables.MergeMode.Intersection, true);
+                    if (!skinHandle.IsDone) yield return skinHandle;
+                    var skinList = new List<GameObject>(skinHandle.Result);
+                    catalogue.bodyDictionary.Add(type, skinList);
             
-                skinLabels = new List<string>(){C.ADDRESSABLE_LABEL_HEAD, type};
-                skinHandle = Addressables.LoadAssetsAsync<GameObject>(skinLabels, null, Addressables.MergeMode.Intersection, true);
-                if (!skinHandle.IsDone) yield return skinHandle;
-                skinList = new List<GameObject>(skinHandle.Result);
-                catalogue.headDictionary.Add(type, skinList);
-            }
+                    skinLabels = new List<string>(){C.ADDRESSABLE_LABEL_HEAD, type, alignment};
+                    skinHandle = Addressables.LoadAssetsAsync<GameObject>(skinLabels, null, Addressables.MergeMode.Intersection, true);
+                    if (!skinHandle.IsDone) yield return skinHandle;
+                    skinList = new List<GameObject>(skinHandle.Result);
+                    catalogue.headDictionary.Add(type, skinList);
+                }
             
-            // Character catalogue generation
-//            _characterDictionary = new Dictionary<string, GameObject>();
-            
-            var characterLabels = new List<string>(){C.ADDRESSABLE_LABEL_CHARACTER, alignment};
-            var characterHandle = Addressables.LoadAssetsAsync<GameObject>(characterLabels, null, Addressables.MergeMode.Intersection, true);
-            if (!characterHandle.IsDone) yield return characterHandle;
-            var characterList = new List<GameObject>(characterHandle.Result);
-            foreach (var character in characterList)
-            {
-                var chComponent = character.GetComponent<Character>();
-                if(chComponent == null) continue;
-                catalogue.characterDictionary.Add(chComponent.TypeStringified, character);
+                // Character catalogue generation
+                var characterLabels = new List<string>(){C.ADDRESSABLE_LABEL_CHARACTER, alignment};
+                var characterHandle = Addressables.LoadAssetsAsync<GameObject>(characterLabels, null, Addressables.MergeMode.Intersection, true);
+                if (!characterHandle.IsDone) yield return characterHandle;
+                var characterList = new List<GameObject>(characterHandle.Result);
+                foreach (var character in characterList)
+                {
+                    var chComponent = character.GetComponent<Character>();
+                    if(chComponent == null) continue;
+                    catalogue.characterDictionary.Add(chComponent.TypeStringified, character);
+                }
             }
 
             Debug.Log("Assets Ready");
@@ -79,25 +72,43 @@ namespace TheBitCave.BattleRoyale.Utils
             OnInitComplete();
         }
 
+        /// <summary>
+        /// Retrieves the character class prefab from the catalogue
+        /// </summary>
+        /// <param name="type">The character class/type</param>
+        /// <param name="alignment">The character alignment (Good/Evil)</param>
+        /// <returns>The character prefab to be instantiated in game</returns>
         public GameObject GetCharacterPrefab(string type, string alignment)
         {
             _characterCatalogue.TryGetValue(alignment, out var catalogue);
             return catalogue != null && catalogue.characterDictionary.TryGetValue(type, out var go) ? go : null;
         }
 
+        /// <summary>
+        /// Retrieves the available head skins for the character
+        /// </summary>
+        /// <param name="type">The character class/type</param>
+        /// <param name="alignment">The character alignment (Good/Evil)</param>
+        /// <returns>A list of available heads</returns>
         public List<GameObject> GetHeadList(string type, string alignment)
         {
             _characterCatalogue.TryGetValue(alignment, out var catalogue);
             return catalogue != null && catalogue.headDictionary.TryGetValue(type, out var list) ? list : null;
         }
 
+        /// <summary>
+        /// Retrieves the available body skins for the character
+        /// </summary>
+        /// <param name="type">The character class/type</param>
+        /// <param name="alignment">The character alignment (Good/Evil)</param>
+        /// <returns>A list of available bodies</returns>
         public List<GameObject> GetBodyList(string type, string alignment)
         {
             _characterCatalogue.TryGetValue(alignment, out var catalogue);
             return catalogue != null && catalogue.bodyDictionary.TryGetValue(type, out var list) ? list : null;
         }
         
-        protected virtual void OnInitComplete()
+        private void OnInitComplete()
         {
             SkinManagerComplete?.Invoke();
         }
