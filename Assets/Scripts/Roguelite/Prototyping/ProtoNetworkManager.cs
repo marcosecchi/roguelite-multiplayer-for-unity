@@ -1,5 +1,6 @@
 using Mirror;
 using TheBitCave.BattleRoyale.Utils;
+using TheBitCave.BattleRoyale;
 using UnityEngine;
 
 namespace TheBitCave.BattleRoyale.Prototype
@@ -8,6 +9,7 @@ namespace TheBitCave.BattleRoyale.Prototype
     {
 
         public CharacterType characterType = CharacterType.Thief;
+        public CharacterAlignment characterAlignment = CharacterAlignment.Evil;
         
         public override void OnStartServer()
         {
@@ -20,16 +22,20 @@ namespace TheBitCave.BattleRoyale.Prototype
         {
             base.OnClientConnect();
 
-            foreach (var type in C.characterTypes)
+            foreach (var alignment in C.alignmentTypes)
             {
+                foreach (var type in C.characterTypes)
+                {
 //                Debug.Log("Registering character: " + type);
-                var go = AssetManager.Instance.GetCharacterPrefab(type);
-                if(go == null) continue;
-                NetworkClient.RegisterPrefab(go);
+                    var go = AssetManager.Instance.GetCharacterPrefab(type, alignment);
+                    if(go == null) continue;
+                    NetworkClient.RegisterPrefab(go);
+                }
             }
             var message = new ProtoMessage
             {
-                characterType = characterType.ToString().ToLower()
+                characterType = C.GetCharacterTypeLabel(characterType),
+                characterAlignment = C.GetCharacterAlignmentLabel(characterAlignment)
 //                characterType = C.GetRandomCharacterLabel()
             };
             NetworkClient.Send(message);
@@ -37,7 +43,7 @@ namespace TheBitCave.BattleRoyale.Prototype
 
         private void OnCharacterCreationReady(NetworkConnection conn, ProtoMessage message)
         {
-            var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType);
+            var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType, message.characterAlignment);
             var go = Instantiate(prefab);
             go.transform.position = GetStartPosition().position;
             NetworkServer.AddPlayerForConnection(conn, go);
@@ -47,6 +53,7 @@ namespace TheBitCave.BattleRoyale.Prototype
     public struct ProtoMessage : NetworkMessage
     {
         public string characterType;
+        public string characterAlignment;
     }
 
 }

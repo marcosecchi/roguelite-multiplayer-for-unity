@@ -180,7 +180,9 @@ namespace TheBitCave.BattleRoyale
         #region ITypeable implementation 
         
         public CharacterType Type => stats.Type;
-        public virtual string TypeStringified => C.GetCharacterLabel(stats.Type);
+        public virtual string TypeStringified => C.GetCharacterTypeLabel(stats.Type);
+        public CharacterAlignment Alignment => stats.Alignment;
+        public virtual string AlignmentStringified => C.GetCharacterAlignmentLabel(stats.Alignment);
         
         #endregion
     }

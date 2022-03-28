@@ -19,6 +19,9 @@ namespace TheBitCave.BattleRoyale
         private string _type;
 
         [SyncVar]
+        private string _alignment;
+
+        [SyncVar]
         private int _selectedBodyIndex;
 
         [SyncVar]
@@ -28,9 +31,10 @@ namespace TheBitCave.BattleRoyale
         {
             base.OnStartServer();
             _type = GetComponent<ICharacterTypeable>().TypeStringified;
-            var list = AssetManager.Instance.GetBodyList(_type);
+            _alignment = GetComponent<ICharacterTypeable>().AlignmentStringified;
+            var list = AssetManager.Instance.GetBodyList(_type, _alignment);
             _selectedBodyIndex = Random.Range(0, list.Count);
-            list = AssetManager.Instance.GetHeadList(_type);
+            list = AssetManager.Instance.GetHeadList(_type, _alignment);
             _selectedHeadIndex = Random.Range(0, list.Count);
         }
 
@@ -39,7 +43,7 @@ namespace TheBitCave.BattleRoyale
             base.OnStartClient();
 
             // Body generation
-            var list = AssetManager.Instance.GetBodyList(_type);
+            var list = AssetManager.Instance.GetBodyList(_type, _alignment);
             var prefab = list[_selectedBodyIndex];
             var skin = prefab.GetComponent<CharacterSkinBodyElements>();
             AddBodyPart(skin.Body, bodySlot);
@@ -47,7 +51,7 @@ namespace TheBitCave.BattleRoyale
             AddBodyPart(skin.ArmRight, armRightSlot);
 
             // Head generation
-            list = AssetManager.Instance.GetHeadList(_type);
+            list = AssetManager.Instance.GetHeadList(_type, _alignment);
             prefab = list[_selectedHeadIndex];
             AddBodyPart(prefab, headSlot);
         }
