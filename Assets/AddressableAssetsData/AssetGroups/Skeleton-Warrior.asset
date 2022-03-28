@@ -18,23 +18,26 @@ MonoBehaviour:
   m_GUID: e1f0aff4bdfccb6439868aff32888aee
   m_SerializeEntries:
   - m_GUID: 56dd941dc9a365d4fa949fd87ce43408
-    m_Address: Head01 - Warrior
+    m_Address: SkeletonHead01 - Warrior
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - warrior
+    - evil
   - m_GUID: a22c89aa0793a2e4d97212bad40982f8
-    m_Address: Head02 - Warrior
+    m_Address: SkeletonHead02 - Warrior
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - warrior
+    - evil
   - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
-    m_Address: Body01 - Warrior
+    m_Address: SkeletonBody01 - Warrior
     m_ReadOnly: 0
     m_SerializedLabels:
     - body
     - warrior
+    - evil
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

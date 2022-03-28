@@ -23,24 +23,28 @@ MonoBehaviour:
     m_SerializedLabels:
     - character
     - ranger
+    - evil
   - m_GUID: 533aa52d09a919b419f31d1bfa25224f
     m_Address: Skeleton - Warrior
     m_ReadOnly: 0
     m_SerializedLabels:
     - warrior
     - character
+    - evil
   - m_GUID: 67aa12d87c7a2374eb8a0e7ef947c17d
     m_Address: Skeleton - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
     - character
     - mage
+    - evil
   - m_GUID: c85f839e7c432e34a937f028f6cb146d
     m_Address: Skeleton - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - character
     - thief
+    - evil
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

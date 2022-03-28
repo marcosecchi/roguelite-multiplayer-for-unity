@@ -18,29 +18,33 @@ MonoBehaviour:
   m_GUID: 1b9f82d5161ffb64f9e2b11aea4a3d41
   m_SerializeEntries:
   - m_GUID: 7fb276c909eeeda42882a6288d40cc17
-    m_Address: Head01 - Thief
+    m_Address: SkeletonHead01 - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - thief
+    - evil
   - m_GUID: 6011f89eddbc92c46bbe8b5371d363da
-    m_Address: Head02 - Thief
+    m_Address: SkeletonHead02 - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - thief
+    - evil
   - m_GUID: 5946aa1fe66290b46846b9d27911809a
-    m_Address: Head03 - Thief
+    m_Address: SkeletonHead03 - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - head
     - thief
+    - evil
   - m_GUID: 56ce5456a1d98584aae9703f2c30048f
-    m_Address: Body01 - Thief
+    m_Address: SkeletonBody01 - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - body
     - thief
+    - evil
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
