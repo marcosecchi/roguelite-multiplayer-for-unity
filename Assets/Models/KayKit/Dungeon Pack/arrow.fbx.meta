@@ -1,9 +1,24 @@
 fileFormatVersion: 2
 guid: 5ff1e4933b735d344ac433c3793df65b
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrownDark
+    second: {fileID: 2100000, guid: 81bc61c43d989e94da5ce99f0c8932b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreenDark
+    second: {fileID: 2100000, guid: 95f5ad040793368478228d330cfa4be6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: f48425d017b6db249b83152d8c0f652a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -14,6 +29,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -43,6 +59,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -54,6 +71,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8

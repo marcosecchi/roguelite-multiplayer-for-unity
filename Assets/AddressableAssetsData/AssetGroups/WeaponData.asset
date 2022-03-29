@@ -37,6 +37,14 @@ MonoBehaviour:
     m_Address: Axe_Common
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 2faa727ab349f11469af0aa54df1da54
+    m_Address: Axe_Uncommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e1a1089421afd7f4f88b1b9d534cfe96
+    m_Address: Axe_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
