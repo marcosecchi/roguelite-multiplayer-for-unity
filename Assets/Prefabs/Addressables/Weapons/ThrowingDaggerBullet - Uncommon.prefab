@@ -51,7 +51,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   moveForce: 8
-  damageAmount: 3
+  damageAmount: 14
+  pushbackForce: 120
   vfx: {fileID: 0}
 --- !u!54 &8565945044764080463
 Rigidbody:

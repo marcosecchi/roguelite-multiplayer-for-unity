@@ -27,7 +27,6 @@ namespace TheBitCave.BattleRoyale.Abilities
         [Server]
         public virtual void Damage(float amount, uint provoker)
         {
-            Debug.Log("DamagedBy " + provoker );
             hitPoints -= Mathf.Clamp(amount, 0, hitPoints);
             OnDamageTaken?.Invoke(hitPoints);
             if (hitPoints != 0) return;

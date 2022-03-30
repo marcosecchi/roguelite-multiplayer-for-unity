@@ -15,6 +15,9 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         private float damageAmount = 3;
 
         [SerializeField]
+        private float pushbackForce = 0;
+
+        [SerializeField]
         private GameObject vfx;
 
         private Rigidbody _rigidbody;
@@ -32,9 +35,20 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         {
             var t = transform;
             RpcCreateVfx(t.position, t.rotation);
-            if (!isServer) return;
+            if (!isServer) return; 
             var damageable = other.GetComponent<IDamageable>();
             damageable?.Damage(damageAmount, OwnerId);
+            var otherRigidbody = other.GetComponent<Rigidbody>();
+            var otherCharacterController = other.GetComponent<CharacterController>();
+            switch (pushbackForce)
+            {
+                case > 0 when otherRigidbody != null:
+                    otherRigidbody.AddForce(transform.forward * pushbackForce);
+                    break;
+                case > 0 when otherCharacterController != null:
+                    otherCharacterController.SimpleMove(transform.forward * pushbackForce);
+                    break;
+            }
             NetworkServer.Destroy(gameObject);
         }
         
@@ -46,7 +60,6 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         [Client]
         protected virtual void RpcCreateVfx(Vector3 position, Quaternion rotation)
         {
-            Debug.Log(vfx);
             if (vfx == null) return;
             Instantiate(vfx, position, rotation);
         }
