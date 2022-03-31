@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: ba429fc93a465804e8d923f0a3831828
+guid: 56fc9332c5871064d865693feb9c8be4
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 560194234720034106
-    second: KayKit Animated Character|Hop
+      74: 6352134752737312462
+    second: KayKit Animated Character|AttackCombo
   externalObjects: {}
   materials:
     materialImportMode: 2
