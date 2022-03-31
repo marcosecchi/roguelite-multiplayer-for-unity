@@ -6,7 +6,7 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
-    public class ThrowableWeapon : BaseWeapon
+    public class RangedWeapon : BaseWeapon
     {
         [SerializeField]
         private float moveForce = 8;
@@ -23,6 +23,9 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         private Rigidbody _rigidbody;
         private Collider _collider;
 
+        /// <summary>
+        /// Registers all needed components
+        /// </summary>
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -31,6 +34,10 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
             _collider.isTrigger = true;
         }
         
+        /// <summary>
+        /// Handles the collision (though a trigger) of the damageable element
+        /// </summary>
+        /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
             var t = transform;
