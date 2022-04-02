@@ -44,12 +44,14 @@ namespace TheBitCave.BattleRoyale
         {
             if (!isLocalPlayer) return;
             inputActions.Player.Attack.started += OnAttackStarted;
+            CameraManager.Instance.SetLocalPlayer(transform);
         }
         
         public override void OnStopClient()
         {
             if (!isLocalPlayer) return;
             inputActions.Player.Attack.started -= OnAttackStarted;
+            CameraManager.Instance.SetLocalPlayer(null);
         }
 
         public override void OnStartLocalPlayer()
