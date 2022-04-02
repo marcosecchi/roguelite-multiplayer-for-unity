@@ -13,12 +13,17 @@ namespace TheBitCave.BattleRoyale.Abilities
         public event IDamageable.Destroyed OnDestroyed;
 
         [Header("Health Settings")]
-        [SyncVar]
+        [SyncVar(hook = nameof(HealthChanged))]
         [SerializeField]
         protected float hitPoints;
         
         public float HitPoints => hitPoints;
-        
+
+        protected void Awake()
+        {
+            HealthChanged(0, hitPoints);
+        }
+
         public float StartingHitPoints
         {
             set => hitPoints = value;
@@ -38,6 +43,11 @@ namespace TheBitCave.BattleRoyale.Abilities
         {
             if (!isServer) return;
             NetworkServer.Destroy(gameObject);
+        }
+
+        protected virtual void HealthChanged(float _, float newValue)
+        {
+            
         }
     }
     

@@ -2,6 +2,7 @@ using System.Collections;
 using Mirror;
 using TheBitCave.BattleRoyale.Abilities;
 using TheBitCave.BattleRoyale.Data;
+using TMPro;
 using UnityEngine;
 
 namespace TheBitCave.BattleRoyale.Prototype
@@ -9,6 +10,7 @@ namespace TheBitCave.BattleRoyale.Prototype
     public class ProtoHealth : Health
     {
         public CurveSO animCurve;
+        public TextMeshProUGUI label;
         
         [Server]
         public override void Damage(float amount, uint provoker)
@@ -32,5 +34,11 @@ namespace TheBitCave.BattleRoyale.Prototype
                 yield return new WaitForSeconds(0.005f);
             }
         }
+        
+        protected override void HealthChanged(float _, float newValue)
+        {
+            label.text = newValue.ToString();
+        }
+
     }
 }
