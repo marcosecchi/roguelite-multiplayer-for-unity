@@ -8,6 +8,13 @@ namespace TheBitCave.BattleRoyale.Prototype
     public class ProtoNetworkManager : NetworkManager
     {
 
+        public enum SkinSpawnMethod
+        {
+            Random,
+            EditorSelection
+        }
+        
+        public SkinSpawnMethod skinSpawnMethod = SkinSpawnMethod.Random;
         public CharacterType characterType = CharacterType.Thief;
         public CharacterAlignment characterAlignment = CharacterAlignment.Evil;
         
@@ -32,9 +39,15 @@ namespace TheBitCave.BattleRoyale.Prototype
                     NetworkClient.RegisterPrefab(go);
                 }
             }
+
+            var cType = C.GetCharacterTypeLabel(characterType);
+            if (skinSpawnMethod == SkinSpawnMethod.Random)
+            {
+                cType = C.GetRandomCharacterLabel();
+            }
             var message = new ProtoMessage
             {
-                characterType = C.GetCharacterTypeLabel(characterType),
+                characterType = cType,
                 characterAlignment = C.GetCharacterAlignmentLabel(characterAlignment)
 //                characterType = C.GetRandomCharacterLabel()
             };
