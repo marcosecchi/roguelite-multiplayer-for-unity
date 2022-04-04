@@ -2,9 +2,8 @@ namespace TheBitCave.BattleRoyale
 {
     public partial class C
     {
-        public const string ADDRESSABLE_LABEL_BODY = "body";
-        public const string ADDRESSABLE_LABEL_HEAD = "head";
         public const string ADDRESSABLE_LABEL_CHARACTER = "character";
+        public const string ADDRESSABLE_LABEL_SKIN = "skin";
 
         public const string ADDRESSABLE_LABEL_MINION = "minion";
         public const string ADDRESSABLE_LABEL_WARRIOR = "warrior";

@@ -17,48 +17,20 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e93351d376be38244ab94d3faeb23170
   m_SerializeEntries:
-  - m_GUID: 89879cbe41c06ae49a1232d9a565b67e
-    m_Address: SkeletonHead01 - Ranger
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - head
-    - ranger
-    - evil
-  - m_GUID: dec017365b3364841ad3688c368d76d9
-    m_Address: SkeletonHead02 - Ranger
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - head
-    - ranger
-    - evil
-  - m_GUID: ea1567a2e80e1e44ba8c39291b3afb51
-    m_Address: SkeletonHead03 - Ranger
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - head
-    - ranger
-    - evil
   - m_GUID: 95fda88169b8f94459b2005845c4d1b9
     m_Address: SkeletonBody01 - Ranger
     m_ReadOnly: 0
     m_SerializedLabels:
-    - body
     - ranger
     - evil
+    - skin
   - m_GUID: aab2c78d46f805c4686608bd366f8cdd
     m_Address: SkeletonBody02 - Ranger
     m_ReadOnly: 0
     m_SerializedLabels:
-    - body
     - ranger
     - evil
-  - m_GUID: ebc8762564f623048be917641d30cf53
-    m_Address: SkeletonHead04 - Ranger
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - head
-    - ranger
-    - evil
+    - skin
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

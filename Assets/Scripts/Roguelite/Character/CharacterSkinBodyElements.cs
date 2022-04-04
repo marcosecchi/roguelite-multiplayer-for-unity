@@ -10,9 +10,11 @@ namespace TheBitCave.BattleRoyale
         [SerializeField] protected GameObject body;
         [SerializeField] protected GameObject armLeft;
         [SerializeField] protected GameObject armRight;
+        [SerializeField] protected GameObject[] heads;
         
         public virtual GameObject Body => body;
         public virtual GameObject ArmLeft => armLeft;
         public virtual GameObject ArmRight => armRight;
+        public virtual GameObject[] Heads => heads;
     }
 }

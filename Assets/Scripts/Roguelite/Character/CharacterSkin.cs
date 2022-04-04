@@ -34,8 +34,11 @@ namespace TheBitCave.BattleRoyale
             _alignment = GetComponent<ICharacterTypeable>().AlignmentStringified;
             var list = AssetManager.Instance.GetBodyList(_type, _alignment);
             _selectedBodyIndex = Random.Range(0, list.Count);
-            list = AssetManager.Instance.GetHeadList(_type, _alignment);
-            _selectedHeadIndex = Random.Range(0, list.Count);
+            var prefab = list[_selectedBodyIndex];
+            Debug.Log(prefab);
+            var skin = prefab.GetComponent<CharacterSkinBodyElements>();
+            Debug.Log(skin);
+            _selectedHeadIndex = Random.Range(0, skin.Heads.Length);
         }
 
         public override void OnStartClient()
@@ -51,8 +54,7 @@ namespace TheBitCave.BattleRoyale
             AddBodyPart(skin.ArmRight, armRightSlot);
 
             // Head generation
-            list = AssetManager.Instance.GetHeadList(_type, _alignment);
-            prefab = list[_selectedHeadIndex];
+            prefab = skin.Heads[_selectedHeadIndex];
             AddBodyPart(prefab, headSlot);
         }
 
