@@ -49,7 +49,6 @@ namespace TheBitCave.BattleRoyale.Prototype
             {
                 characterType = cType,
                 characterAlignment = C.GetCharacterAlignmentLabel(characterAlignment)
-//                characterType = C.GetRandomCharacterLabel()
             };
             NetworkClient.Send(message);
         }
