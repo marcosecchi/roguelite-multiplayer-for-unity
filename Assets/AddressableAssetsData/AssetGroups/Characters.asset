@@ -45,6 +45,34 @@ MonoBehaviour:
     - character
     - thief
     - evil
+  - m_GUID: 9df1dd8bc3815bb4a95ce60d401639f0
+    m_Address: Hero - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - mage
+    - good
+  - m_GUID: c995676f7bcd63346b8772b2616335a0
+    m_Address: Hero - Ranger
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - ranger
+    - good
+  - m_GUID: e2e32f0e13227124f9cc9ae476027089
+    m_Address: Hero - Thief
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - thief
+    - good
+  - m_GUID: 15e27da48487b244cb40493518a3c868
+    m_Address: Hero - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - character
+    - warrior
+    - good
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
