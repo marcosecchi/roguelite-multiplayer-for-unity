@@ -4489,8 +4489,8 @@ MonoBehaviour:
   autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs: []
-  skinSpawnMethod: 0
-  characterType: 2
+  skinSpawnMethod: 1
+  characterType: 4
   characterAlignment: 0
 --- !u!4 &1701322206
 Transform:

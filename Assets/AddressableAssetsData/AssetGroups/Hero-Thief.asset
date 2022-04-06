@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 266f6e16b828a7d4881f87700a04c82b
   m_SerializeEntries:
   - m_GUID: 59fe76f9317981f4392ce5ecc9b8f949
-    m_Address: Body01 - Thief
+    m_Address: HeroBody01 - Thief
     m_ReadOnly: 0
     m_SerializedLabels:
     - skin

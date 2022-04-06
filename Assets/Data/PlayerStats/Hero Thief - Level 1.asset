@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   characterType: 3
-  characterAlignment: 1
+  characterAlignment: 0
   walkSpeed: 6
   runSpeed: 10
   rotationSpeed: 2

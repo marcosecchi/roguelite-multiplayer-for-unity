@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 4da3bed119c1148479c4366b558406f7
   m_SerializeEntries:
   - m_GUID: 43fd19aaaca167c428cb101b89b2ac22
-    m_Address: Body01 - Warrior
+    m_Address: HeroBody01 - Warrior
     m_ReadOnly: 0
     m_SerializedLabels:
     - skin

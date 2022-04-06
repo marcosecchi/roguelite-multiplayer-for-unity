@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: e785a36f799a7124e940004085f46d8e
   m_SerializeEntries:
   - m_GUID: d257f0f919ed05147beb68295fc4e6c4
-    m_Address: Body01 - Mage
+    m_Address: HeroBody01 - Mage
     m_ReadOnly: 0
     m_SerializedLabels:
     - skin
