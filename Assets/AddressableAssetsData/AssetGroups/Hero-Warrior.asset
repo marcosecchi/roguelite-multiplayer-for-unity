@@ -16,7 +16,14 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4da3bed119c1148479c4366b558406f7
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 43fd19aaaca167c428cb101b89b2ac22
+    m_Address: Body01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin
+    - good
+    - warrior
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

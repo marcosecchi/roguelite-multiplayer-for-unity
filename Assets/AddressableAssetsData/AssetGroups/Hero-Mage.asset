@@ -16,7 +16,14 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e785a36f799a7124e940004085f46d8e
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: d257f0f919ed05147beb68295fc4e6c4
+    m_Address: Body01 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin
+    - good
+    - mage
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:

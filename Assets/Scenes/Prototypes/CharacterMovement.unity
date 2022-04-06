@@ -4491,7 +4491,7 @@ MonoBehaviour:
   spawnPrefabs: []
   skinSpawnMethod: 0
   characterType: 2
-  characterAlignment: 1
+  characterAlignment: 0
 --- !u!4 &1701322206
 Transform:
   m_ObjectHideFlags: 0
