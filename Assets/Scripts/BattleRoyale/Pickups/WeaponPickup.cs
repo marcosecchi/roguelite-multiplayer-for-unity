@@ -25,9 +25,9 @@ namespace TheBitCave.BattleRoyale
             }
         }
 
-        [Server]
         protected override void Pick(GameObject picker)
         {
+            if(!isServer) return;
             if (rangedWeapon != null)
             {
                 var attack = picker.GetComponent<AbilityRangedAttack>();

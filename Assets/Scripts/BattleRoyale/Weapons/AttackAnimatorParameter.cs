@@ -11,7 +11,8 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
         CloseCombatOneHanded,
         Throw,
         CastOneHanded,
-        CastTwoHanded
+        CastTwoHanded,
+        ShootBow
     }
     
 }

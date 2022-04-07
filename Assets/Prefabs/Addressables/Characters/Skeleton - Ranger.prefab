@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8519103515951704714, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: handSlot
+      value: 
+      objectReference: {fileID: 291439102095782290}
     - target: {fileID: 1063455048423379336, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: m_AssetId
       value: e4157b5dcd7f08749990cbb14c45b64b
@@ -57,7 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063455048423379340, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: m_Name
-      value: Character - Ranger
+      value: Skeleton - Ranger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968334824308090760, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6968334824308090760, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
       propertyPath: m_LocalPosition.y
@@ -73,3 +81,8 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d7e4826d4ba7a2049849a567d3e07401, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+--- !u!4 &291439102095782290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1209969964857334872, guid: 83246864f7ddd43439f10baee42ca382, type: 3}
+  m_PrefabInstance: {fileID: 1495699838059507146}
+  m_PrefabAsset: {fileID: 0}

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9968541235d9da542af7a3f970352480, type: 3}
-  m_Name: Bow_Common
+  m_Name: Bow_Uncommon
   m_EditorClassIdentifier: 
   animatorParameter: 7
-  weaponModelPrefab: {fileID: 4519038757325399263, guid: db4cc828b9641e340ba900290d5a7c41, type: 3}
+  weaponModelPrefab: {fileID: 4519038757325399263, guid: baee79cc0e0c8ff4e96fed7d84828cbe, type: 3}
   vfx: {fileID: 0}
   bulletPrefab: {fileID: -5691235245424348166, guid: ee0ded6c4805d4c40b425f62fe47a364, type: 3}
