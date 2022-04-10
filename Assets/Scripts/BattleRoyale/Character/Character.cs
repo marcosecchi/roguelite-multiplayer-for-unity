@@ -167,7 +167,6 @@ namespace TheBitCave.BattleRoyale
         /// </summary>
         public virtual void UpdateWeaponModels()
         {
-            Debug.Log("Picked");
             closeCombatAttack.SetWeaponVisibility(isInCloseCombatRange);
             rangedAttack.SetWeaponVisibility(!isInCloseCombatRange);
         }
