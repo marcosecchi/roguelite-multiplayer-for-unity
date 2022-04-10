@@ -10,13 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Skeleton-Ranger
+  m_Name: Evil Skins
   m_EditorClassIdentifier: 
-  m_GroupName: Skeleton-Ranger
+  m_GroupName: Evil Skins
   m_Data:
     m_SerializedData: []
-  m_GUID: e93351d376be38244ab94d3faeb23170
+  m_GUID: 167b79f3045475a449a0fd5f579ade68
   m_SerializeEntries:
+  - m_GUID: 6a2ec8cce4ae5794f85093977ad84e2d
+    m_Address: SkeletonBody01 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - mage
+    - evil
+    - skin
+  - m_GUID: e5f9b480e028a02489788b060a07f334
+    m_Address: SkeletonBody02 - Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - mage
+    - evil
+    - skin
   - m_GUID: 95fda88169b8f94459b2005845c4d1b9
     m_Address: SkeletonBody01 - Ranger
     m_ReadOnly: 0
@@ -31,9 +45,23 @@ MonoBehaviour:
     - ranger
     - evil
     - skin
+  - m_GUID: 2412f3c7e1aed654b89585bfabc8c02e
+    m_Address: SkeletonBody01 - Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - warrior
+    - evil
+    - skin
+  - m_GUID: 56ce5456a1d98584aae9703f2c30048f
+    m_Address: SkeletonBody01 - Thief
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - thief
+    - evil
+    - skin
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: be4f48002068afc4198956fc16dcc092, type: 2}
-    - {fileID: 11400000, guid: fc7d7c9a9eb4d3b42b0a8fe60346070d, type: 2}
+    - {fileID: 11400000, guid: 46e93e6f181857f42a74c7974af16bf9, type: 2}
+    - {fileID: 11400000, guid: aea1036fcc64ecb4393bd0d2205bf466, type: 2}

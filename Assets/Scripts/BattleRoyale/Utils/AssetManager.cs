@@ -41,7 +41,6 @@ namespace TheBitCave.BattleRoyale.Utils
                 foreach (var type in C.characterTypes)
                 {
                     var skinLabels = new List<string>(){C.ADDRESSABLE_LABEL_SKIN, type, alignment};
-            
                     var skinHandle = Addressables.LoadAssetsAsync<GameObject>(skinLabels, null, Addressables.MergeMode.Intersection, true);
                     if (!skinHandle.IsDone) yield return skinHandle;
                     var skinList = new List<GameObject>(skinHandle.Result);
