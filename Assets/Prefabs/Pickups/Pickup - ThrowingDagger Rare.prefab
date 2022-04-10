@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2973279743087843636}
   - component: {fileID: 4096899823025720045}
   - component: {fileID: 8578713449912976770}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pickup - ThrowingDagger Rare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

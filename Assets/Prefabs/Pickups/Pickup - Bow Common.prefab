@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 216521035787896127}
   - component: {fileID: 1340126822882023142}
   - component: {fileID: 6723800568801384841}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pickup - Bow Common
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   syncInterval: 0.1
   closeCombatWeapon: {fileID: 0}
   rangedWeapon: {fileID: 11400000, guid: ac58627cdc4c34a4590623efff50cdb9, type: 2}
-  pickableBy: 02000000
+  pickableBy: 0200000004000000
 --- !u!1001 &9148772141952240584
 PrefabInstance:
   m_ObjectHideFlags: 0
