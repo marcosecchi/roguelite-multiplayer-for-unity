@@ -53,6 +53,54 @@ MonoBehaviour:
     m_Address: Bow_Uncommon
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 62e97217aff0fd44593d2c5f6f6a7dd7
+    m_Address: AxeDouble_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d8efe3d633560664c9ceb4147e579163
+    m_Address: AxeDouble_Uncommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d7700c96c10d206439a5b17f8935039c
+    m_Address: AxeDouble_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7628ae2a429915b45a606f71de6ecbef
+    m_Address: Crossbow_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 898d8993c8cb0ef42aa1aaf024163a45
+    m_Address: Crossbow_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f8c2fa6573a6b446b4d73c6ba0e75ae
+    m_Address: Crossbow_Uncommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ffb04a3c0cef51541a4320d013749dff
+    m_Address: Hammer_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4541d21b696f42c4689f023141cb266c
+    m_Address: Hammer_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 138ed73d548504e47975725788525ad1
+    m_Address: Hammer_Uncommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6dc89ceeb4f5314f985b98f04d22ffb
+    m_Address: Staff_Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 36e7de38651b11b409ef4af84f6da573
+    m_Address: Staff_Rare
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fb04922aa6a004c4097b16ab5b907d08
+    m_Address: Staff_Uncommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e7585f8e8fbc0a941aac93a41c9cd638, type: 2}
   m_SchemaSet:
