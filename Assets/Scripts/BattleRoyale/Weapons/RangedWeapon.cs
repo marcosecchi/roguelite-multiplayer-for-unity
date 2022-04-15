@@ -10,7 +10,7 @@ namespace TheBitCave.BattleRoyale.WeaponSystem
     {
         [SerializeField]
         private float moveForce = 8;
-
+        
         [SerializeField]
         private float damageAmount = 3;
 

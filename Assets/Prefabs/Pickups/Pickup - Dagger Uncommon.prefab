@@ -1,62 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1344516268587331247
+--- !u!1001 &3497060720967694776
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 754760078395217912}
     m_Modifications:
-    - target: {fileID: 1795283166216055211, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
-      propertyPath: m_Name
-      value: ThrowingDagger - Rare
-      objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138341939864627400, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+    - target: {fileID: 4311045612706079415, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4509549126792422356, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
+      propertyPath: m_Name
+      value: ThrowingDagger - Uncommon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c5fa32eaf5aceee4faac5f728ceba49d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 48acc826e0e34c54f9eae6b1c9de53f8, type: 3}
 --- !u!1001 &5454188684004638219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,11 +66,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2545113884346667084, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
       propertyPath: m_Name
-      value: Pickup - ThrowingDagger Rare
+      value: Pickup - Dagger Uncommon
       objectReference: {fileID: 0}
     - target: {fileID: 2545113884346667121, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
       propertyPath: m_AssetId
-      value: f3453bc9dd34a514896984af5a057f57
+      value: 8dfa7148b1fd25f419fd524648a2a1d4
       objectReference: {fileID: 0}
     - target: {fileID: 2545113884346667123, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
       propertyPath: m_RootOrder
@@ -119,7 +119,11 @@ PrefabInstance:
     - target: {fileID: 3666738646943713944, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
       propertyPath: rangedWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: b24f9124eb57cda4d91e7c68280b1920, type: 2}
+      objectReference: {fileID: 11400000, guid: 77f717869fa5d764a9210b58e47b0db2, type: 2}
+    - target: {fileID: 3666738646943713944, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
+      propertyPath: closeCombatWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: f9058bbf725752a448c49b06eb02f45d, type: 2}
     - target: {fileID: 3666738646943713944, guid: 3f849a9a27e85d741b5986277385ae85, type: 3}
       propertyPath: pickableBy.Array.size
       value: 1
