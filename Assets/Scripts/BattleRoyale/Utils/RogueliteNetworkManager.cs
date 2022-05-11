@@ -1,5 +1,7 @@
+using System.Linq;
 using Mirror;
 using TheBitCave.BattleRoyale.Utils;
+using UnityEngine;
 
 namespace TheBitCave.BattleRoyale
 {
@@ -44,32 +46,39 @@ namespace TheBitCave.BattleRoyale
                 cType = C.GetRandomCharacterLabel();
             }
 
-            var characterAlignment = C.GetRandomAlignment();
-            if (keepAlignmentBalanced)
+            var cAlignment = C.GetRandomAlignment();
+            if (keepAlignmentBalanced && NetworkServer.connections.Count > 0)
             {
-                
+                cAlignment = HasGoodMorePlayers() ? C.ALIGNMENT_EVIL : C.ALIGNMENT_GOOD;
             }
             var message = new ProtoMessage
             {
-                characterType = cType,
-                characterAlignment = characterAlignment
+                CharacterType = cType,
+                CharacterAlignment = cAlignment
             };
             NetworkClient.Send(message);
         }
 
         private void OnCharacterCreationReady(NetworkConnection conn, ProtoMessage message)
         {
-            var prefab = AssetManager.Instance.GetCharacterPrefab(message.characterType, message.characterAlignment);
+            var prefab = AssetManager.Instance.GetCharacterPrefab(message.CharacterType, message.CharacterAlignment);
             var go = Instantiate(prefab);
             go.transform.position = GetStartPosition().position;
             NetworkServer.AddPlayerForConnection(conn, go);
         }
-    }
 
+        private static bool HasGoodMorePlayers()
+        {
+            var list = FindObjectsOfType<Character>();
+            var count = list.Count(ch => ch.Alignment == CharacterAlignment.Good);
+            return count > list.Length / 2;
+        }
+    }
+    
     public struct ProtoMessage : NetworkMessage
     {
-        public string characterType;
-        public string characterAlignment;
+        public string CharacterType;
+        public string CharacterAlignment;
     }
 
 }
