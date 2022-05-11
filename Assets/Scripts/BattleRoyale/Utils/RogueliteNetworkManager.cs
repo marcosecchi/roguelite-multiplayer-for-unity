@@ -1,11 +1,9 @@
 using Mirror;
 using TheBitCave.BattleRoyale.Utils;
-using TheBitCave.BattleRoyale;
-using UnityEngine;
 
-namespace TheBitCave.BattleRoyale.Prototype
+namespace TheBitCave.BattleRoyale
 {
-    public class ProtoNetworkManager : NetworkManager
+    public class RogueliteNetworkManager : NetworkManager
     {
 
         public enum SkinSpawnMethod
@@ -16,7 +14,7 @@ namespace TheBitCave.BattleRoyale.Prototype
         
         public SkinSpawnMethod skinSpawnMethod = SkinSpawnMethod.Random;
         public CharacterType characterType = CharacterType.Thief;
-        public CharacterAlignment characterAlignment = CharacterAlignment.Evil;
+        public bool keepAlignmentBalanced = true;
         
         public override void OnStartServer()
         {
@@ -45,10 +43,16 @@ namespace TheBitCave.BattleRoyale.Prototype
             {
                 cType = C.GetRandomCharacterLabel();
             }
+
+            var characterAlignment = C.GetRandomAlignment();
+            if (keepAlignmentBalanced)
+            {
+                
+            }
             var message = new ProtoMessage
             {
                 characterType = cType,
-                characterAlignment = C.GetCharacterAlignmentLabel(characterAlignment)
+                characterAlignment = characterAlignment
             };
             NetworkClient.Send(message);
         }

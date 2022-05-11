@@ -1,15 +1,14 @@
-using System;
 using Mirror;
 using TheBitCave.BattleRoyale.Utils;
 using UnityEngine;
 
-namespace TheBitCave.BattleRoyale.Prototype
+namespace TheBitCave.BattleRoyale
 {
     /// <summary>Shows NetworkManager controls in a GUI at runtime.</summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("")]
     [RequireComponent(typeof(NetworkManager))]
-    public class ProtoNetworkManagerHUD : MonoBehaviour
+    public class RogueliteNetworkManagerHUD : MonoBehaviour
     {
         NetworkManager manager;
 
@@ -18,7 +17,7 @@ namespace TheBitCave.BattleRoyale.Prototype
 
         private bool _guiEnabled;
 
-        void Awake()
+        private void Awake()
         {
             manager = GetComponent<NetworkManager>();
         }
@@ -28,12 +27,12 @@ namespace TheBitCave.BattleRoyale.Prototype
             AssetManager.Instance.SkinManagerComplete += OnSkinManagerComplete;
         }
 
-        void OnSkinManagerComplete()
+        private void OnSkinManagerComplete()
         {
             _guiEnabled = true;
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
             if (!_guiEnabled) return;
             
@@ -65,7 +64,7 @@ namespace TheBitCave.BattleRoyale.Prototype
             GUILayout.EndArea();
         }
 
-        void StartButtons()
+        private void StartButtons()
         {
             if (!NetworkClient.active)
             {
@@ -110,7 +109,7 @@ namespace TheBitCave.BattleRoyale.Prototype
             }
         }
 
-        void StatusLabels()
+        private void StatusLabels()
         {
             // host mode
             // display separately because this always confused people:
@@ -132,7 +131,7 @@ namespace TheBitCave.BattleRoyale.Prototype
             }
         }
 
-        void StopButtons()
+        private void StopButtons()
         {
             // stop host if host mode
             if (NetworkServer.active && NetworkClient.isConnected)

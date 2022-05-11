@@ -45,5 +45,10 @@ namespace TheBitCave.BattleRoyale
             return characterTypes[Random.Range(0, characterTypes.Length)];
         }
 
+        public static string GetRandomAlignment()
+        {
+            return alignmentTypes[Random.Range(0, alignmentTypes.Length)];
+        }
+
     }
 }
