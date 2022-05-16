@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TheBitCave.BattleRoyale
 {
-    public class RogueliteNetworkManager : NetworkManager
+    public class BattleRoyaleNetworkManager : NetworkManager
     {
 
         public enum SkinSpawnMethod

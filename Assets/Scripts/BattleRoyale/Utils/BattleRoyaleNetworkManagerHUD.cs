@@ -8,7 +8,7 @@ namespace TheBitCave.BattleRoyale
     [DisallowMultipleComponent]
     [AddComponentMenu("")]
     [RequireComponent(typeof(NetworkManager))]
-    public class RogueliteNetworkManagerHUD : MonoBehaviour
+    public class BattleRoyaleNetworkManagerHUD : MonoBehaviour
     {
         NetworkManager manager;
 
